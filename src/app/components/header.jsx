@@ -11,13 +11,13 @@ export default function Header() {
         <GitHubIcon />
       </div>
       <nav>
-        <div>
+        <div className='item'>
           <a>Kontakt</a>
         </div>
-        <div>
+        <div className='item'>
           <a>O mnie</a>
         </div>
-        <div>
+        <div className='item'>
           <a>Prace</a>
         </div>
       </nav>
