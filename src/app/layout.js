@@ -1,7 +1,16 @@
 import localFont from 'next/font/local';
 
+import Header from 'components/header';
+
+import 'public/css/theme.css';
+
+const soleil = localFont({
+  src: '../../public/fonts/soleil.woff2', 
+  variable: '--font-proxima-nova'
+});
+
 const proximaNova = localFont({
-  src: '../styles/fonts/proximanova_extrabold.woff', 
+  src: '../../public/fonts/proxima-nova.woff2', 
   variable: '--font-proxima-nova'
 });
 
@@ -13,7 +22,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='pl'>
-      <body className={`${proximaNova.variable}`}>
+      <body className={`${proximaNova.variable } ${soleil.variable}`}>
+        <Header />
         <main>
           {children}
         </main>
