@@ -1,8 +1,21 @@
+'use client';
 import PhoneIcon from 'public/icons/phone';
 import MailIcon from 'public/icons/mail';
 import GitHubIcon from 'public/icons/github';
 
 export default function Header() {
+  const handlePhoneClick = () => {
+    window.location.href = 'tel:+48733196208';
+  };
+
+  const handleMailClick = () => {
+    window.location.href = 'mailto:wgwcompany@duck.com';
+  };
+
+  const handleGithubClick = () => {
+    window.location.href = 'https://github.com/niezle-ziolko';
+  };
+
   return (
     <header>
       <nav>
@@ -17,9 +30,15 @@ export default function Header() {
         </div>
       </nav>
       <div className='icon'>
-        <PhoneIcon />
-        <MailIcon />
-        <GitHubIcon />
+        <div onClick={handlePhoneClick} style={{ cursor: 'pointer' }}>
+          <PhoneIcon />
+        </div>
+        <div onClick={handleMailClick} style={{ cursor: 'pointer' }}>
+          <MailIcon />
+        </div>
+        <div onClick={handleGithubClick} style={{ cursor: 'pointer' }}>
+          <GitHubIcon />
+        </div>
       </div>
     </header>
   );

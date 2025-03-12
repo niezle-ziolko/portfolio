@@ -1,0 +1,107 @@
+.container {
+  width: 12rem;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.75rem;
+  background-color: #ebe6ef;
+  border: 4px solid #121331;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  gap: 0.5rem;
+}
+
+/* Efekt po zaznaczeniu */
+#switch:checked + .switch-body {
+  transform: scaleX(-1);
+}
+
+#switch:checked ~ .container {
+  background-color: #3a3347;
+}
+
+/* Okrąg */
+.circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 4px solid #121331;
+}
+
+/* Stylowanie przycisku */
+.switch {
+  width: 100%;
+  height: 2.5rem;
+  border: 4px solid #121331;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: block;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Wnętrze przycisku */
+.switch-body {
+  width: 100%;
+  height: 100%;
+  background-color: #f24c00;
+  position: relative;
+}
+
+/* Strzałka */
+.arrow {
+  width: 0;
+  height: 0;
+  position: relative;
+  z-index: 20;
+  border-left: 24px solid transparent;
+  border-right: 24px solid transparent;
+  border-top: 20px solid #121331;
+}
+
+.arrow-inner {
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-top: 15px solid #e44901;
+  top: -20px;
+  left: -18px;
+}
+
+/* Skosy */
+.skew-box {
+  width: 24px;
+  height: 36px;
+  position: absolute;
+  top: 9px;
+  background-color: #f24c00;
+  border-bottom: 4px solid #121331;
+}
+
+.skew-box.left {
+  left: 0;
+  border-right: 2px solid #121331;
+  transform: skewY(39deg);
+}
+
+.skew-box.right {
+  left: 24px;
+  background-color: #c44002;
+  border-right: 4px solid #121331;
+  border-left: 2px solid #121331;
+  transform: skewY(-39deg);
+}
+
+/* Mały pasek */
+.small-bar {
+  width: 1.5rem;
+  height: 0.25rem;
+  flex-shrink: 0;
+  background-color: #121331;
+  border-radius: 9999px;
+}

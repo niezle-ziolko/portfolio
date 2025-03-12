@@ -1,43 +1,78 @@
+:root {
+  --primary-color: #4000f5;
+  --secondary-color: #cef565;
+  --third-theme-color: #e8e8e8;
+  --primary-theme-color: #222831;
+  --transparent-color: transparent;
+  --secondary-theme-color: #24b3fb;
+  --flex-display: flex;
+  --center-align: center;
+  --absolute-position: absolute;
+  --relative-position: relative;
+  --pointer-cursor: pointer;
+}
+
+.dark {
+  --primary-color: #3df3c2;
+  --secondary-color: #42005a;
+}
+
 html, body {
-  width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 header {
-  background-color: #cef565;
-  width: 60px;
-  height: 100%;
-  padding: 20px;
-  position: relative;
+  top: 0;
   left: 0;
   right: 0;
-  top: 0;
   bottom: 0;
-  justify-content: center;
-  align-items: center;
-  display: grid;
+  width: 60px;
+  padding: 20px;
+  align-items: start;
+  position: relative;
+  flex-direction: column;
+  display: var(--flex-display);
+  justify-content: space-between;
+  background-color: var(--secondary-color);
 }
 
 header .icon {
-  width: 150px;
-  justify-content: center;
-  display: grid;
-  gap: 25px;
+  gap: 20px;
+  width: 60px;
+  flex-direction: column;
+  display: var(--flex-display);
+  align-items: var(--center-align);
+  justify-content: var(--center-align);
 }
 
 header nav {
+  width: 60px;
+  height: 100%;
   display: grid;
-  gap: 70px;
+  padding-top: 30px;
+  align-items: start;
+  justify-content: var(--center-align);
 }
 
 header .item {
-  font-family: 'proximaNova';
   font-size: 25px;
   transform: rotate(-90deg);
+  font-family: var(--proxima-nova-font);
+}
+
+header svg {
+  fill: var(--primary-color);
+}
+
+main {
+  width: 100%;
 }
 
 body {
-  display: flex;
+  color: var(--primary-color);
+  display: var(--flex-display);
+  font-family: var(--soleil-font);
 }

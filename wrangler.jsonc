@@ -14,7 +14,10 @@
 		"enabled": true
 	},
 	"placement": { "mode": "smart" },
-	"assets": { "directory": "./public/", "binding": "ASSETS" },
+	"assets": {
+		"directory": ".public/",
+		"binding": "STATIC"
+	},
 	"vars": {
 		"PNPM_VERSION": "10.6.2"
 	}
