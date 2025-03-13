@@ -1,107 +1,100 @@
-.container {
+.custom-container {
   width: 12rem;
   aspect-ratio: 16 / 9;
   border-radius: 0.75rem;
-  background-color: #ebe6ef;
-  border: 4px solid #121331;
+  border: 4px solid var(--primary-color);
+}
+
+.custom-content {
   display: flex;
+  height: 100%;
+  width: 100%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   align-items: center;
-  padding: 0 0.5rem;
   gap: 0.5rem;
 }
 
-/* Efekt po zaznaczeniu */
-#switch:checked + .switch-body {
-  transform: scaleX(-1);
-}
-
-#switch:checked ~ .container {
-  background-color: #3a3347;
-}
-
-/* Okrąg */
-.circle {
+.custom-circle {
   width: 1.5rem;
   height: 1.5rem;
   flex-shrink: 0;
-  border-radius: 50%;
-  border: 4px solid #121331;
+  border-radius: 9999px;
+  border: 4px solid var(--primary-color);
 }
 
-/* Stylowanie przycisku */
-.switch {
+.custom-label {
   width: 100%;
   height: 2.5rem;
-  border: 4px solid #121331;
-  border-radius: 0.5rem;
+  border: 4px solid var(--primary-color);
+  border-radius: 0.25rem;
   cursor: pointer;
   display: block;
-  position: relative;
 }
 
-.hidden {
+.custom-label:has(:checked) {
+  transform: scaleX(-1);
+}
+
+.custom-input {
   display: none;
 }
 
-/* Wnętrze przycisku */
-.switch-body {
+.custom-switch {
   width: 100%;
   height: 100%;
-  background-color: #f24c00;
   position: relative;
 }
 
-/* Strzałka */
-.arrow {
+.custom-arrow {
   width: 0;
   height: 0;
-  position: relative;
   z-index: 20;
   border-left: 24px solid transparent;
   border-right: 24px solid transparent;
-  border-top: 20px solid #121331;
+  border-top: 20px solid var(--primary-color);
+  position: relative;
 }
 
-.arrow-inner {
+.custom-arrow-inner {
   width: 0;
   height: 0;
   position: absolute;
   border-left: 18px solid transparent;
   border-right: 18px solid transparent;
-  border-top: 15px solid #e44901;
   top: -20px;
   left: -18px;
 }
 
-/* Skosy */
-.skew-box {
+.custom-skew-left {
   width: 24px;
   height: 36px;
+  z-index: 10;
   position: absolute;
   top: 9px;
-  background-color: #f24c00;
-  border-bottom: 4px solid #121331;
-}
-
-.skew-box.left {
   left: 0;
-  border-right: 2px solid #121331;
+  border-right: 2px solid var(--primary-color);
+  border-bottom: 4px solid var(--primary-color);
   transform: skewY(39deg);
 }
 
-.skew-box.right {
+.custom-skew-right {
+  width: 25px;
+  height: 36px;
+  z-index: 10;
+  position: absolute;
+  top: 9px;
   left: 24px;
-  background-color: #c44002;
-  border-right: 4px solid #121331;
-  border-left: 2px solid #121331;
+  border-right: 4px solid var(--primary-color);
+  border-left: 2px solid var(--primary-color);
+  border-bottom: 4px solid var(--primary-color);
   transform: skewY(-39deg);
 }
 
-/* Mały pasek */
-.small-bar {
+.custom-line {
   width: 1.5rem;
   height: 0.25rem;
   flex-shrink: 0;
-  background-color: #121331;
+  background-color: var(--primary-color);
   border-radius: 9999px;
 }
