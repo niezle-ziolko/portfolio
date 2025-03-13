@@ -1,10 +1,7 @@
 :root {
   --primary-color: #4000f5;
   --secondary-color: #cef565;
-  --third-theme-color: #e8e8e8;
-  --primary-theme-color: #222831;
   --transparent-color: transparent;
-  --secondary-theme-color: #24b3fb;
   --flex-display: flex;
   --center-align: center;
   --absolute-position: absolute;
@@ -72,7 +69,12 @@ main {
 }
 
 body {
+  background-color: var(--secondary-color);
   color: var(--primary-color);
   display: var(--flex-display);
   font-family: var(--soleil-font);
+}
+
+footer {
+  padding: 15px;
 }
