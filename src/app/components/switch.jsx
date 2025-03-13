@@ -7,20 +7,20 @@ export default function Switch() {
   const { isDarkMode, setIsDarkMode } = useTheme();
 
   return (
-    <div class='custom-container'>
-      <div class='custom-content'>
-        <div class='custom-circle' />
-        <label htmlFor='switch' class='custom-label'>
-          <input type='checkbox' id='switch' class='custom-input' checked={isDarkMode} onChange={() => setIsDarkMode(!isDarkMode)} />
-          <div class='custom-switch'>
-            <div class='custom-arrow'>
-              <div class='custom-arrow-inner' />
+    <div className='custom-container'>
+      <div className='custom-content'>
+        <div className='custom-circle' />
+        <label htmlFor='switch' className='custom-label'>
+          <input type='checkbox' id='switch' className='custom-input' checked={isDarkMode} onChange={() => setIsDarkMode(!isDarkMode)} />
+          <div className='custom-switch'>
+            <div className='custom-arrow'>
+              <div className='custom-arrow-inner' />
             </div>
-            <div class='custom-skew-left' />
-            <div class='custom-skew-right' />
+            <div className='custom-skew-left' />
+            <div className='custom-skew-right' />
           </div>
         </label>
-        <div class='custom-line' />
+        <div className='custom-line' />
       </div>
     </div>
   );
