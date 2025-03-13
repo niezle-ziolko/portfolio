@@ -20,13 +20,13 @@ export default function Header() {
     <header>
       <nav>
         <div className='item'>
-          <a>Kontakt</a>
-        </div>
-        <div className='item'>
           <a>O mnie</a>
         </div>
         <div className='item'>
           <a>Prace</a>
+        </div>
+        <div className='item'>
+          <a>Kontakt</a>
         </div>
       </nav>
       <div className='icon'>

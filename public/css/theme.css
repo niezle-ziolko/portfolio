@@ -21,15 +21,20 @@ html, body {
   height: 100%;
 }
 
+body {
+  color: var(--primary-color);
+  display: var(--flex-display);
+  font-family: var(--soleil-font);
+  background-color: var(--secondary-color);
+}
+
 header {
   top: 0;
-  left: 0;
-  right: 0;
   bottom: 0;
   width: 60px;
   padding: 20px;
+  position: fixed;
   align-items: start;
-  position: relative;
   flex-direction: column;
   display: var(--flex-display);
   justify-content: space-between;
@@ -66,15 +71,27 @@ header svg {
 
 main {
   width: 100%;
-}
-
-body {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  display: var(--flex-display);
-  font-family: var(--soleil-font);
+  padding-left: 100px;
 }
 
 footer {
+  right: 0;
   padding: 15px;
+  position: absolute;
+  justify-content: end;
+  display: var(--flex-display);
+}
+
+.hello {
+  height: 100vh;
+  display: var(--flex-display);
+}
+
+.hello .left {
+  width: 50%;
+  background-color: #0d0d0d;
+}
+
+.hello .right {
+  width: 50%;
 }

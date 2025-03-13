@@ -1,7 +1,7 @@
 'use client';
 import { useTheme } from 'context/theme-context';
 
-import 'public/css/buttons/switch.css';
+import 'public/css/checkbox/switch.css';
 
 export default function Switch() {
   const { isDarkMode, setIsDarkMode } = useTheme();
