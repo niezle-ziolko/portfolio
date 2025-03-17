@@ -16,17 +16,41 @@ export default function Header() {
     window.location.href = 'https://github.com/niezle-ziolko';
   };
 
+  const handleAboutClick = () => {
+    const aboutSection = document.getElementById('about');
+
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    };
+  };
+
+  const handleExamplesClick = () => {
+    const examplesSection = document.getElementById('examples');
+
+    if (examplesSection) {
+      examplesSection.scrollIntoView({ behavior: 'smooth' });
+    };
+  };
+
+  const handleContactClick = () => {
+    const contactSection = document.getElementById('contact');
+
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    };
+  };
+
   return (
     <header>
       <nav>
         <div className='item'>
-          <a>O mnie</a>
+          <button onClick={handleAboutClick} style={{ cursor: 'pointer' }}>O mnie</button>
         </div>
         <div className='item'>
-          <a>Prace</a>
+          <button onClick={handleExamplesClick} style={{ cursor: 'pointer' }}>Prace</button>
         </div>
         <div className='item'>
-          <a>Kontakt</a>
+          <button onClick={handleContactClick} style={{ cursor: 'pointer' }}>Kontakt</button>
         </div>
       </nav>
       <div className='icon'>

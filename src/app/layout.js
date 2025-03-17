@@ -24,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='pl'>
+    <html lang='pl' className='light'>
       <body className={`${proximaNova.variable } ${soleil.variable}`}>
         <ThemeProvider>
           <Header />

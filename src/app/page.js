@@ -1,6 +1,6 @@
 import Hello from 'components/section/hello';
 import About from 'components/section/about';
-import Portfolio from 'components/section/portfolio';
+import Examples from 'components/section/examples';
 import Contact from 'components/section/contact';
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Hello />
       <About />
-      <Portfolio />
+      <Examples />
       <Contact />
     </>
   );

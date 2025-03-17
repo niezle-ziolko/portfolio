@@ -16,13 +16,13 @@
 		"react-dom": "^19.0.0"
 	},
 	"devDependencies": {
-		"@cloudflare/next-on-pages": "^1.13.9",
-		"@cloudflare/workers-types": "^4.20250310.0",
-		"@eslint/eslintrc": "^3",
-		"eslint": "^9",
+		"@cloudflare/next-on-pages": "^1.13.10",
+		"@cloudflare/workers-types": "^4.20250313.0",
+		"@eslint/eslintrc": "^3.3.0",
+		"eslint": "^9.22.0",
 		"eslint-config-next": "15.1.6",
-		"vercel": "^41.3.2",
-		"wrangler": "^3.112.0"
+		"vercel": "^41.4.1",
+		"wrangler": "^3.114.1"
 	},
 	"packageManager": "pnpm@10.6.2+sha256.20072a1f6edd17646ea9234bf32c42d563dad37b2973e97a2dde5c17774a824d"
 }
