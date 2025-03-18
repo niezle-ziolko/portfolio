@@ -2,6 +2,7 @@
   --primary-color: #5050e5;
   --secondary-color: #cef565;
   --thirty-color: #e2e8f0;
+  --fourthy-color: #292828;
   --transparent-color: transparent;
   --flex-display: flex;
   --center-align: center;
@@ -148,7 +149,7 @@ section {
 
 .hello .left {
   width: 50%;
-  background-color: #0d0d0d;
+  background-color: var(--fourthy-color);
 }
 
 .hello .box {
