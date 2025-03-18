@@ -2,7 +2,7 @@
   --primary-color: #5050e5;
   --secondary-color: #cef565;
   --thirty-color: #e2e8f0;
-  --fourthy-color: #292828;
+  --fourthy-color: #262e33;
   --transparent-color: transparent;
   --flex-display: flex;
   --center-align: center;
@@ -13,33 +13,12 @@
   --null: 0;
   --twenty-pixels: 20px;
   --sixty-pixels: 60px;
+  --half-percentages: 50%;
 }
 
 .dark {
   --primary-color: #35dfdf;
   --secondary-color: #42005a;
-}
-
-@keyframes slideIn {
-  0% {
-    transform: translateY(20px);
-    opacity: var(--null);
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideDown {
-  0% {
-    transform: translateY(-20px);
-    opacity: var(--null)
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 html, body {
@@ -126,7 +105,7 @@ h1 {
   color: var(--transparent-color);
   margin-top: var(--twenty-pixels);
   margin-bottom: var(--twenty-pixels);
-  animation: slideIn 1s ease forwards;
+  animation: slideIn 2s ease forwards;
   font-family: var(--proxima-nova-font);
   -webkit-text-stroke: 1px var(--thirty-color);
 }
@@ -139,7 +118,7 @@ h1 span {
 p {
   font-size: 17px;
   color: var(--thirty-color);
-  animation: slideIn 1s ease forwards;
+  animation: slideIn 2s ease forwards;
 }
 
 section {
@@ -147,18 +126,14 @@ section {
   display: var(--flex-display);
 }
 
-.hello .left {
-  width: 50%;
-  background-color: var(--fourthy-color);
-}
-
-.hello .box {
-  width: 50%;
+section .box {
   display: var(--flex-display);
+  width: var(--half-percentages);
   align-items: var(--center-align);
   justify-content: var(--center-align);
 }
 
-.avatar {
-  animation: slideDown 1s ease forwards;
+#box {
+  background-color: #262e33;
+  border: 2px solid #000;
 }
