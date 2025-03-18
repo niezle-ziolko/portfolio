@@ -14,7 +14,7 @@
   position: var(--relative-position);
   border-radius: var(--twenty-pixels);
   justify-content: var(--center-align);
-  animation: open 2s forwards alternate;
+  animation: open 1s forwards alternate;
   transform: perspective(1900px) rotateX(-88.5deg);
   box-shadow: inset 0 0 0 2px #c8cacb, inset 0 0 0 10px #000;
   background-image: linear-gradient(

@@ -89,6 +89,7 @@ header svg {
 main {
   width: 100%;
   padding-left: 100px;
+  height: 100vh;
 }
 
 footer {
