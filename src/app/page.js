@@ -1,6 +1,6 @@
 'use client';
 import { useEffect } from 'react';
-import Paper from 'components/paper';
+import About from 'components/about';
 import Laptop from 'components/laptop';
 import Examples from 'components/section/examples';
 import Contact from 'components/section/contact';
@@ -48,11 +48,11 @@ export default function Home() {
         </div>
       </section>
       <section id='about'>
-        <div className='box'>
-          <Paper />
+        <div className='box' id='box'>
+          <About />
         </div>
         <div className='box'>
-          
+
         </div>
       </section>
       <Examples />

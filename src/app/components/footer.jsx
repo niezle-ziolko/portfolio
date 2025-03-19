@@ -1,4 +1,4 @@
-import Switch from './checkbox/switch';
+import Switch from './switch';
 
 export default function Footer() {
   return (
