@@ -3,6 +3,8 @@
   --secondary-color: #cef565;
   --thirty-color: #e2e8f0;
   --fourthy-color: #262e33;
+  --white-color: #fff;
+  --black-color: #000;
   --transparent-color: transparent;
   --flex-display: flex;
   --center-align: center;
@@ -14,6 +16,7 @@
   --twenty-pixels: 20px;
   --sixty-pixels: 60px;
   --half-percentages: 50%;
+  --max-percentages: 100%;
 }
 
 .dark {
@@ -22,17 +25,17 @@
 }
 
 html, body {
-  width: 100%;
-  height: 100%;
   margin: var(--null);
   padding: var(--null);
+  width: var(--max-percentages);
+  height: var(--max-percentages);
 }
 
 body {
-  transition: var(--all-transition);
   color: var(--primary-color);
   display: var(--flex-display);
   font-family: var(--soleil-font);
+  transition: var(--all-transition);
   background-color: var(--secondary-color);
 }
 
@@ -59,11 +62,11 @@ header .icon {
 }
 
 header nav {
-  height: 100%;
   display: grid;
   padding-top: 30px;
   align-items: start;
   width: var(--sixty-pixels);
+  height: var(--max-percentages);
   justify-content: var(--center-align);
 }
 
@@ -87,9 +90,9 @@ header svg {
 }
 
 main {
-  width: 100%;
-  padding-left: 100px;
   height: 100vh;
+  padding-left: 100px;
+  width: var(--max-percentages);
 }
 
 footer {
@@ -119,7 +122,6 @@ h1 span {
 p {
   font-size: 17px;
   color: var(--thirty-color);
-  animation: slideIn 2s ease forwards;
 }
 
 section {
@@ -137,4 +139,8 @@ section .box {
 #box {
   background-color: #262e33;
   border: 2px solid #000;
+}
+
+#box p {
+  animation: slideIn 2s ease forwards;
 }

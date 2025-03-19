@@ -51,10 +51,10 @@
 .star {
   width: 5px;
   height: 5px;
-  border-radius: 50%;
-  background-color: #fff;
   transition: var(--all-transition);
   position: var(--absolute-position);
+  background-color: var(--white-color);
+  border-radius: var(--half-percentages);
 }
 
 .star-1 {

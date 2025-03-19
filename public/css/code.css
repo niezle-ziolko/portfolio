@@ -23,7 +23,7 @@
 .dot {
   width: 15px;
   height: 15px;
-  border-radius: 50%;
+  border-radius: var(--half-percentages);
 }
 
 .dot-1 {

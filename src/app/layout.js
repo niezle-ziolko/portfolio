@@ -13,6 +13,11 @@ const soleil = localFont({
   variable: '--soleil-font'
 });
 
+const mahalo = localFont({
+  src: '../../public/fonts/mahalo.woff2', 
+  variable: '--mahalo-font'
+});
+
 const proximaNova = localFont({
   src: '../../public/fonts/proxima-nova.woff2', 
   variable: '--proxima-nova-font'
@@ -26,7 +31,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='pl' className='light'>
-      <body className={`${proximaNova.variable } ${soleil.variable}`}>
+      <body className={`${soleil.variable} ${mahalo.variable} ${proximaNova.variable }`}>
         <ThemeProvider>
           <Header />
           <main>{children}</main>
