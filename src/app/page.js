@@ -5,6 +5,7 @@ import Laptop from 'components/laptop';
 import Examples from 'components/section/examples';
 import Contact from 'components/section/contact';
 
+import ReactIcon from 'public/icons/react';
 export default function Home() {
   useEffect(() => {
     let currentSection = 0;
@@ -52,7 +53,7 @@ export default function Home() {
           <About />
         </div>
         <div className='box'>
-
+          <ReactIcon />
         </div>
       </section>
       <Examples />

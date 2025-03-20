@@ -155,3 +155,21 @@ section .box {
 #box p {
   animation: slideIn 2s ease forwards;
 }
+
+svg {
+  stroke: #555;;
+  stroke-width: 0.5;
+  width: 250px;
+}
+
+svg path {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: draw 2s ease infinite alternate;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 0;
+  }
+}

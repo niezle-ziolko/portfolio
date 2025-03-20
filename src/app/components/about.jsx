@@ -1,6 +1,7 @@
 export default function About() {
   return (
-    <div>
+    <div style={{ paddingInline: '100px' }}>
+      <h1>O mnie</h1>
       <p>
         Moja historia w świecie programowania zaczęła się w czasach pandemii COVID-19. Chciałem wtedy otworzyć własny sklep internetowy,
         jednak brak funduszy na zlecenie jego wykonania zmusił mnie do spróbowania własnych sił. Przez rok intensywnie uczyłem się i tworzyłem swoją pierwszą aplikację
