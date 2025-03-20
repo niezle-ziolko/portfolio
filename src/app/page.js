@@ -2,10 +2,11 @@
 import { useEffect } from 'react';
 import About from 'components/about';
 import Laptop from 'components/laptop';
+import IconsList from 'components/icons';
+
 import Examples from 'components/section/examples';
 import Contact from 'components/section/contact';
 
-import ReactIcon from 'public/icons/react';
 export default function Home() {
   useEffect(() => {
     let currentSection = 0;
@@ -53,7 +54,7 @@ export default function Home() {
           <About />
         </div>
         <div className='box'>
-          <ReactIcon />
+          <IconsList />
         </div>
       </section>
       <Examples />

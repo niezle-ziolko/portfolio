@@ -121,9 +121,33 @@ h1 span {
   -webkit-text-stroke: 2px;
 }
 
+h2 {
+  font-size: 45px;
+  line-height: 1em;
+  -webkit-text-stroke: 2px;
+  color: var(--primary-color);
+  margin-top: var(--twenty-pixels);
+  margin-bottom: var(--twenty-pixels);
+  font-family: var(--proxima-nova-font);
+}
+
 p {
   font-size: 17px;
+  line-height: 1.5;
   color: var(--thirty-color);
+}
+
+ul {
+  display: flex;
+  padding-left: 0;
+  flex-wrap: wrap;
+  list-style-type: none;
+  justify-content: center;
+}
+
+li {
+  width: 250px;
+  text-align: center;
 }
 
 section {
@@ -156,20 +180,15 @@ section .box {
   animation: slideIn 2s ease forwards;
 }
 
-svg {
-  stroke: #555;;
-  stroke-width: 0.5;
-  width: 250px;
+#about svg {
+  stroke-width: 0.5px;
+  stroke: var(--primary-color);
 }
 
-svg path {
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  animation: draw 2s ease infinite alternate;
-}
-
-@keyframes draw {
-  0% {
-    stroke-dashoffset: 0;
-  }
+#about svg path,
+#about svg circle,
+#about svg polygon {
+  stroke-dasharray: 350;
+  stroke-dashoffset: 350;
+  animation: draw 2s ease reverse forwards;
 }

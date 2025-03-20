@@ -9,7 +9,7 @@ export default function Switch() {
   return (
     <div>
       <label className='switch'>
-        <input id='checkbox' type='checkbox' checked={isDarkMode} onChange={() => setIsDarkMode(!isDarkMode)} />
+        <input id='checkbox' type='checkbox' checked={isDarkMode} aria-label='switch' onChange={() => setIsDarkMode(!isDarkMode)} />
         <span className='slider'>
           <div className='star star-1' />
           <div className='star star-2' />

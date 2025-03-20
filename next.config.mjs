@@ -7,7 +7,7 @@ const nextConfig = {
     allowedDevOrigins: [
         'localhost',
         '*.gitpod.io',
-        '3000-niezleziolko-portfolio-odr7n7z3cfy.ws-eu118.gitpod.io'
+        '3000-niezleziolko-portfolio-13pezqoghjl.ws-eu118.gitpod.io'
     ]
 };
 

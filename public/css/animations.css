@@ -17,3 +17,9 @@
     transform: perspective(1000px) rotateX(0deg);
   }
 }
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 0;
+  }
+}
