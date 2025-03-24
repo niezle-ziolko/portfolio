@@ -1,0 +1,29 @@
+:root {
+  --primary-color: #5050e5;
+  --secondary-color: #cef565;
+}
+
+.dark {
+  --primary-color: #35dfdf;
+  --secondary-color: #42005a;
+}
+
+$thirty-color: #e2e8f0;
+$fourthy-color: #262e33;
+$white-color: #fff;
+$black-color: #000;
+$transparent-color: transparent;
+$border: 2px solid $black-color;
+$flex-display: flex;
+$inline-block-display: inline-block;
+$center-align: center;
+$pointer-cursor: pointer;
+$all-transition: all 0.4s;
+$absolute-position: absolute;
+$relative-position: relative;
+$none: none;
+$null: 0;
+$twenty-pixels: 20px;
+$sixty-pixels: 60px;
+$half-percentages: 50%;
+$max-percentages: 100%;

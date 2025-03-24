@@ -1,29 +1,31 @@
+@use '../variables' as *;
+
 .switch {
   width: 4em;
   height: 2.2em;
   font-size: 17px;
   border-radius: 30px;
   display: inline-block;
-  position: var(--relative-position);
+  position: $relative-position;
 }
 
 .switch input {
-  width: var(--null);
-  height: var(--null);
-  opacity: var(--null);
+  width: $null;
+  height: $null;
+  opacity: $null;
 }
 
 .slider {
   cursor: pointer;
   transition: 0.4s;
-  top: var(--null);
+  top: $null;
   overflow: hidden;
-  left: var(--null);
-  right: var(--null);
-  bottom: var(--null);
+  left: $null;
+  right: $null;
+  bottom: $null;
   border-radius: 30px;
   background-color: #5050e5;
-  position: var(--absolute-position);
+  position: $absolute-position;
 }
 
 .slider:before {
@@ -34,7 +36,7 @@
   height: 1.2em;
   transition: 0.4s;
   border-radius: 20px;
-  position: var(--absolute-position);
+  position: $absolute-position;
   box-shadow: inset 8px -4px #ffd365;
   transition-timing-function: cubic-bezier(0.81, -0.04, 0.38, 1.5);
 }
@@ -51,10 +53,10 @@
 .star {
   width: 5px;
   height: 5px;
-  transition: var(--all-transition);
-  position: var(--absolute-position);
-  background-color: var(--white-color);
-  border-radius: var(--half-percentages);
+  transition: $all-transition;
+  position: $absolute-position;
+  background-color: $white-color;
+  border-radius: $half-percentages;
 }
 
 .star-1 {
@@ -73,16 +75,16 @@
 }
 
 .switch input:checked ~ .slider .star {
-  opacity: var(--null);
+  opacity: $null;
 }
 
 .cloud {
   width: 3.5em;
   left: -1.1em;
   bottom: -1.4em;
-  opacity: var(--null);
-  transition: var(--all-transition);
-  position: var(--absolute-position);
+  opacity: $null;
+  transition: $all-transition;
+  position: $absolute-position;
 }
 
 .switch input:checked ~ .slider .cloud {

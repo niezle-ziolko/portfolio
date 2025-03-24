@@ -13,13 +13,14 @@
 	"dependencies": {
 		"next": "15.2.3",
 		"react": "^19.0.0",
-		"react-dom": "^19.0.0"
+		"react-dom": "^19.0.0",
+		"sass": "^1.86.0"
 	},
 	"devDependencies": {
 		"@cloudflare/next-on-pages": "^1.13.10",
-		"@cloudflare/workers-types": "^4.20250319.0",
-		"@eslint/eslintrc": "^3.3.0",
-		"eslint": "^9.22.0",
+		"@cloudflare/workers-types": "^4.20250321.0",
+		"@eslint/eslintrc": "^3.3.1",
+		"eslint": "^9.23.0",
 		"eslint-config-next": "15.1.6",
 		"vercel": "^41.4.1",
 		"wrangler": "^3.114.2"
@@ -27,6 +28,7 @@
 	"packageManager": "pnpm@10.6.5+sha256.47c8bca42b4b48534b5b1b28d573c506773937b02f68e52992fbd8269131c5c8",
 	"pnpm": {
 		"ignoredBuiltDependencies": [
+			"@parcel/watcher",
 			"esbuild",
 			"sharp",
 			"workerd"

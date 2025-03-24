@@ -1,5 +1,3 @@
-import 'public/css/laptop.css';
-
 import Avatar from 'public/icons/avatars';
 
 export default function Laptop() {

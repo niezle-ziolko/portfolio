@@ -5,17 +5,11 @@ import { ThemeProvider } from 'context/theme-context';
 import Header from 'components/header';
 import Footer from 'components/footer';
 
-import 'public/css/theme.css';
-import 'public/css/animations.css';
+import 'public/css/styles.scss';
 
 const soleil = localFont({
   src: '../../public/fonts/soleil.woff2', 
   variable: '--soleil-font'
-});
-
-const mahalo = localFont({
-  src: '../../public/fonts/mahalo.woff2', 
-  variable: '--mahalo-font'
 });
 
 const proximaNova = localFont({
@@ -31,7 +25,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='pl' className='light'>
-      <body className={`${soleil.variable} ${mahalo.variable} ${proximaNova.variable }`}>
+      <body className={`${soleil.variable} ${proximaNova.variable}`}>
         <ThemeProvider>
           <Header />
           <main>{children}</main>

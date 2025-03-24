@@ -1,10 +1,12 @@
 'use client';
 import { useEffect } from 'react';
+import Code from 'components/code';
 import About from 'components/about';
+import Files from 'components/files';
 import Laptop from 'components/laptop';
-import IconsList from 'components/icons';
+import IconsList from 'components/list';
+import Projects from 'components/projects';
 
-import Examples from 'components/section/examples';
 import Contact from 'components/section/contact';
 
 export default function Home() {
@@ -38,7 +40,7 @@ export default function Home() {
 
   return (
     <>
-      <section>
+      <section id='hello'>
         <div className='box' id='box'>
           <div style={{ paddingInline: '100px' }}>
             <h1>Siemanko,<br />nazywam się <span>Norman!</span></h1>
@@ -57,7 +59,22 @@ export default function Home() {
           <IconsList />
         </div>
       </section>
-      <Examples />
+      <section id='certyficates'>
+        <div className='box'>
+          <Files />
+        </div>
+        <div className='box' id='box'>
+          
+        </div>
+      </section>
+      <section className='examples' id='examples'>
+        <div style={{ width: '50%' }}>
+          <Code />
+        </div>
+        <div className='box' id='box'>
+          <Projects />
+        </div>
+      </section>
       <Contact />
     </>
   );

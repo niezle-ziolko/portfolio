@@ -2,10 +2,9 @@ export default function NextIcon() {
   return(
     <svg
       id='Next'
-      width='200px'
-      height='200px'
+      width='75'
+      height='75'
       viewBox='0 -3 48 56'
-      style={{ strokeWidth: '.6px' }}
       xmlns='http://www.w3.org/2000/svg'
     >
       <path

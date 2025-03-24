@@ -3,9 +3,10 @@ export default function CSSIcon() {
     <svg
       id='CSS3'
       fill='none'
-      width='200px'
-      height='200px'
+      width='75'
+      height='75'
       viewBox='0 0 40 40'
+      style={{ strokeWidth: '1px' }}
       xmlns='http://www.w3.org/2000/svg'
     >
       <g>

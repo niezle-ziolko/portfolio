@@ -1,10 +1,10 @@
 export default function ReactIcon() {
   return (
     <svg
-      width='200px'
-      height='200px'
+      width='75'
+      height='75'
       viewBox='-22 0 170 130'
-      style={{ strokeWidth: '1.1px' }}
+      style={{ strokeWidth: '2.5px' }}
       xmlns='http://www.w3.org/2000/svg'
     >
       <g transform='matrix(1.25305,0,0,1.25305,-16.3076,4.57191)'>

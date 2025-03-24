@@ -24,6 +24,14 @@ export default function Header() {
     };
   };
 
+  const handleCertyficatesClick = () => {
+    const examplesSection = document.getElementById('certyficates');
+
+    if (examplesSection) {
+      examplesSection.scrollIntoView({ behavior: 'smooth' });
+    };
+  };
+
   const handleExamplesClick = () => {
     const examplesSection = document.getElementById('examples');
 
@@ -47,7 +55,10 @@ export default function Header() {
           <button onClick={handleAboutClick} style={{ cursor: 'pointer' }}>O mnie</button>
         </div>
         <div className='item'>
-          <button onClick={handleExamplesClick} style={{ cursor: 'pointer' }}>Prace</button>
+          <button onClick={handleCertyficatesClick} style={{ cursor: 'pointer' }}>Dyplomy</button>
+        </div>
+        <div className='item'>
+          <button onClick={handleExamplesClick} style={{ cursor: 'pointer' }}>Projekty</button>
         </div>
         <div className='item'>
           <button onClick={handleContactClick} style={{ cursor: 'pointer' }}>Kontakt</button>

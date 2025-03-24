@@ -1,0 +1,56 @@
+.phone {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  width: 160px;
+  border: 4px solid black;
+  border-radius: 16px;
+  background-image: linear-gradient(
+    15deg,
+    #3f51b1 0%,
+    #5a55ae 13%,
+    #7b5fac 25%,
+    #8f6aae 38%,
+    #a86aa4 50%,
+    #cc6b8e 62%,
+    #f18271 75%,
+    #f3a469 87%,
+    #f7c978 100%
+  );
+}
+
+.bar {
+  border: 1px solid black;
+  background-color: black;
+  width: 80px;
+  height: 8px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.button {
+  position: absolute;
+  border: 4px solid black;
+  border-radius: 6px;
+
+  &.top {
+    top: 25px;
+    height: 15px;
+    left: -18px;
+  }
+
+  &.left {
+    left: -8px;
+    bottom: 170px;
+    height: 55px;
+    padding: 0px;
+  }
+
+  &.right {
+    right: -8px;
+    bottom: 175px;
+    height: 40px;
+    padding: 0px;
+  }
+}

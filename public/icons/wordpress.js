@@ -1,10 +1,9 @@
 export default function WordpressIcon() {
   return (
     <svg
-      width='200px'
-      height='200px'
+      width='75'
+      height='75'
       viewBox='0 -7 50 65'
-      style={{ strokeWidth: '.7px' }}
       xmlns='http://www.w3.org/2000/svg'
     >
       <path
