@@ -29,6 +29,7 @@
         }
     ],
 	"vars": {
-		"PNPM_VERSION": "10.7.0"
+		"PNPM_VERSION": "10.7.0",
+		"NODE_VERSION": "23.7.0"
 	}
 }
