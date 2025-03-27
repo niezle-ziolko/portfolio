@@ -32,6 +32,7 @@ export default function Files() {
           <div className='body' />
         </button>
       </div>
+      <iframe src="document.pdf" width="100%" height="300px"></iframe>
     </div>
   );
 };

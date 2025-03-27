@@ -19,12 +19,20 @@
 	"observability": {
 		"enabled": true
 	},
-	"placement": { "mode": "smart" },
+	"placement": {
+		"mode": "smart"
+	},
+	"kv_namespaces": [
+        {
+            "binding": "KV",
+            "id": "0a2b37e3074f4eadad1528ebe96a51a3"
+        }
+    ],
 	"assets": {
 		"directory": "public/",
 		"binding": "STATIC"
 	},
 	"vars": {
-		"PNPM_VERSION": "10.6.5"
+		"PNPM_VERSION": "10.7.0"
 	}
 }
