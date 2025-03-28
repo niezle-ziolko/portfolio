@@ -15,7 +15,9 @@ export default function Avatar() {
         <g fill='none' fillRule='evenodd'>
           <g mask='url(#prefix__react-mask-5)'>
             <g transform='translate(32 36)'>
-              <mask id='prefix__b' fill='#fff'><use href='#prefix__a' /></mask>
+              <mask id='prefix__b' fill='#fff'>
+                <use href='#prefix__a' />
+              </mask>
               <use fill='#D0C6AC' href='#prefix__a' />
               <g mask='url(#prefix__b)' fill='#FFDBB4'>
                 <path d='M0 0h264v280H0z' />
@@ -29,9 +31,13 @@ export default function Avatar() {
                   id='prefix__c'
                 />
               </defs>
-              <mask id='prefix__d' fill='#fff'><use href='#prefix__c' /></mask>
+              <mask id='prefix__d' fill='#fff'>
+                <use href='#prefix__c' />
+              </mask>
               <use fill='#B7C1DB' href='#prefix__c' />
-              <g mask='url(#prefix__d)' fill='#262E33'><path d='M0 0h264v110H0z' /></g>
+              <g mask='url(#prefix__d)' fill='#262E33'>
+                <path d='M0 0h264v110H0z' />
+              </g>
               <path d='M102 61.74V110h-7V58.15a64.54 64.54 0 007 3.59zm67-3.59V98.5a3.5 3.5 0 11-7 0V61.74a64.54 64.54 0 007-3.59z' fill='#F4F4F4' mask='url(#prefix__d)' />
               <path
                 d='M90.96 12.724C75.91 15.571 65.5 21.243 65.5 32.308 65.5 52.02 98.538 68 132 68s66.5-15.98 66.5-35.692c0-11.065-10.41-16.737-25.46-19.584 9.085 3.35 14.96 8.982 14.96 18.353C188 51.469 160.179 68 132 68S76 51.469 76 31.077c0-9.37 5.875-15.003 14.96-18.353z'
@@ -45,7 +51,9 @@ export default function Avatar() {
                 <defs>
                   <path d='M35.118 15.128C36.176 24.62 44.226 32 54 32c9.804 0 17.874-7.426 18.892-16.96.082-.767-.775-2.04-1.85-2.04H37.088c-1.08 0-2.075 1.178-1.97 2.128z' id='prefix__e' />
                 </defs>
-                <mask id='prefix__f' fill='#fff'><use href='#prefix__e' /></mask>
+                <mask id='prefix__f' fill='#fff'>
+                  <use href='#prefix__e' />
+                </mask>
                 <use fillOpacity='.7' href='#prefix__e' />
                 <rect fill='#FFF' mask='url(#prefix__f)' x='39' y='2' width='31' height='16' rx='5' />
                 <g mask='url(#prefix__f)' fill='#FF4F6D'>
@@ -73,12 +81,18 @@ export default function Avatar() {
                 id='prefix__i'
               />
             </defs>
-            <mask id='prefix__h' fill='#fff'><use href='#prefix__g' /></mask>
+            <mask id='prefix__h' fill='#fff'>
+              <use href='#prefix__g' />
+            </mask>
             <g mask='url(#prefix__h)'>
               <g transform='translate(74 34)'>
-                <mask id='prefix__j' fill='#fff'><use href='#prefix__i' /></mask>
-                  <use fill='#28354B' href='#prefix__i' />
-                  <g mask='url(#prefix__j)' fill='#D6B370'><path d='M0 0h264v280H0z' /></g>
+                <mask id='prefix__j' fill='#fff'>
+                  <use href='#prefix__i' />
+                </mask>
+                <use fill='#28354B' href='#prefix__i' />
+                <g mask='url(#prefix__j)' fill='#D6B370'>
+                  <path d='M0 0h264v280H0z' />
+                </g>
               </g>
             </g>
           </g>

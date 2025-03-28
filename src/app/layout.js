@@ -5,7 +5,7 @@ import { ThemeProvider } from 'context/theme-context';
 import Header from 'components/header';
 import Footer from 'components/footer';
 
-import 'public/css/styles.scss';
+import 'styles/styles.scss';
 
 const soleil = localFont({
   src: '../../public/fonts/soleil.woff2', 

@@ -2,7 +2,7 @@ import { getRequestContext } from '@cloudflare/next-on-pages';
 
 export async function GET(request) {
   const { env } = getRequestContext();
-  
+
   const url = new URL(request.url);
   const id = url.searchParams.get('id');
 
@@ -14,7 +14,8 @@ export async function GET(request) {
   };
 
   try {
-    const value = await env.KV.get(id);
+    const rawValue = await env.KV.get(id);
+    const value = rawValue ? JSON.parse(rawValue) : null;
     
     if (!value) {
       return new Response(JSON.stringify({ error: 'Key not found' }), {
@@ -25,7 +26,7 @@ export async function GET(request) {
 
     return new Response(JSON.stringify({ id, value }), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json' }
     });
   } catch (error) {
     return new Response(JSON.stringify({ error: 'Internal Server Error' }), {
