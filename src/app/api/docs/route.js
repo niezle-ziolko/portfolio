@@ -1,4 +1,8 @@
-export async function GET(request, env) {
+import { getRequestContext } from '@cloudflare/next-on-pages';
+
+export async function GET(request) {
+  const { env } = getRequestContext();
+  
   const url = new URL(request.url);
   const id = url.searchParams.get('id');
 
