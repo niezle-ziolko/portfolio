@@ -5,33 +5,27 @@
 	"scripts": {
 		"dev": "next dev --turbopack",
 		"build": "next build",
-		"lint": "next lint",
-		"pages": "npx @cloudflare/next-on-pages",
-		"preview": "wrangler pages dev",
-		"deploy": "npm run pages && wrangler pages deploy"
+		"start": "next start",
+		"lint": "next lint --fix",
+		"prod": "opennextjs-cloudflare build",
+		"preview": "opennextjs-cloudflare preview",
+		"deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+		"cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts"
 	},
 	"dependencies": {
-		"next": "15.2.3",
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
-		"sass": "^1.86.0"
+		"@opennextjs/cloudflare": "^1.8.0",
+		"cssnano": "^7.1.1",
+		"next": "15.4.6",
+		"react": "19.1.0",
+		"react-dom": "19.1.0"
 	},
 	"devDependencies": {
-		"@cloudflare/next-on-pages": "^1.13.10",
-		"@cloudflare/workers-types": "^4.20250321.0",
 		"@eslint/eslintrc": "^3.3.1",
-		"eslint": "^9.23.0",
-		"eslint-config-next": "15.1.6",
-		"vercel": "^41.4.1",
-		"wrangler": "^3.114.3"
+		"@tailwindcss/postcss": "^4.1.13",
+		"eslint": "^9.35.0",
+		"eslint-config-next": "15.4.6",
+		"tailwindcss": "^4.1.13",
+		"wrangler": "^4.34.0"
 	},
-	"packageManager": "pnpm@10.7.0+sha256.35cab26953bf90847e798839db58c9a2a82d526b7af179fd2a103c18242cadc6",
-	"pnpm": {
-		"ignoredBuiltDependencies": [
-			"@parcel/watcher",
-			"esbuild",
-			"sharp",
-			"workerd"
-		]
-	}
+	"packageManager": "pnpm@10.15.0"
 }
