@@ -7,13 +7,8 @@ import { ThemeProvider } from "context/theme-context";
 import "styles/globals.css";
 
 const sfRegular = localFont({
-  src: "./styles/fonts/sf-pro-regular.woff2", 
+  src: "./styles/fonts/sf-pro-regular.woff2",
   variable: "--primary-font-family"
-});
-
-const sfBold = localFont({
-  src: "./styles/fonts/sf-pro-bold.woff2", 
-  variable: "--secondary-font-family"
 });
 
 export const metadata = {
@@ -24,7 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${sfRegular.variable} ${sfBold.variable}`}>
+      <body className={`${sfRegular.variable}`}>
         <ThemeProvider>
           <Header />
           <main>{children}</main>

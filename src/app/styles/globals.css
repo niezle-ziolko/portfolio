@@ -109,7 +109,11 @@
 }
 
 @utility u11 {
-  @apply u10 block w-5 h-[2px] my-[6px] mx-auto rounded-sm bg-current;
+  @apply block w-5 h-[2px] my-[6px] mx-auto rounded-sm bg-font-secondary duration-200;
+}
+
+@utility u12 {
+  @apply py-1 px-12 text-3xl text-font-secondary font-bold md:px-0 md:font-normal md:text-base md:text-current;
 }
 
 @layer base {
@@ -118,15 +122,19 @@
   }
 
   p {
-    @apply text-base font-normal font-(family-name:--primary-font-family);
+    @apply text-base leading-none font-normal font-(family-name:--primary-font-family);
   }
 
   a {
-    @apply u10 hover:text-font-secondary;
+    @apply hover:text-font-secondary;
   }
 
   ul {
     @apply mx-1 gap-4 font-(family-name:--secondary-font-family);
+  }
+
+  li {
+    @apply w-full md:w-auto;
   }
 
   svg {

@@ -37,15 +37,15 @@ export default function ThemeButton() {
           />
           <label
             htmlFor="theme-color-light"
-            className="u10 w-5 h-5 inline-flex box-border items-center justify-center rounded-full cursor-pointer peer-checked:border-[1.5px] peer-checked:border-theme-button-border after:w-4 after:h-4 after:absolute after:rounded-full after:content-[''] after:shadow-[inset_0_0.5px_1px_rgba(0,0,0,0.5)] peer-focus:outline peer-focus:outline-[rgba(0,125,250,0.6)] peer-focus:outline-[2px] peer-focus:outline-offset-[2px]"
+            className="u10 w-5 h-5 inline-flex box-border items-center justify-center rounded-full cursor-pointer peer-checked:border-[1.5px] peer-checked:border-theme-button-border peer-focus:outline peer-focus:outline-[rgba(0,125,250,0.6)] peer-focus:outline-[2px] peer-focus:outline-offset-[2px]"
           >
-            <span className="w-4 h-4 block rounded-full bg-[#e3e4e5]" />
+            <span className="w-4 h-4 block rounded-full bg-[#e3e4e5] shadow-[inset_0_0.5px_1px_rgba(0,0,0,0.5)]" />
           </label>
         </li>
       </ul>
 
       {/* Dynamic Text */}
-      <span className="w-10 text-xs text-center font-bold">
+      <span className="w-10 text-xs text-center text-font-secondary md:text-font-primary font-bold">
         {isDarkMode ? "Ciemny" : "Jasny"}
       </span>
     </div>
