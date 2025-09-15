@@ -134,7 +134,7 @@
   }
 
   a {
-    @apply hover:text-font-secondary;
+    @apply hover:u10 hover:text-font-secondary;
   }
 
   ul {
