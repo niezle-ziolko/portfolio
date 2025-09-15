@@ -120,6 +120,10 @@
   @apply flex items-center justify-start;
 }
 
+@utility u14 {
+  @apply fill-font-secondary md:fill-font-primary hover:fill-font-secondary;
+}
+
 @layer base {
   body {
     @apply u10 text-font-primary bg-background font-(family-name:--primary-font-family);
