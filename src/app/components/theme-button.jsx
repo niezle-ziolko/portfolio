@@ -8,7 +8,7 @@ export default function ThemeButton() {
     <div className="flex items-center gap-2">
       <ul className="p-1 flex gap-2 rounded-full bg-theme-button-background shadow-[inset_0_0_1px_rgba(0,0,0,0.11)]">
         {/* Dark Mode */}
-        <li className="flex items-center justify-center">
+        <li className="u1">
           <input
             id="theme-color-dark"
             name="theme"
@@ -26,7 +26,7 @@ export default function ThemeButton() {
         </li>
 
         {/* Light Mode */}
-        <li className="flex items-center justify-center">
+        <li className="u1">
           <input
             id="theme-color-light"
             name="theme"

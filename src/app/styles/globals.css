@@ -116,6 +116,10 @@
   @apply py-1 px-12 text-3xl text-font-secondary font-bold md:px-0 md:font-normal md:text-base md:text-current;
 }
 
+@utility u13 {
+  @apply flex items-center justify-start;
+}
+
 @layer base {
   body {
     @apply u10 text-font-primary bg-background font-(family-name:--primary-font-family);
