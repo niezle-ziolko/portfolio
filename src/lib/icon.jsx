@@ -1,22 +1,36 @@
-import React from "react";
+"use client";
 import useSWR from "swr";
 import Image from "next/image";
 
-// Funkcja fetchująca SVG
 const fetchSvg = async (src) => {
   const res = await fetch(src, { cache: "force-cache" });
   if (!res.ok) throw new Error(`Failed to fetch SVG: ${res.status} ${res.statusText}`);
   let text = await res.text();
-  text = text.replace(/^\s*<\?xml[\s\S]*?\?>\s*/i, ""); // usuwa deklarację XML
-  text = text.replace(/<!--[\s\S]*?-->/g, ""); // usuwa komentarze
+  text = text.replace(/^\s*<\?xml[\s\S]*?\?>\s*/i, "");
+  text = text.replace(/<!--[\s\S]*?-->/g, "");
+
   return text;
 };
 
 const Icon = ({ src, width = 24, height = 24, alt, className, style }) => {
   const { data: svg, error } = useSWR(src, fetchSvg, { revalidateOnFocus: false });
 
-  // fallback przy błędzie lub jeszcze niezaładowanym SVG
-  if (!svg || error) {
+  if (!svg && !error) {
+    return (
+      <div
+        className={className}
+        style={{
+          display: "inline-block",
+          width,
+          height,
+          backgroundColor: "transparent",
+          ...style
+        }}
+      />
+    );
+  };
+
+  if (error || !svg) {
     return (
       <Image
         src={src}
@@ -28,9 +42,8 @@ const Icon = ({ src, width = 24, height = 24, alt, className, style }) => {
         loading="lazy"
       />
     );
-  }
+  };
 
-  // SVG załadowane
   return (
     <span
       className={className}
@@ -39,7 +52,7 @@ const Icon = ({ src, width = 24, height = 24, alt, className, style }) => {
         width,
         height,
         lineHeight: 0,
-        ...style,
+        ...style
       }}
       role={alt ? "img" : undefined}
       aria-label={alt || undefined}
@@ -47,7 +60,7 @@ const Icon = ({ src, width = 24, height = 24, alt, className, style }) => {
         __html: svg.replace(
           /<svg([^>]*)>/,
           "<svg$1 style=\"width:100%;height:100%;display:block;\">"
-        ),
+        )
       }}
     />
   );

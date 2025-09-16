@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import Icon from "./SvgIcon";
+
+import Icon from "lib/icon";
 
 import ThemeButton from "./theme-button";
 
@@ -24,7 +25,8 @@ export default function NavMenu() {
             </li>
             <li className="w-full block md:hidden">
               <div className="flex justify-end items-center">
-                <label className="relative cursor-pointer hover:text-white">
+                <label htmlFor="menu" className="relative cursor-pointer hover:text-white">
+                  <span className="sr-only">menu</span>
                   <input
                     id="menu"
                     type="checkbox"
@@ -41,6 +43,11 @@ export default function NavMenu() {
         <li>
           <Link href="#about">
             <p className="u12">O mnie</p>
+          </Link>
+        </li>
+        <li>
+          <Link href="#skills">
+            <p className="u12">Umiejętności</p>
           </Link>
         </li>
         <li>
