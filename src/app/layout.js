@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
       <body className={`${sfRegular.variable}`}>
         <ThemeProvider>
           <Header />
-          <main className="mt-11">{children}</main>
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>
