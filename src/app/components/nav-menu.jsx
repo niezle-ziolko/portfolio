@@ -11,7 +11,7 @@ export default function NavMenu() {
   const size = 25;
 
   return(
-    <nav className={`px-0 w-full box-border overflow-hidden max-w-[1024px] transition-bg duration-200 ${isOpen ? "bg-background" : ""}`}>
+    <nav className={`px-0 w-full box-border overflow-hidden max-w-x transition-bg duration-200 ${isOpen ? "bg-background" : ""}`}>
       <ul className={`flex flex-col w-auto items-start justify-start transition-height duration-200 md:flex-row md:items-center md:justify-between ${isOpen ? "h-screen" : "h-11"}`}>
         <li>
           <ul className="h-11 flex items-center justify-between">

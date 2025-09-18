@@ -48,6 +48,8 @@
   --spacing-qp: 25%;
   --spacing-hp: 50%;
 
+  --spacing-x: 1024px;
+
   --spacing-ot: 0.1rem;
   --spacing-t: 0.125rem;
   --spacing-q: 0.25rem;
@@ -165,13 +167,21 @@
   @apply w-[3px] h-8 block bg-g-200 absolute rounded-xs md:hidden;
 }
 
+@utility u16 {
+  @apply text-2xl text-white [filter:drop-shadow(0_0_1px_#fff)_drop-shadow(0_0_10px_#fff)];
+}
+
 @layer base {
   body {
     @apply u10 text-font-primary bg-background font-(family-name:--primary-font-family);
   }
 
+  section {
+    @apply u1;
+  }
+
   h1 {
-    @apply text-6xl font-bold;
+    @apply py-10  font-bold ;
   }
 
   p {

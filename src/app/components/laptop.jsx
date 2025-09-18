@@ -4,10 +4,15 @@ export default function Laptop() {
   const size = 250;
 
   return (
-    <div>
-      <div className="pt-10">
-        <h1>Siemanko, nazywam się Norman</h1>
-        <p>Tworzę nowoczesne aplikacje webowe i strony w WordPressie. Masz pomysł na projekt? Z przyjemnością go zrealizuję – odezwij się, a wspólnie wprowadzimy go w życie!</p>
+    <div className="max-w-x text-center">
+      <div className="py-10">
+        <p className="u16">Siemanko! </p>
+        <p className="text-6xl font-bold">
+          <span className="text-transparent bg-[linear-gradient(97deg,#0096ff,#bb64ff_42%,#f2416b_74%,#eb7500)] bg-clip-text">
+            jestem Norman
+          </span>
+           👋
+        </p>
       </div>
       <div className="grid justify-center scale-100">
         {/* Screen */}
@@ -80,6 +85,12 @@ export default function Laptop() {
             md:block
           " />
       </div>
+
+      <p className="u16">
+        Tworzę nowoczesne aplikacje webowe i strony w WordPressie. 
+        Masz pomysł na projekt? Z przyjemnością go zrealizuję –
+        odezwij się, a wspólnie wprowadzimy go w życie!
+      </p>
     </div>
   );
 };
