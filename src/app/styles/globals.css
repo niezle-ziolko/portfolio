@@ -170,6 +170,10 @@
     @apply u10 text-font-primary bg-background font-(family-name:--primary-font-family);
   }
 
+  h1 {
+    @apply text-6xl font-bold;
+  }
+
   p {
     @apply text-base leading-none font-normal font-(family-name:--primary-font-family);
   }

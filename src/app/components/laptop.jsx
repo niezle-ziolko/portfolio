@@ -5,7 +5,11 @@ export default function Laptop() {
 
   return (
     <div>
-      <div className="grid justify-center scale-[0.8]">
+      <div className="pt-10">
+        <h1>Siemanko, nazywam się Norman</h1>
+        <p>Tworzę nowoczesne aplikacje webowe i strony w WordPressie. Masz pomysł na projekt? Z przyjemnością go zrealizuję – odezwij się, a wspólnie wprowadzimy go w życie!</p>
+      </div>
+      <div className="grid justify-center scale-100">
         {/* Screen */}
         <div className="
             u1 relative mx-auto
