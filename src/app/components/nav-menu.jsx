@@ -16,6 +16,7 @@ export default function NavMenu() {
         <li>
           <ul className="h-11 flex items-center justify-between">
             <li className={`u10 u13 ${isOpen ? "opacity-0" : "opacity-100"}`}>
+              {/* Logo */}
               <Icon
                 width={size}
                 height={size}
@@ -23,6 +24,8 @@ export default function NavMenu() {
                 src="/avatar.svg"
               />
             </li>
+
+            {/* Toggle */}
             <li className="w-full block md:hidden">
               <div className="flex justify-end items-center">
                 <label htmlFor="menu" className="relative cursor-pointer hover:text-white">
@@ -40,6 +43,8 @@ export default function NavMenu() {
             </li>
           </ul>
         </li>
+
+        {/* References */}
         <li>
           <Link href="#about">
             <p className="u12">O mnie</p>

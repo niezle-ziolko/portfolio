@@ -4,7 +4,9 @@ export default function Home() {
   return (
     <div>
       <section className="h-11" />
-      <Laptop />
+      <section>
+        <Laptop />
+      </section>
     </div>
   );
 };
