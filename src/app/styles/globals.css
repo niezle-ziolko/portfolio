@@ -167,29 +167,25 @@
   @apply w-[3px] h-8 block bg-g-200 absolute rounded-xs md:hidden;
 }
 
-@utility u16 {
-  @apply text-2xl text-white [filter:drop-shadow(0_0_1px_#fff)_drop-shadow(0_0_10px_#fff)];
-}
-
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
     @apply u10 text-font-primary bg-background font-(family-name:--primary-font-family);
   }
 
   section {
-    @apply u1;
+    @apply u1 min-h-170 h-screen;
   }
 
   h1 {
-    @apply py-10  font-bold ;
+    @apply py-10 font-bold;
   }
 
   p {
     @apply text-base leading-none font-normal font-(family-name:--primary-font-family);
-  }
-
-  a {
-    @apply hover:u10 hover:text-font-secondary;
   }
 
   ul {
@@ -206,5 +202,9 @@
 
   span {
     @apply font-(family-name:--primary-font-family);
+  }
+
+  button {
+    @apply cursor-pointer hover:u10 hover:text-font-secondary;
   }
 }

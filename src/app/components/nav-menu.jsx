@@ -6,9 +6,41 @@ import Icon from "lib/icon";
 
 import ThemeButton from "./theme-button";
 
+const sections = [
+  { id: "about", label: "O mnie" },
+  { id: "skills", label: "Umiejętności" },
+  { id: "achievements", label: "Osiągnięcia" },
+  { id: "projects", label: "Projekty" },
+  { id: "activity", label: "Aktywność" },
+];
+
+const socialLinks = [
+  {
+    href: "tel:+48733196208",
+    alt: "Phone number",
+    icon: "/phone.svg"
+  },
+  {
+    href: "mailto:wgwcompany@duck.com",
+    alt: "Email",
+    icon: "/email.svg"
+  },
+  {
+    href: "https://github.com/niezle-ziolko",
+    alt: "Github",
+    icon: "/github.svg"
+  }
+];
+
 export default function NavMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const size = 25;
+
+  const handleScroll = (id) => (e) => {
+    e.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
+  };
 
   return(
     <nav className={`px-0 w-full box-border overflow-hidden max-w-x transition-bg duration-200 ${isOpen ? "bg-background" : ""}`}>
@@ -45,81 +77,35 @@ export default function NavMenu() {
         </li>
 
         {/* References */}
-        <li>
-          <Link href="#about">
-            <p className="u12">O mnie</p>
-          </Link>
-        </li>
-        <li>
-          <Link href="#skills">
-            <p className="u12">Umiejętności</p>
-          </Link>
-        </li>
-        <li>
-          <Link href="#achievements">
-            <p className="u12">Osiągnięcia</p>
-          </Link>
-        </li>
-        <li>
-          <Link href="#projects">
-            <p className="u12">Projekty</p>
-          </Link>
-        </li>
-        <li>
-          <Link href="#activity">
-            <p className="u12">Aktywność</p>
-          </Link>
-        </li>
+        {sections.map((section) => (
+          <li key={section.id}>
+            <button onClick={handleScroll(section.id)}>
+              <p className="u12">{section.label}</p>
+            </button>
+          </li>
+        ))}
+
         <li className="md:w-2/5">
           <ul className="u12 flex mx-0 py-5 md:py-0 justify-between">
-            <li className="u13">
-              <Link
-                className="u13"
-                target="_blank"
-                alt="Phone number"
-                href="tel:+48733196208"
-              >
-                <Icon
-                  width={size}
-                  height={size}
-                  className="u14"
-                  alt="Phone icon"
-                  src="/phone.svg"
-                />
-              </Link>
-            </li>
-            <li className="u13">
-              <Link
-                alt="Email"
-                className="u13"
-                target="_blank"
-                href="mailto:wgwcompany@duck.com"
-              >
-                <Icon
-                  width={size}
-                  height={size}
-                  className="u14"
-                  alt="Email icon"
-                  src="/email.svg"
-                />
-              </Link>
-            </li>
-            <li className="u13">
-              <Link
-                alt="Github"
-                target="_blank"
-                className="u13"
-                href="https://github.com/niezle-ziolko"
-              >
-                <Icon
-                  width={size}
-                  height={size}
-                  className="u14"
-                  alt="Github icon"
-                  src="/github.svg"
-                />
-              </Link>
-            </li>
+            {socialLinks.map((item) => (
+              <li key={item.href} className="u13">
+                <Link
+                  className="u13"
+                  target="_blank"
+                  href={item.href}
+                  aria-label={item.alt}
+                >
+                  <Icon
+                    width={size}
+                    height={size}
+                    className="u14"
+                    alt={item.alt}
+                    src={item.icon}
+                  />
+                </Link>
+              </li>
+            ))}
+
             <li className="u13">
               <ThemeButton />
             </li>
