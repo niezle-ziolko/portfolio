@@ -65,8 +65,9 @@ export default function NavMenu() {
                   <input
                     id="menu"
                     type="checkbox"
+                    checked={isOpen}
                     className="absolute opacity-0 z-20 peer"
-                    onClick={() => setIsOpen((prev) => !prev)}
+                    onChange={() => setIsOpen((prev) => !prev)}
                   />
                   <span className="u11 transition-rotate peer-checked:translate-y-[4.5px] peer-checked:rotate-45" />
                   <span className="u11 transition-rotate peer-checked:translate-y-[-4px] peer-checked:-rotate-45" />
