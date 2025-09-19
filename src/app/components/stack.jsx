@@ -1,0 +1,66 @@
+import Icon from "lib/icon";
+
+export default function Stack() {
+  const size = 64;
+
+  return(
+    <div>
+      <Icon
+        width={size}
+        height={size}
+        alt="NextJS"
+        src="/nextjs.svg"
+        className="u16"
+      />
+      <Icon
+        width={size}
+        height={size}
+        alt="NodeJS"
+        src="/nodejs.svg"
+        className="u16"
+      />
+      <Icon
+        width={size}
+        height={size}
+        alt="GraphQL"
+        src="/graphql.svg"
+        className="u16"
+      />
+      <Icon
+        width={size}
+        height={size}
+        alt="Docker"
+        src="/docker.svg"
+        className="u16"
+      />
+      <Icon
+        width={size}
+        height={size}
+        alt="Tailwindcss"
+        src="/tailwind-css.svg"
+        className="u16"
+      />
+      <Icon
+        width={size}
+        height={size}
+        alt="React"
+        src="/react.svg"
+        className="u16"
+      />
+      <Icon
+        width={size}
+        height={size}
+        alt="npm"
+        src="/npm.svg"
+        className="u16"
+      />
+      <Icon
+        width={size}
+        height={size}
+        alt="Wordpress"
+        src="/wordpress.svg"
+        className="u16"
+      />
+    </div>
+  );
+};

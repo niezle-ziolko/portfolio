@@ -5,7 +5,7 @@ export default function Laptop() {
 
   return (
     <div className="max-w-x text-center">
-      <div className="py-8">
+      <div className="pb-8 md:py-8">
         <p className="text-white text-lg/6 md:text-3xl/8">Siemanko! </p>
         <p className="font-bold text-4xl/12 md:text-6xl/20">
           <span className="text-transparent bg-[linear-gradient(97deg,#0096ff,#bb64ff_42%,#f2416b_74%,#eb7500)] bg-clip-text">

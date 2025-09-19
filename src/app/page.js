@@ -1,4 +1,5 @@
 import Laptop from "components/laptop";
+import Stack from "components/stack";
 
 export default function Home() {
   return (
@@ -6,8 +7,8 @@ export default function Home() {
       <section id="about" className="bg-black">
         <Laptop />
       </section>
-      <section id="skills" className="min-h-250">
-
+      <section id="skills">
+        <Stack />
       </section>
     </div>
   );
