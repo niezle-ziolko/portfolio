@@ -14,24 +14,6 @@ const sections = [
   { id: "activity", label: "Aktywność" },
 ];
 
-const socialLinks = [
-  {
-    href: "tel:+48733196208",
-    alt: "Phone number",
-    icon: "/phone.svg"
-  },
-  {
-    href: "mailto:wgwcompany@duck.com",
-    alt: "Email",
-    icon: "/email.svg"
-  },
-  {
-    href: "https://github.com/niezle-ziolko",
-    alt: "Github",
-    icon: "/github.svg"
-  }
-];
-
 export default function NavMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const size = 25;
@@ -47,7 +29,7 @@ export default function NavMenu() {
       <ul className={`flex flex-col w-auto items-start justify-start transition-height duration-200 md:flex-row md:items-center md:justify-between ${isOpen ? "h-screen" : "h-11"}`}>
         <li>
           <ul className="h-11 flex items-center justify-between">
-            <li className={`u10 u13 ${isOpen ? "opacity-0" : "opacity-100"}`}>
+            <li className={`u10 u12 ${isOpen ? "opacity-0" : "opacity-100"}`}>
               {/* Logo */}
               <Icon
                 width={size}
@@ -81,36 +63,13 @@ export default function NavMenu() {
         {sections.map((section) => (
           <li key={section.id}>
             <button onClick={handleScroll(section.id)}>
-              <p className="u12">{section.label}</p>
+              <p className="py-1 px-12 text-3xl text-font-secondary font-bold md:px-0 md:font-normal md:text-base md:text-current">{section.label}</p>
             </button>
           </li>
         ))}
 
-        <li className="md:w-2/5">
-          <ul className="u12 flex mx-0 py-5 md:py-0 justify-between">
-            {socialLinks.map((item) => (
-              <li key={item.href} className="u13">
-                <Link
-                  className="u13"
-                  target="_blank"
-                  href={item.href}
-                  aria-label={item.alt}
-                >
-                  <Icon
-                    width={size}
-                    height={size}
-                    className="u14"
-                    alt={item.alt}
-                    src={item.icon}
-                  />
-                </Link>
-              </li>
-            ))}
-
-            <li className="u13">
-              <ThemeButton />
-            </li>
-          </ul>
+        <li className="u12 ml-12 mt-2 md:m-0">
+          <ThemeButton />
         </li>
       </ul>
     </nav>

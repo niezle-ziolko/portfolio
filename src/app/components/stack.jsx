@@ -1,66 +1,41 @@
 import Icon from "lib/icon";
 
+const icons = [
+  { alt: "NextJS", src: "/nextjs.svg", top: "10%", left: "20%", scale: 2 },
+  { alt: "NodeJS", src: "/nodejs.svg", top: "25%", left: "70%", scale: 0.9 },
+  { alt: "GraphQL", src: "/graphql.svg", top: "50%", left: "40%", scale: 1.4 },
+  { alt: "Docker", src: "/docker.svg", top: "65%", left: "20%", scale: 1.1 },
+  { alt: "Tailwindcss", src: "/tailwind-css.svg", top: "75%", left: "60%", scale: 0.8 },
+  { alt: "React", src: "/react.svg", top: "40%", left: "85%", scale: 1.3 },
+  { alt: "npm", src: "/npm.svg", top: "15%", left: "50%", scale: 0.7 },
+  { alt: "Wordpress", src: "/wordpress.svg", top: "80%", left: "35%", scale: 1.0 }
+];
+
 export default function Stack() {
   const size = 64;
 
-  return(
-    <div>
-      <Icon
-        width={size}
-        height={size}
-        alt="NextJS"
-        src="/nextjs.svg"
-        className="u16"
-      />
-      <Icon
-        width={size}
-        height={size}
-        alt="NodeJS"
-        src="/nodejs.svg"
-        className="u16"
-      />
-      <Icon
-        width={size}
-        height={size}
-        alt="GraphQL"
-        src="/graphql.svg"
-        className="u16"
-      />
-      <Icon
-        width={size}
-        height={size}
-        alt="Docker"
-        src="/docker.svg"
-        className="u16"
-      />
-      <Icon
-        width={size}
-        height={size}
-        alt="Tailwindcss"
-        src="/tailwind-css.svg"
-        className="u16"
-      />
-      <Icon
-        width={size}
-        height={size}
-        alt="React"
-        src="/react.svg"
-        className="u16"
-      />
-      <Icon
-        width={size}
-        height={size}
-        alt="npm"
-        src="/npm.svg"
-        className="u16"
-      />
-      <Icon
-        width={size}
-        height={size}
-        alt="Wordpress"
-        src="/wordpress.svg"
-        className="u16"
-      />
+  return (
+    <div className="w-x max-w-x">
+      <h2>Moje umiejętności</h2>
+      <div className="flex relative h-[450px] justify-center items-center">
+        <div className="absolute w-full h-full transition-all duration-300 scroll-resize">
+          {icons.map((icon, i) => (
+            <Icon
+              key={i}
+              width={size}
+              height={size}
+              alt={icon.alt}
+              src={icon.src}
+              className="u14 absolute"
+              style={{
+                top: icon.top,
+                left: icon.left,
+                transform: `translate(-50%, -50%) scale(${icon.scale})`,
+              }}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
-};
+}
