@@ -12,6 +12,9 @@
   --color-header: oklch(0.2316 0.0038 286.1 / 70%);
   --color-header-keyline: oklch(0.3802 0.005 286.16 / 70%);
 
+  --color-element-background: oklch(0 0 0);
+  --color-element-border: transparent;
+
   --color-theme-button-background: oklch(0.3802 0.005 286.16 / 70%);
   --color-theme-button-border: oklch(0.9184 0.0017 247.84);
 }
@@ -25,6 +28,9 @@
 
   --color-header: oklch(0.9707 0.0027 286.35 / 70%);
   --color-header-keyline: oklch(0.2316 0.0038 286.1 / 20%);
+
+  --color-element-background: oklch(1 0 0);
+  --color-element-border: oklch(0.8945 0 0 / 50%);
 
   --color-theme-button-background: oklch(0.9324 0.0067 286.27 / 70.2%);
   --color-theme-button-border: oklch(0.296 0.0046 325.69);
@@ -172,10 +178,6 @@
   @apply w-[3px] h-8 block bg-g-200 absolute rounded-xs md:hidden;
 }
 
-@utility u14 {
-  @apply p-2 border bg-white rounded-xl border-[rgba(220,220,220,0.5)] shadow-[2px_2px_4px_rgba(0,0,0,0.1),_inset_0_1px_1px_rgba(0,0,0,0.05)];
-}
-
 @layer utilities {
   @media (min-width: 960px) {
   .scroll-resize {
@@ -199,7 +201,7 @@
   }
 
   h2 {
-    @apply py-10 font-bold;
+    @apply text-font-third py-10 font-bold;
   }
 
   p {
