@@ -51,9 +51,9 @@ export default function Laptop() {
           />
 
           {/* Buttons */}
-          <div className="u15 top-13 left-[-2px]" />
-          <div className="u15 top-23 left-[-2px]" />
-          <div className="u15 h-13 top-16 right-[-2px] animate-button" />
+          <div className="u13 top-13 left-[-2px]" />
+          <div className="u13 top-23 left-[-2px]" />
+          <div className="u13 h-13 top-16 right-[-2px] animate-button" />
         </div>
 
         {/* Keyboard */}

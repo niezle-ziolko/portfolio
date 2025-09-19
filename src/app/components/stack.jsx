@@ -17,7 +17,7 @@ export default function Stack() {
   return (
     <div className="w-x max-w-x">
       <h2>Moje umiejętności</h2>
-      <div className="flex relative h-[450px] justify-center items-center">
+      <div className="flex relative h-[450px] justify-center items-center scale-80 md:scale-100">
         <div className="absolute w-full h-full transition-all duration-300 scroll-resize">
           {icons.map((icon, i) => (
             <Icon
