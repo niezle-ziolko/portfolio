@@ -1,3 +1,6 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
+
 import Icon from "lib/icon";
 
 const icons = [
@@ -13,12 +16,68 @@ const icons = [
 
 export default function Stack() {
   const size = 64;
+  const headerRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef(null);
+  const [scale, setScale] = useState(0.5);
+
+  useEffect(() => {
+    const currentHeader = headerRef.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.3 }
+    );
+
+    if (currentHeader) {
+      observer.observe(currentHeader);
+    };
+
+    return () => {
+      if (currentHeader) {
+        observer.unobserve(currentHeader);
+      };
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      let visibleRatio = (windowHeight - rect.top) / (rect.height + windowHeight);
+      visibleRatio = Math.min(Math.max(visibleRatio, 0), 1);
+
+      const newScale = 0.5 + visibleRatio * 0.5;
+      setScale(newScale);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
 
   return (
     <div className="w-x max-w-x">
-      <h2>Moje umiejętności</h2>
-      <div className="flex relative h-[450px] justify-center items-center scale-80 md:scale-100">
-        <div className="absolute w-full h-full transition-all duration-300 scroll-resize">
+      {/* Title */}
+      <h2 ref={headerRef} className={isVisible ? "animate-header" : ""}>Moje umiejętności.</h2>
+
+      {/* Icons */}
+      <div className="flex relative h-[450px] justify-center items-center">
+        <div
+          ref={containerRef}
+          className="absolute w-full h-full"
+          style={{
+            transform: `scale(${scale})`,
+            transformOrigin: "center center",
+          }}
+        >
           {icons.map((icon, i) => (
             <Icon
               key={i}
@@ -43,4 +102,4 @@ export default function Stack() {
       </div>
     </div>
   );
-}
+};
