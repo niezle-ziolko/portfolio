@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useState } from "react";
 
 import Icon from "lib/icon";
@@ -8,10 +7,10 @@ import ThemeButton from "./theme-button";
 
 const sections = [
   { id: "about", label: "O mnie" },
-  { id: "skills", label: "Umiejętności" },
-  { id: "achievements", label: "Osiągnięcia" },
+  { id: "stack", label: "Umiejętności" },
+  { id: "skills", label: "Osiągnięcia" },
   { id: "projects", label: "Projekty" },
-  { id: "activity", label: "Aktywność" },
+  { id: "contact", label: "Kontakt" }
 ];
 
 export default function NavMenu() {

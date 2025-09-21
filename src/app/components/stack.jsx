@@ -4,14 +4,14 @@ import { useEffect, useRef, useState } from "react";
 import Icon from "lib/icon";
 
 const icons = [
-  { alt: "NextJS", src: "/nextjs.svg", top: "10%", left: "20%", scale: 2 },
-  { alt: "NodeJS", src: "/nodejs.svg", top: "25%", left: "70%", scale: 0.9 },
-  { alt: "GraphQL", src: "/graphql.svg", top: "50%", left: "40%", scale: 1.4 },
-  { alt: "Docker", src: "/docker.svg", top: "65%", left: "20%", scale: 1.1 },
-  { alt: "Tailwindcss", src: "/tailwind-css.svg", top: "75%", left: "60%", scale: 0.8 },
-  { alt: "React", src: "/react.svg", top: "40%", left: "85%", scale: 1.3 },
-  { alt: "npm", src: "/npm.svg", top: "15%", left: "50%", scale: 0.7 },
-  { alt: "Wordpress", src: "/wordpress.svg", top: "80%", left: "35%", scale: 1.0 }
+  { alt: "NextJS", src: "/nextjs.svg", top: "0%", left: "5%", scale: 2.1 },
+  { alt: "NodeJS", src: "/nodejs.svg", top: "20%", left: "55%", scale: 1.6 },
+  { alt: "GraphQL", src: "/graphql.svg", top: "10%", left: "90%", scale: 2.5 },
+  { alt: "Docker", src: "/docker.svg", top: "50%", left: "10%", scale: 1.1 },
+  { alt: "Tailwindcss", src: "/tailwind-css.svg", top: "55%", left: "70%", scale: 1.6 },
+  { alt: "React", src: "/react.svg", top: "90%", left: "80%", scale: 2 },
+  { alt: "npm", src: "/npm.svg", top: "75%", left: "40%", scale: 0.8 },
+  { alt: "Wordpress", src: "/wordpress.svg", top: "90%", left: "20%", scale: 1.5 }
 ];
 
 export default function Stack() {
@@ -49,7 +49,7 @@ export default function Stack() {
       let visibleRatio = (windowHeight - rect.top) / (rect.height + windowHeight);
       visibleRatio = Math.min(Math.max(visibleRatio, 0), 1);
 
-      const newScale = 0.5 + visibleRatio * 0.5;
+      const newScale = Math.min(1, 0.5 + visibleRatio * 0.5);
       setScale(newScale);
     };
 
@@ -64,12 +64,12 @@ export default function Stack() {
   }, []);
 
   return (
-    <div className="w-x max-w-x">
+    <div className="max-w-x">
       {/* Title */}
       <h2 ref={headerRef} className={isVisible ? "animate-header" : ""}>Moje umiejętności.</h2>
 
       {/* Icons */}
-      <div className="flex relative h-[450px] justify-center items-center">
+      <div className="flex relative h-[300px] md:h-[425px] justify-center items-center">
         <div
           ref={containerRef}
           className="absolute w-full h-full"
@@ -90,6 +90,7 @@ export default function Stack() {
                 bg-element-background
                 rounded-2xl border-element-border
                 shadow-[2px_2px_4px_rgba(0,0,0,0.1),_inset_0_1px_1px_rgba(0,0,0,0.05)]
+                scale-70 md:scale-100
               "
               style={{
                 top: icon.top,
@@ -100,6 +101,17 @@ export default function Stack() {
           ))}
         </div>
       </div>
+
+      {/* Paragraph */}
+      <p ref={headerRef} className={`opacity-0 ${isVisible ? "animate-header" : ""}`}>
+        Na co dzień tworzę nowoczesne aplikacje i strony internetowe, 
+        łącząc <em>Next.js</em>, <em>React</em> i <em>GraphQL</em> z solidnym zapleczem w <em>Node.js</em>. 
+        Potrafię efektywnie zarządzać środowiskiem pracy dzięki <em>Dockerowi</em> i <em>npm</em>, 
+        a w warstwie wizualnej stawiam na szybkość i estetykę z pomocą TailwindCSS. 
+        Mam również doświadczenie z <em>WordPressem</em>, 
+        dzięki czemu mogę sprawnie realizować projekty zarówno w pełni customowe, 
+        jak i oparte na gotowych rozwiązaniach.
+      </p>
     </div>
   );
 };

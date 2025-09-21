@@ -6,8 +6,8 @@ export default function Laptop() {
   return (
     <div className="max-w-x text-center">
       <div className="pb-8 md:py-8">
-        <p className="text-white text-lg/6 md:text-3xl/8">Siemanko! </p>
-        <p className="font-bold text-4xl/12 md:text-6xl/20">
+        <p className="p-0 text-white text-lg/6 md:text-3xl/8">Siemanko! </p>
+        <p className="p-0 font-bold text-4xl/12 md:text-6xl/20">
           <span className="text-transparent bg-[linear-gradient(97deg,#0096ff,#bb64ff_42%,#f2416b_74%,#eb7500)] bg-clip-text">
             jestem Norman
           </span>
@@ -86,7 +86,8 @@ export default function Laptop() {
           " />
       </div>
 
-      <p className="py-8 text-lg/6 md:text-2xl/8 text-white [filter:drop-shadow(0_0_1px_#fff)_drop-shadow(0_0_10px_#fff)]">Tworzę nowoczesne aplikacje webowe i strony oparte o WordPress.</p>
+      {/* Paragraph */}
+      <p className="py-5 text-lg/6 md:text-2xl/8 text-white [filter:drop-shadow(0_0_1px_#fff)_drop-shadow(0_0_10px_#fff)]">Tworzę nowoczesne aplikacje webowe i strony oparte o WordPress.</p>
       
     </div>
   );

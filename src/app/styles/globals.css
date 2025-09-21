@@ -193,11 +193,15 @@
   }
 
   h2 {
-    @apply py-10 text-5xl opacity-0 font-bold text-font-third;
+    @apply p-5 pt-10 text-4xl md:text-5xl opacity-0 font-bold text-font-third;
   }
 
   p {
-    @apply text-base leading-none font-normal font-(family-name:--primary-font-family);
+    @apply p-5 md:p-0 text-base md:text-2xl font-bold leading-none text-font-third font-(family-name:--primary-font-family);
+  }
+
+  em {
+    @apply not-italic text-font-secondary;
   }
 
   ul {
