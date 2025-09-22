@@ -8,13 +8,14 @@ export default function Laptop() {
       <div className="pb-8 md:py-8">
         <p className="p-0 text-white text-lg/6 md:text-3xl/8">Siemanko! </p>
         <p className="p-0 font-bold text-4xl/12 md:text-6xl/20">
-          <span className="text-transparent bg-[linear-gradient(97deg,#0096ff,#bb64ff_42%,#f2416b_74%,#eb7500)] bg-clip-text">
+          <span className="text-transparent bg-clip-text bg-[linear-gradient(97deg,#0096ff,#bb64ff_42%,#f2416b_74%,#eb7500)]">
             jestem Norman
           </span>
            👋
         </p>
       </div>
       <div className="grid justify-center scale-100">
+
         {/* Screen */}
         <div className="
             u1 relative mx-auto

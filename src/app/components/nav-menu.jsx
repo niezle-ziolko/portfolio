@@ -29,6 +29,7 @@ export default function NavMenu() {
         <li>
           <ul className="h-11 flex items-center justify-between">
             <li className={`u10 u12 ${isOpen ? "opacity-0" : "opacity-100"}`}>
+
               {/* Logo */}
               <Icon
                 width={size}

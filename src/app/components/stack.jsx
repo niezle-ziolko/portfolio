@@ -4,14 +4,14 @@ import { useEffect, useRef, useState } from "react";
 import Icon from "lib/icon";
 
 const icons = [
-  { alt: "NextJS", src: "/nextjs.svg", top: "0%", left: "5%", scale: 2.1 },
-  { alt: "NodeJS", src: "/nodejs.svg", top: "20%", left: "55%", scale: 1.6 },
-  { alt: "GraphQL", src: "/graphql.svg", top: "10%", left: "90%", scale: 2.5 },
-  { alt: "Docker", src: "/docker.svg", top: "50%", left: "10%", scale: 1.1 },
-  { alt: "Tailwindcss", src: "/tailwind-css.svg", top: "55%", left: "70%", scale: 1.6 },
-  { alt: "React", src: "/react.svg", top: "90%", left: "80%", scale: 2 },
-  { alt: "npm", src: "/npm.svg", top: "75%", left: "40%", scale: 0.8 },
-  { alt: "Wordpress", src: "/wordpress.svg", top: "90%", left: "20%", scale: 1.5 }
+  { alt: "NextJS", src: "/nextjs.svg", top: "5%", left: "0%", scale: 3 },
+  { alt: "NodeJS", src: "/nodejs.svg", top: "40%", left: "55%", scale: 2 },
+  { alt: "GraphQL", src: "/graphql.svg", top: "15%", left: "90%", scale: 3.5 },
+  { alt: "Docker", src: "/docker.svg", top: "30%", left: "10%", scale: 1.1 },
+  { alt: "Tailwindcss", src: "/tailwind-css.svg", top: "75%", left: "50%", scale: 1.6 },
+  { alt: "React", src: "/react.svg", top: "90%", left: "80%", scale: 2.5 },
+  { alt: "npm", src: "/npm.svg", top: "80%", left: "20%", scale: 0.8 },
+  { alt: "Wordpress", src: "/wordpress.svg", top: "95%", left: "5%", scale: 1.5 }
 ];
 
 export default function Stack() {
@@ -64,12 +64,10 @@ export default function Stack() {
   }, []);
 
   return (
-    <div className="max-w-x">
-      {/* Title */}
-      <h2 ref={headerRef} className={isVisible ? "animate-header" : ""}>Moje umiejętności.</h2>
+    <div className="grid relative max-w-x justify-center items-center">
 
       {/* Icons */}
-      <div className="flex relative h-[300px] md:h-[425px] justify-center items-center">
+      <div className="flex w-full absolute h-screen overflow-hidden">
         <div
           ref={containerRef}
           className="absolute w-full h-full"
@@ -102,7 +100,10 @@ export default function Stack() {
         </div>
       </div>
 
-      {/* Paragraph */}
+      {/* Title */}
+      <h2 ref={headerRef} className={isVisible ? "animate-header" : ""}>Moje umiejętności.</h2>
+
+      {/* Description */}
       <p ref={headerRef} className={`opacity-0 ${isVisible ? "animate-header" : ""}`}>
         Na co dzień tworzę nowoczesne aplikacje i strony internetowe, 
         łącząc <em>Next.js</em>, <em>React</em> i <em>GraphQL</em> z solidnym zapleczem w <em>Node.js</em>. 
