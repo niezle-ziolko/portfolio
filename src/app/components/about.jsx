@@ -14,7 +14,8 @@ export default function About() {
         entries.forEach((entry) => {
           if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
             setIsVisible(true);
-            observer.unobserve(entry.target);
+          } else {
+            setIsVisible(false);
           }
         });
       },
@@ -24,7 +25,7 @@ export default function About() {
     observer.observe(element);
 
     return () => {
-      observer.unobserve(element);
+      observer.disconnect();
     };
   }, []);
 
@@ -35,16 +36,32 @@ export default function About() {
       <div className="flex h-15 w-full top-0 absolute justify-center">
         <div
           ref={ref}
-          className={`h-15 w-full blur-md md:blur-xl relative -top-5 rounded-b-full bg-[linear-gradient(97deg,#0096ff,#bb64ff_42%,#f2416b_74%,#eb7500)] ${isVisible ? "animate-backlight" : ""}`}
+          className={`
+            h-15 w-full blur-sm md:blur-xl relative -top-5 rounded-b-full 
+            bg-[linear-gradient(97deg,#0096ff,#bb64ff_42%,#f2416b_74%,#eb7500)] 
+            ${isVisible ? "animate-backlight" : ""}
+          `}
         />
       </div>
 
       <div>
         {/* Title */}
-        <h2 className={`w-fit text-transparent bg-clip-text bg-[linear-gradient(97deg,#0096ff,#bb64ff_42%,#f2416b_74%,#eb7500)] ${isVisible ? "animate-header" : ""}`}>O mnie.</h2>
+        <h2
+          ref={ref} 
+          className={`
+            w-fit text-transparent bg-clip-text 
+            bg-[linear-gradient(97deg,#0096ff,#bb64ff_42%,#f2416b_74%,#eb7500)] 
+            ${isVisible ? "animate-header" : ""}
+          `}
+        >
+          O mnie.
+        </h2>
 
         {/* Description */}
-        <div className={`flex gap-1 flex-col md:gap-10 md:flex-row ${isVisible ? "animate-header" : ""}`}>
+        <div
+          ref={ref}
+          className={`flex gap-1 flex-col md:gap-10 md:flex-row ${isVisible ? "animate-header" : ""}`}
+        >
           <p className="u14">
             Moja przygoda z programowaniem zaczęła się w czasach pandemii, 
             kiedy wpadłem na pomysł stworzenia sklepu internetowego z produktami CBD i konopnymi. 
