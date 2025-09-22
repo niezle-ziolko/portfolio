@@ -1,7 +1,9 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 import Icon from "lib/icon";
+import { useScale } from "lib/animate";
+import { useSlideUp } from "lib/animate";
 
 const icons = [
   { alt: "NextJS", src: "/nextjs.svg", top: "5%", left: "0%", scale: 3 },
@@ -16,56 +18,13 @@ const icons = [
 
 export default function Stack() {
   const size = 64;
-  const headerRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const containerRef = useRef(null);
-  const [scale, setScale] = useState(0.5);
+  const ref = useRef(null);
 
-  useEffect(() => {
-    const currentHeader = headerRef.current;
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.3 }
-    );
-
-    if (currentHeader) {
-      observer.observe(currentHeader);
-    };
-
-    return () => {
-      if (currentHeader) {
-        observer.unobserve(currentHeader);
-      };
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-
-      const rect = containerRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      let visibleRatio = (windowHeight - rect.top) / (rect.height + windowHeight);
-      visibleRatio = Math.min(Math.max(visibleRatio, 0), 1);
-
-      const newScale = Math.min(1, 0.5 + visibleRatio * 0.5);
-      setScale(newScale);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleScroll);
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, []);
+  const slideClass = useSlideUp(ref, "animate-up");
+  const { containerRef, scale } = useScale(0.5);
 
   return (
     <div className="grid relative max-w-x justify-center items-center">
-
       {/* Icons */}
       <div className="flex w-full absolute h-screen overflow-hidden">
         <div
@@ -101,10 +60,10 @@ export default function Stack() {
       </div>
 
       {/* Title */}
-      <h2 ref={headerRef} className={isVisible ? "animate-header" : ""}>Moje umiejętności.</h2>
+      <h2 ref={ref} className={slideClass}>Moje umiejętności</h2>
 
       {/* Description */}
-      <p ref={headerRef} className={`opacity-0 ${isVisible ? "animate-header" : ""}`}>
+      <p ref={ref} className={`opacity-0 ${slideClass}`}>
         Na co dzień tworzę nowoczesne aplikacje i strony internetowe, 
         łącząc <em>Next.js</em>, <em>React</em> i <em>GraphQL</em> z solidnym zapleczem w <em>Node.js</em>. 
         Potrafię efektywnie zarządzać środowiskiem pracy dzięki <em>Dockerowi</em> i <em>npm</em>, 

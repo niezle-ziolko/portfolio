@@ -1,4 +1,4 @@
-import Icon from "lib/icon";
+import Icon from "../lib/icon";
 
 export default function Laptop() {
   const size = 250;

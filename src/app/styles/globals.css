@@ -73,7 +73,7 @@
   --animate-open: open 3s forwards;
   --animate-button: buttonPush 1s forwards 1s;
   --animate-avatar: avatar 1s forwards 1s;
-  --animate-header: slideUp 1s ease-out both;
+  --animate-up: slideUp 1s ease-out both;
   --animate-backlight: backlight 5s forwards;
 
   @keyframes interference {
@@ -118,14 +118,17 @@
     0% {
       width: 0%;
       height: 0%;
+      opacity: 1;
     }
     25% {
       width: 110%;
       height: 110px;
+      opacity: 1;
     }
     100% {
       width: 100%;
       height: 80px;
+      opacity: 1;
     }
   }
 

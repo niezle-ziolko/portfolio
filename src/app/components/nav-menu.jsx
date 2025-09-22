@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-import Icon from "lib/icon";
+import Icon from "../lib/icon";
 
 import ThemeButton from "./theme-button";
 
