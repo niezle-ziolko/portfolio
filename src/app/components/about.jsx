@@ -16,8 +16,9 @@ export default function About() {
         <div
           ref={ref}
           className={`
-            h-15 w-full blur-sm md:blur-xl relative -top-5 rounded-b-full
+            h-30 w-full blur-sm md:blur-xl relative -top-15 rounded-b-full u15
             bg-[linear-gradient(97deg,#0096ff,#bb64ff_42%,#f2416b_74%,#eb7500)] 
+            after:h-30 after:block after:backdrop-blur-xs after:w-full
             ${backlightClass}
           `}
         />

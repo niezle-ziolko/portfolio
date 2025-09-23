@@ -3633,8 +3633,8 @@ packages:
     resolution: {integrity: sha512-ZL6DDuAlRlLGghwcfmSn9sK3Hr6ArtyudlSAiCqQ6IfE+b+HHbydbYDIG15IfS5do+7XQQBdBiubF/cV2dnDzg==}
     engines: {node: '>=6'}
 
-  tar@7.4.4:
-    resolution: {integrity: sha512-O1z7ajPkjTgEgmTGz0v9X4eqeEXTDREPTO77pVC1Nbs86feBU1Zhdg+edzavPmYW1olxkwsqA2v4uOw6E8LeDg==}
+  tar@7.5.0:
+    resolution: {integrity: sha512-StRGMxeVwyozZpAmHLm2IfbwUlE21DbRXyZrYpGPFBVxM8cxALPongxFVMrs+HqCN7jQVVKyAgKOwGB1WbCp4A==}
     engines: {node: '>=18'}
 
   terser@5.16.9:
@@ -6047,7 +6047,7 @@ snapshots:
   '@tailwindcss/oxide@4.1.13':
     dependencies:
       detect-libc: 2.1.0
-      tar: 7.4.4
+      tar: 7.5.0
     optionalDependencies:
       '@tailwindcss/oxide-android-arm64': 4.1.13
       '@tailwindcss/oxide-darwin-arm64': 4.1.13
@@ -8470,7 +8470,7 @@ snapshots:
 
   tapable@2.2.3: {}
 
-  tar@7.4.4:
+  tar@7.5.0:
     dependencies:
       '@isaacs/fs-minipass': 4.0.1
       chownr: 3.0.0

@@ -75,8 +75,8 @@
   --animate-avatar: avatar 1s forwards 1s;
   --animate-up: slideUp 1s ease-out both;
   --animate-down: slideDown 1s ease-out both;
-  --animate-backlight: backlightIntro 1s ease-out forwards, backlightLoop 4s ease-in-out infinite;
-  --animate-backlight-exit: backlightExit 4s ease-out forwards;
+  --animate-backlight: backlightIntro 2s ease-out forwards, backlightLoop 4s ease-in-out infinite;
+  --animate-backlight-exit: backlightExit 2s ease-out forwards;
 
   @keyframes interference {
     100% {
@@ -122,20 +122,20 @@
       height: 0%;
     }
     100% {
-      width: 110%;
+      width: 100%;
       height: 110px;
     }
   }
 
   @keyframes backlightLoop {
     0% {
-      height: 110px;
+      height: 140px;
     }
     50% {
-      height: 80px;
+      height: 110px;
     }
     100% {
-      height: 110px;
+      height: 140px;
     }
   }
 
