@@ -3,7 +3,7 @@ import useSWR from "swr";
 import Image from "next/image";
 
 const fetchSvg = async (src) => {
-  const res = await fetch(src, { cache: "force-cache" });
+  const res = await fetch(src, { cache: "no-cache" });
   if (!res.ok) throw new Error(`Failed to fetch SVG: ${res.status} ${res.statusText}`);
   let text = await res.text();
   text = text.replace(/^\s*<\?xml[\s\S]*?\?>\s*/i, "");

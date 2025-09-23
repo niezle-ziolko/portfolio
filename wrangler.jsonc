@@ -24,7 +24,7 @@
 		"enabled": true
 	},
     "vars": {
-	    "NODE_VERSION": "24.7.0",
-        "PNPM_VERSION": "10.16.0"
+	    "NODE_VERSION": "24.8.0",
+        "PNPM_VERSION": "10.16.1"
 	}
 }

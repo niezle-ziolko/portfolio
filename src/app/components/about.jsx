@@ -5,8 +5,8 @@ import { useSlideUp } from "lib/animate";
 
 export default function About() {
   const ref = useRef(null);
-  const backlightClass = useSlideUp(ref, "animate-backlight");
-  const upClass = useSlideUp(ref, "animate-up");
+  const backlightClass = useSlideUp(ref, "animate-backlight", "animate-backlight-exit");
+  const upClass = useSlideUp(ref, "animate-up", "animate-down");
 
   return (
     <div className="flex relative w-full h-full max-w-x items-center">
@@ -16,7 +16,7 @@ export default function About() {
         <div
           ref={ref}
           className={`
-            h-15 w-full blur-sm md:blur-xl relative -top-5 rounded-b-full opacity-0
+            h-15 w-full blur-sm md:blur-xl relative -top-5 rounded-b-full
             bg-[linear-gradient(97deg,#0096ff,#bb64ff_42%,#f2416b_74%,#eb7500)] 
             ${backlightClass}
           `}

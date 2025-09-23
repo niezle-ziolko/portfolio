@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useState, useEffect } from "react";
 
-export function useSlideUp(ref, className) {
+export function useSlideUp(ref, enterClass, exitClass) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export function useSlideUp(ref, className) {
     };
   }, [ref]);
 
-  return isVisible ? `${className}` : "";
+  return isVisible ? enterClass : exitClass;
 };
 
 export function useScale(initialScale = 0.5) {

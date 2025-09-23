@@ -2,29 +2,20 @@
 import { useRef } from "react";
 
 import Icon from "lib/icon";
+import { icons } from "data/stack";
 import { useScale } from "lib/animate";
 import { useSlideUp } from "lib/animate";
-
-const icons = [
-  { alt: "NextJS", src: "/nextjs.svg", top: "5%", left: "0%", scale: 3 },
-  { alt: "NodeJS", src: "/nodejs.svg", top: "40%", left: "55%", scale: 2 },
-  { alt: "GraphQL", src: "/graphql.svg", top: "15%", left: "90%", scale: 3.5 },
-  { alt: "Docker", src: "/docker.svg", top: "30%", left: "10%", scale: 1.1 },
-  { alt: "Tailwindcss", src: "/tailwind-css.svg", top: "75%", left: "50%", scale: 1.6 },
-  { alt: "React", src: "/react.svg", top: "90%", left: "80%", scale: 2.5 },
-  { alt: "npm", src: "/npm.svg", top: "80%", left: "20%", scale: 0.8 },
-  { alt: "Wordpress", src: "/wordpress.svg", top: "95%", left: "5%", scale: 1.5 }
-];
 
 export default function Stack() {
   const size = 64;
   const ref = useRef(null);
 
-  const slideClass = useSlideUp(ref, "animate-up");
+  const slideClass = useSlideUp(ref, "animate-up", "animate-down");
   const { containerRef, scale } = useScale(0.5);
 
   return (
     <div className="grid relative max-w-x justify-center items-center">
+
       {/* Icons */}
       <div className="flex w-full absolute h-screen overflow-hidden">
         <div

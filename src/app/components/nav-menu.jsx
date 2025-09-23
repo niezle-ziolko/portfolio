@@ -1,17 +1,10 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 
 import Icon from "lib/icon";
-
+import { sections } from "data/nav-menu";
 import ThemeButton from "./theme-button";
-
-const sections = [
-  { id: "about", label: "O mnie" },
-  { id: "stack", label: "Umiejętności" },
-  { id: "skills", label: "Osiągnięcia" },
-  { id: "projects", label: "Projekty" },
-  { id: "contact", label: "Kontakt" }
-];
 
 export default function NavMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,12 +24,14 @@ export default function NavMenu() {
             <li className={`u10 u12 ${isOpen ? "opacity-0" : "opacity-100"}`}>
 
               {/* Logo */}
-              <Icon
-                width={size}
-                height={size}
-                alt="Avatar"
-                src="/avatar.svg"
-              />
+              <Link href="/" alt="Logo">
+                <Icon
+                  width={size}
+                  height={size}
+                  alt="Avatar"
+                  src="/avatar.svg"
+                />
+              </Link>
             </li>
 
             {/* Toggle */}
