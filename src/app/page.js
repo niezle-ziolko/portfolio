@@ -1,6 +1,7 @@
 import About from "components/about";
 import Stack from "components/stack";
 import Laptop from "components/laptop";
+import Skills from "components/skills";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
         <Stack />
       </section>
       <section id="skills">
-
+        <Skills />
       </section>
       <section id="projects">
 

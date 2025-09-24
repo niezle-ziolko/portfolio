@@ -34,7 +34,7 @@ export default function About() {
             ${upClass}
           `}
         >
-          O mnie.
+          O mnie
         </h2>
 
         {/* Description */}
