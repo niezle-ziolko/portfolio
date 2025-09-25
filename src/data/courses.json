@@ -1,0 +1,14 @@
+{
+  "courses": [
+    {
+      "title": "Harvard CS50X",
+      "image": "/cs50x.webp",
+      "certificate": "https://certificates.cs50.io/5a0d47b5-d702-41c1-955d-087b0f25129c.pdf?size=letter"
+    },
+    {
+      "title": "Harvard CS50W",
+      "image": "/cs50w.webp",
+      "certificate": "https://certificates.cs50.io/6f5116d0-882d-4fc1-9dc6-0c96c5d4c7b1.pdf?size=letter"
+    }
+  ]
+}

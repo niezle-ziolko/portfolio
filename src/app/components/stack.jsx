@@ -20,7 +20,7 @@ export default function Stack() {
       <div className="flex w-full absolute h-screen overflow-hidden">
         <div
           ref={containerRef}
-          className="absolute w-full h-full"
+          className="u15 absolute"
           style={{
             transform: `scale(${scale})`,
             transformOrigin: "center center",
@@ -51,7 +51,9 @@ export default function Stack() {
       </div>
 
       {/* Title */}
-      <h2 ref={ref} className={slideClass}>Moje umiejętności</h2>
+      <h2 ref={ref} className={slideClass}>
+        Moje umiejętności
+      </h2>
 
       {/* Description */}
       <p ref={ref} className={`opacity-0 ${slideClass}`}>

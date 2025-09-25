@@ -51,7 +51,11 @@
   --color-or-800: oklch(0.4961 0.0724 64.07);
   --color-or-900: oklch(0.3613 0.0506 60.43);
 
-  --tw-rotate-x: rotate(-90deg);
+  --color-gradient: 97deg,
+  oklch(0.6624 0.1867 249.84),
+  oklch(0.672 0.2258 307.22) 42%,
+  oklch(0.6461 0.2124 11.95) 74%,
+  oklch(0.6874 0.1749 52.79);
 
   --spacing-qp: 25%;
   --spacing-hp: 50%;
@@ -66,6 +70,7 @@
   --spacing-twh: 12.5rem;
 
   --ff: 45deg;
+  --tw-rotate-x: rotate(-90deg);
 
   --transition: all 0.5s;
 
@@ -75,8 +80,8 @@
   --animate-avatar: avatar 1s forwards 1s;
   --animate-up: slideUp 1s ease-out both;
   --animate-down: slideDown 1s ease-out both;
-  --animate-backlight: backlightIntro 2s ease-out forwards, backlightLoop 4s ease-in-out infinite;
-  --animate-backlight-exit: backlightExit 2s ease-out forwards;
+  --animate-backlight: backlightIntro 0.7s ease-out forwards, backlightLoop 4s ease-in-out infinite;
+  --animate-backlight-exit: backlightExit 0.7s ease-out forwards;
 
   @keyframes interference {
     100% {
@@ -129,13 +134,13 @@
 
   @keyframes backlightLoop {
     0% {
-      height: 140px;
+      height: 120px;
     }
     50% {
-      height: 110px;
+      height: 100px;
     }
     100% {
-      height: 140px;
+      height: 120px;
     }
   }
 
@@ -229,6 +234,10 @@
 
 @utility u14 {
   @apply py-1 w-full md:max-w-75;
+}
+
+@utility u15 {
+  @apply w-full h-full;
 }
 
 @layer base {

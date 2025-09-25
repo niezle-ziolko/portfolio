@@ -9,28 +9,28 @@ export default function About() {
   const upClass = useSlideUp(ref, "animate-up", "animate-down");
 
   return (
-    <div className="flex relative w-full h-full max-w-x items-center">
+    <div className="u1 u15 relative max-w-x">
 
       {/* Backlight */}
       <div className="flex h-15 w-full top-0 absolute justify-center">
         <div
           ref={ref}
           className={`
-            h-30 w-full blur-sm md:blur-xl relative -top-15 rounded-b-full u15
-            bg-[linear-gradient(97deg,#0096ff,#bb64ff_42%,#f2416b_74%,#eb7500)] 
-            after:h-30 after:block after:backdrop-blur-xs after:w-full
+            w-full blur-sm md:blur-xl relative -top-15 rounded-b-full u15
+            bg-[linear-gradient(var(--color-gradient))] 
+            after:h-30 after:block after:backdrop-blur-lg after:w-full
             ${backlightClass}
           `}
         />
       </div>
 
-      <div>
+      <div className="w-full">
         {/* Title */}
         <h2
           ref={ref} 
           className={`
             w-fit text-transparent bg-clip-text 
-            bg-[linear-gradient(97deg,#0096ff,#bb64ff_42%,#f2416b_74%,#eb7500)] 
+            bg-[linear-gradient(var(--color-gradient))]
             ${upClass}
           `}
         >

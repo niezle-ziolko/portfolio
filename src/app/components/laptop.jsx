@@ -6,9 +6,11 @@ export default function Laptop() {
   return (
     <div className="max-w-x text-center">
       <div className="pb-8 md:py-8">
-        <p className="p-0 text-white text-lg/6 md:text-3xl/8">Siemanko! </p>
+        <p className="p-0 text-white text-lg/6 md:text-3xl/8">
+          Siemanko!
+        </p>
         <p className="p-0 font-bold text-4xl/12 md:text-6xl/20">
-          <span className="text-transparent bg-clip-text bg-[linear-gradient(97deg,#0096ff,#bb64ff_42%,#f2416b_74%,#eb7500)]">
+          <span className="text-transparent bg-clip-text bg-[linear-gradient(var(--color-gradient))]">
             jestem Norman
           </span>
            👋
@@ -22,7 +24,7 @@ export default function Laptop() {
             h-80 w-45 p-2 pb-6
             rounded-3xl
 
-            bg-[linear-gradient(97deg,#0096ff,#bb64ff_42%,#f2416b_74%,#eb7500)]
+            bg-[linear-gradient(var(--color-gradient))]
             shadow-[inset_0_0_0_2px_var(--color-g-200),inset_0_0_0_10px_#000]
 
             [transform-style:preserve-3d] [transform-origin:50%_100%]
