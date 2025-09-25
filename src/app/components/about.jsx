@@ -1,12 +1,12 @@
 "use client";
 import { useRef } from "react";
 
-import { useSlideUp } from "lib/animate";
+import { useAnimate } from "lib/animate";
 
 export default function About() {
   const ref = useRef(null);
-  const backlightClass = useSlideUp(ref, "animate-backlight", "animate-backlight-exit");
-  const upClass = useSlideUp(ref, "animate-up", "animate-down");
+  const backlightClass = useAnimate(ref, "animate-backlight", "animate-backlight-exit");
+  const upClass = useAnimate(ref, "animate-up", "animate-down");
 
   return (
     <div className="u1 u15 relative max-w-x">

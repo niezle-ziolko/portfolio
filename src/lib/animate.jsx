@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useState, useEffect } from "react";
 
-export function useSlideUp(ref, enterClass, exitClass) {
+export function useAnimate(ref, enterClass, exitClass) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

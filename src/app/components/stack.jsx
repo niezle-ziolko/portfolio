@@ -4,13 +4,13 @@ import { useRef } from "react";
 import Icon from "lib/icon";
 import { icons } from "data/stack";
 import { useScale } from "lib/animate";
-import { useSlideUp } from "lib/animate";
+import { useAnimate } from "lib/animate";
 
 export default function Stack() {
   const size = 64;
   const ref = useRef(null);
 
-  const slideClass = useSlideUp(ref, "animate-up", "animate-down");
+  const slideClass = useAnimate(ref, "animate-up", "animate-down");
   const { containerRef, scale } = useScale(0.5);
 
   return (
