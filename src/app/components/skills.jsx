@@ -2,8 +2,8 @@
 import { useRef } from "react";
 import Image from "next/image";
 
-import { courses } from "data/courses";
 import { useAnimate } from "lib/animate";
+import { courses } from "data/courses.json";
 
 export default function Skills() {
   const ref = useRef(null);

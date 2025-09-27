@@ -3,8 +3,8 @@ import Link from "next/link";
 import { useState } from "react";
 
 import Icon from "lib/icon";
-import { sections } from "data/nav-menu";
 import ThemeButton from "./theme-button";
+import { sections } from "data/nav-menu.json";
 
 export default function NavMenu() {
   const [isOpen, setIsOpen] = useState(false);
