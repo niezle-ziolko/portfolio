@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 
+import { courses } from "data/courses";
 import { useAnimate } from "lib/animate";
 
 export default function Skills() {
@@ -18,18 +19,18 @@ export default function Skills() {
           Moje osiągnięcia
         </h2>
 
-        <Image 
-          src="/cs50x.webp"
-          alt="cs50x"
-          width={200}
-          height={100}
-          className="relative z-10"
-        />
-
-        {/* Blur background */}
-        <p className="relative z-10 p-4">
-          Treść z gradientową ramką
-        </p>
+        {courses.map((course) => (
+          <div key={course.id}>
+            <h3>{course.title}</h3>
+          
+            <Image 
+              src={course.image}
+              alt={course.title}
+              width={100}
+              height={100}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
