@@ -2,8 +2,8 @@
 import { useRef } from "react";
 
 import Icon from "lib/icon";
+import { icons } from "data/stack";
 import { useScale } from "lib/animate";
-import { icons } from "data/stack.json";
 import { useAnimate } from "lib/animate";
 
 export default function Stack() {

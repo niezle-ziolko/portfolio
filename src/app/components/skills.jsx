@@ -3,7 +3,7 @@ import { useRef } from "react";
 import Image from "next/image";
 
 import { useAnimate } from "lib/animate";
-import { courses } from "data/courses.json";
+import { courses } from "data/courses";
 
 export default function Skills() {
   const ref = useRef(null);
