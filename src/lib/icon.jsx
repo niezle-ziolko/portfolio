@@ -45,7 +45,7 @@ const Icon = ({ src, width = 24, height = 24, alt, className, style }) => {
   };
 
   return (
-    <span
+    <figure
       className={className}
       style={{
         display: "inline-block",
