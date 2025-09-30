@@ -89,10 +89,10 @@ export default function Skills() {
                       setFinished(index === courses.length - 1);
                     }}
                     className={`h-2 rounded-full transition-all duration-300 cursor-pointer 
-    ${index === activeIndex 
-                    ? "w-12 bg-hover-player" // aktywny – stały kolor
-                    : "w-2 bg-element-player hover:bg-hover-player"}`
-                    }
+                      ${index === activeIndex 
+                    ? "w-12 bg-hover-player"
+                    : "w-2 bg-element-player hover:bg-hover-player"}
+                    `}
                   />
                 ))}
               </ul>
@@ -101,11 +101,7 @@ export default function Skills() {
 
           <div
             className="u1 u17 fill-element-player cursor-pointer hover:fill-hover-player"
-            onClick={() =>
-              finished
-                ? handleReplay()
-                : setIsPlaying((prev) => !prev)
-            }
+            onClick={() => finished ? handleReplay() : setIsPlaying((prev) => !prev)}
           >
             <Icon width={size} height={size} alt="Control" src={iconSrc} />
           </div>

@@ -38,6 +38,7 @@
   --color-player: oklch(0.3802 0.005 286.16 / 70%);
   --color-element-player: oklch(0.9707 0.0027 286.35 / 80%);
   --color-hover-player: oklch(1 0 0 / 48%);
+  --color-button-player: oklch(0.4065 0.005 286.18 / 72.6%);
 
   --color-b-100: oklch(0.329 0 0);
   --color-b-200: oklch(0.2046 0 0);
@@ -249,7 +250,7 @@
 }
 
 @utility u17 {
-  @apply mb-5 top-5 sticky rounded-full bg-player/80 backdrop-blur-md self-end bottom-8;
+  @apply mb-5 top-5 sticky rounded-full bg-player backdrop-blur-md self-end bottom-8;
 }
 
 @layer base {
