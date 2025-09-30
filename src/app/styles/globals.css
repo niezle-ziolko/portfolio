@@ -35,6 +35,10 @@
   --color-theme-button-background: oklch(0.9324 0.0067 286.27 / 70.2%);
   --color-theme-button-border: oklch(0.296 0.0046 325.69);
 
+  --color-player: oklch(0.3802 0.005 286.16 / 70%);
+  --color-element-player: oklch(0.9707 0.0027 286.35 / 80%);
+  --color-hover-player: oklch(1 0 0 / 48%);
+
   --color-b-100: oklch(0.329 0 0);
   --color-b-200: oklch(0.2046 0 0);
   --color-b-300: oklch(0.2727 0 0);
@@ -238,6 +242,14 @@
 
 @utility u15 {
   @apply w-full h-full;
+}
+
+@utility u16 {
+  @apply flex flex-col;
+}
+
+@utility u17 {
+  @apply mb-5 top-5 sticky rounded-full bg-player/80 backdrop-blur-md self-end bottom-8;
 }
 
 @layer base {

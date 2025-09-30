@@ -40,7 +40,7 @@ export default function About() {
         {/* Description */}
         <div
           ref={ref}
-          className={`flex gap-1 flex-col md:gap-10 md:flex-row ${upClass}`}
+          className={`u16 gap-1 md:gap-10 md:flex-row ${upClass}`}
         >
           <p className="u14">
             Moja przygoda z programowaniem zaczęła się w czasach pandemii, 
