@@ -29,7 +29,7 @@ export default function NavMenu() {
                   width={size}
                   height={size}
                   alt="Avatar"
-                  src="/assets/icons/avatar.svg"
+                  src="/assets/icons/zQJna22Ox9.svg"
                 />
               </Link>
             </li>

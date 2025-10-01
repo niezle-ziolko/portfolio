@@ -6,7 +6,7 @@ import Projects from "components/projects";
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-clip">
       <section className="bg-black">
         <Laptop />
       </section>

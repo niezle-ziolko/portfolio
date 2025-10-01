@@ -49,7 +49,7 @@ export default function Laptop() {
             width={size}
             height={size}
             alt="Avatar"
-            src="/assets/icons/avatar.svg"
+            src="/assets/icons/zQJna22Ox9.svg"
             className="opacity-0 animate-avatar md:opacity-100 md:animate-none"
           />
 

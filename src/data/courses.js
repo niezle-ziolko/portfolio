@@ -2,13 +2,13 @@ export const courses = [
   {
     id: "1",
     title: "Harvard CS50X",
-    image: "/assets/images/cs50x.webp",
+    image: "/assets/images/0EwMo1fsL0.webp",
     certificate: "https://certificates.cs50.io/5a0d47b5-d702-41c1-955d-087b0f25129c.pdf?size=letter"
   },
   {
     id: "2",
     title: "Harvard CS50W",
-    image: "/assets/images/cs50w.webp",
+    image: "/assets/images/8dPUM4ZMuk.webp",
     certificate: "https://certificates.cs50.io/6f5116d0-882d-4fc1-9dc6-0c96c5d4c7b1.pdf?size=letter"
   },
   {

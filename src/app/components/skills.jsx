@@ -1,10 +1,11 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 
 import Icon from "lib/icon";
 import { useAnimate } from "lib/animate";
 import { courses } from "data/courses";
+import { useCarousel } from "lib/carousel";
 
 export default function Skills() {
   const ref = useRef(null);
@@ -13,64 +14,58 @@ export default function Skills() {
   const size = 56;
   const intervalTime = 3000;
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [finished, setFinished] = useState(false);
+  const {
+    activeIndex,
+    isPlaying,
+    finished,
+    setActiveIndex,
+    setIsPlaying,
+    handleReplay,
+    handleTouchStart,
+    handleTouchEnd
+  } = useCarousel({ length: courses.length, intervalTime });
 
-  useEffect(() => {
-    if (!isPlaying || finished) return;
-
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => {
-        if (prev === courses.length - 1) {
-          setFinished(true);
-          setIsPlaying(false);
-          return prev;
-        };
-
-        return prev + 1;
-      });
-    }, intervalTime);
-
-    return () => clearInterval(interval);
-  }, [isPlaying, finished]);
-
-  const handleReplay = () => {
-    setActiveIndex(0);
-    setFinished(false);
-    setIsPlaying(true);
-  };
-
-  let iconSrc = "/assets/icons/play.svg";
-  if (isPlaying) {
-    iconSrc = "/assets/icons/pause.svg";
-  } else if (finished) {
-    iconSrc = "/assets/icons/replay.svg";
-  };
+  let iconSrc = "/assets/icons/BpXu4PZzKr.svg";
+  if (isPlaying) iconSrc = "/assets/icons/fyxToZ1EvX.svg";
+  else if (finished) iconSrc = "/assets/icons/phEO9jcTzd.svg";
 
   return (
     <div className="u15 u16 z-2 relative max-w-x">
-      {/* Title */}
       <h2 ref={ref} className={`pt-11 pb-4 w-full ${slideClass}`}>
         Moje osiągnięcia
       </h2>
 
-      <div className="h-full relative overflow-clip">
+      <div
+        className="h-full relative"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <ul
-          className="flex transition-transform duration-500"
-          style={{ transform: `translateX(-${activeIndex * 97}%)` }}
+          className="flex snap-x snap-mandatory transition-transform duration-500"
+          style={{ transform: `translateX(-${activeIndex * 100}%)` }}
         >
-          {courses.map((course) => (
+          {courses.map((course, index) => (
             <li
               key={course.id}
-              className="min-w-245 min-h-125 flex flex-col items-center justify-center rounded-2xl bg-element-background"
+              className={`
+        min-h-125 flex flex-col items-center justify-center 
+        rounded-2xl snap-start box-border overflow-hidden 
+        bg-element-background flex-[0_0_calc(100%-10px)] 
+        transition-opacity duration-500
+        ${index === activeIndex ? "opacity-100" : "opacity-30"}
+      `}
             >
               <h3>{course.title}</h3>
+
               <Image
                 src={course.image}
                 alt={course.title}
-                width={100}
-                height={100}
+                width={1134}
+                height={675}
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="/assets/images/NZpLlUrqON.webp"
+                className="z-2 w-full h-full absolute rounded-2xl"
               />
             </li>
           ))}
@@ -83,15 +78,10 @@ export default function Skills() {
                 {courses.map((course, index) => (
                   <li
                     key={course.id}
-                    onClick={() => {
-                      setActiveIndex(index);
-                      setIsPlaying(false);
-                      setFinished(index === courses.length - 1);
-                    }}
-                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer 
-                      ${index === activeIndex 
-                    ? "w-12 bg-hover-player"
-                    : "w-2 bg-element-player hover:bg-hover-player"}
+                    onClick={() => { setActiveIndex(index); }}
+                    className={`
+                      h-2 rounded-full transition-all duration-300 cursor-pointer 
+                      ${index === activeIndex ? "w-12 bg-hover-player" : "w-2 bg-element-player hover:bg-hover-player"}
                     `}
                   />
                 ))}
@@ -103,7 +93,12 @@ export default function Skills() {
             className="u1 u17 fill-element-player cursor-pointer hover:fill-hover-player"
             onClick={() => finished ? handleReplay() : setIsPlaying((prev) => !prev)}
           >
-            <Icon width={size} height={size} alt="Control" src={iconSrc} />
+            <Icon
+              width={size}
+              height={size}
+              alt="Control"
+              src={iconSrc}
+            />
           </div>
         </div>
       </div>
