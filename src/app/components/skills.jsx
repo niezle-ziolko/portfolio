@@ -105,7 +105,7 @@ export default function Skills() {
           </div>
 
           <div
-            className="u1 u17 fill-white cursor-pointer hover:fill-hover-player"
+            className="u1 u17 fill-white cursor-pointer hover:fill-element-player"
             onClick={() => (finished ? handleReplay() : setIsPlaying((prev) => !prev))}
           >
             <Icon
