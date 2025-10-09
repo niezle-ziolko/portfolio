@@ -157,7 +157,7 @@ export function useProgressDots({
     });
 
     currentProgressRef.current = 0;
-  }, [replayKey]);
+  }, [replayKey, dotsRef]);
 
   useEffect(() => {
     const dots = dotsRef.current || [];

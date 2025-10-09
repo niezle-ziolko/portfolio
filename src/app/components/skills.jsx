@@ -1,6 +1,7 @@
 "use client";
 import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import Icon from "lib/icon";
 import { useAnimate } from "lib/animate";
@@ -12,38 +13,39 @@ export default function Skills() {
   const dotsRef = useRef([]);
   const slideClass = useAnimate(ref, "animate-up", "animate-down");
 
-  const size = 56;
+  const target = 23;
+  const control = 56;
   const intervalTime = 10000;
 
   const {
-  activeIndex,
-  isPlaying,
-  finished,
-  setActiveIndex,
-  setIsPlaying,
-  handleReplay,
-  handleTouchStart,
-  handleTouchEnd,
-  replayKey,
-  remainingTime
-} = useCarousel({ length: courses.length, intervalTime });
+    activeIndex,
+    isPlaying,
+    finished,
+    setActiveIndex,
+    setIsPlaying,
+    handleReplay,
+    handleTouchStart,
+    handleTouchEnd,
+    replayKey,
+    remainingTime
+  } = useCarousel({ length: courses.length, intervalTime });
 
-useProgressDots({
-  dotsRef,
-  activeIndex,
-  isPlaying,
-  finished,
-  intervalTime,
-  remainingTime,
-  replayKey
-});
+  useProgressDots({
+    dotsRef,
+    activeIndex,
+    isPlaying,
+    finished,
+    intervalTime,
+    remainingTime,
+    replayKey
+  });
 
   let iconSrc = "/assets/icons/BpXu4PZzKr.svg";
   if (isPlaying) iconSrc = "/assets/icons/fyxToZ1EvX.svg";
   else if (finished) iconSrc = "/assets/icons/phEO9jcTzd.svg";
 
   return (
-    <div className="u15 u16 z-2 relative max-w-x">
+    <div className="u15 u16 relative max-w-x">
       <h2 ref={ref} className={`pt-11 pb-4 w-full ${slideClass}`}>
         Moje osiągnięcia
       </h2>
@@ -53,6 +55,7 @@ useProgressDots({
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
+        {/* Slides */}
         <ul
           className="flex snap-x snap-mandatory transition-transform duration-500"
           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
@@ -61,31 +64,57 @@ useProgressDots({
             <li
               key={course.id}
               className={`
-                min-h-125 flex flex-col items-center justify-center 
-                rounded-2xl snap-start box-border overflow-hidden 
+                group  min-h-125 
+                rounded-2xl snap-start overflow-hidden 
                 bg-element-background flex-[0_0_calc(100%-10px)] 
-                transition-opacity duration-500
-                ${index === activeIndex ? "opacity-100" : "opacity-30"}
+                transition-opacity
+                ${index === activeIndex ? "opacity-100 cursor-pointer" : "opacity-30 pointer-events-none cursor-default"}
               `}
             >
-              <h3>{course.title}</h3>
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                href={`${course.certificate}`}
+                className="u16 h-full box-border items-center justify-between"
+              >
+                <div className="u16 p-10 gap-3 w-full">
+                  <h3>{course.title}</h3>
 
-              <Image
-                src={course.image}
-                alt={course.title}
-                width={1134}
-                height={675}
-                loading="lazy"
-                placeholder="blur"
-                blurDataURL="/assets/images/NZpLlUrqON.webp"
-                className="z-2 w-[100px] h-[100px] absolute rounded-2xl"
-              />
+                  <span className="u12 text-lg font-bold">
+                    Certyfikat
+                  
+                    <Icon
+                      width={target}
+                      height={target}
+                      aria-hidden="true"
+                      src="/assets/icons/awoMUEKk1D.svg"
+                      className="
+                        ml-1 fill-font-link opacity-0 transform -scale-x-100 transition-all
+                        group-hover:scale-x-100 group-hover:opacity-100
+                      "
+                    />
+                  </span>
+                
+                </div>
+
+                <Image
+                  src={course.image}
+                  alt={course.title}
+                  width={1134}
+                  height={675}
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL="/assets/images/NZpLlUrqON.webp"
+                  className="w-[100px] h-[100px]"
+                />
+              </Link>
             </li>
           ))}
         </ul>
 
-        <div className="u1 u15 absolute gap-4 top-0">
-          <div className="u17 px-5 py-6">
+        {/* Controls */}
+        <div className="u1 u15 absolute gap-4 top-0 pointer-events-none">
+          <div className="u17 px-5 py-6 pointer-events-auto">
             <div className="u1 h-full">
               <ul className="flex gap-4 items-center">
                 {courses.map((course, index) => (
@@ -109,13 +138,13 @@ useProgressDots({
           </div>
 
           <div
-            className="u1 u17 fill-white cursor-pointer hover:fill-element-player"
+            className="u1 u17 fill-white cursor-pointer pointer-events-auto hover:fill-element-player"
             onClick={() => (finished ? handleReplay() : setIsPlaying((prev) => !prev))}
           >
             <Icon
-              width={size}
-              height={size}
-              alt="Control"
+              width={control}
+              height={control}
+              alt="control"
               src={iconSrc}
             />
           </div>

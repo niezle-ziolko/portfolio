@@ -23,6 +23,7 @@
   --color-font-primary: oklch(0.2745 0.0038 286.1);
   --color-font-secondary: oklch(0 0 0);
   --color-font-third: oklch(0.5399 0.0077 286.14);
+  --color-font-link: oklch(0.522 0.1771 255.83);
 
   --color-background: oklch(0.9707 0.0027 286.35);
 
@@ -279,12 +280,20 @@
     @apply p-5 md:px-0 pt-10 text-4xl md:text-5xl opacity-0 font-bold text-font-third;
   }
 
+  h3 {
+    @apply text-3xl md:text-4xl font-bold text-font-third;
+  }
+
   p {
     @apply p-5 md:p-0 text-base md:text-2xl font-bold leading-none text-font-third font-(family-name:--primary-font-family);
   }
 
   em {
     @apply not-italic text-font-secondary;
+  }
+
+  a {
+    @apply text-font-link;
   }
 
   ul {
