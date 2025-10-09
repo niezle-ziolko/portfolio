@@ -86,7 +86,7 @@
     backlightIntro 0.7s ease-out,
     backlightLoop 4s ease-in-out 0.7s infinite;
   --animate-backlight-exit: backlightExit 0.7s ease-out forwards;
-  --animate-fill-progress: fillProgress 5s linear forwards;
+  --animate-fill-progress: fillProgress 10s linear forwards;
 
   @keyframes interference {
     100% {

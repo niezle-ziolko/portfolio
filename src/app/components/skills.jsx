@@ -13,26 +13,30 @@ export default function Skills() {
   const slideClass = useAnimate(ref, "animate-up", "animate-down");
 
   const size = 56;
-  const intervalTime = 5000;
+  const intervalTime = 10000;
 
   const {
-    activeIndex,
-    isPlaying,
-    finished,
-    setActiveIndex,
-    setIsPlaying,
-    handleReplay,
-    handleTouchStart,
-    handleTouchEnd,
-  } = useCarousel({ length: courses.length, intervalTime });
+  activeIndex,
+  isPlaying,
+  finished,
+  setActiveIndex,
+  setIsPlaying,
+  handleReplay,
+  handleTouchStart,
+  handleTouchEnd,
+  replayKey,
+  remainingTime
+} = useCarousel({ length: courses.length, intervalTime });
 
-  useProgressDots({
-    dotsRef,
-    activeIndex,
-    isPlaying,
-    finished,
-    intervalTime
-  });
+useProgressDots({
+  dotsRef,
+  activeIndex,
+  isPlaying,
+  finished,
+  intervalTime,
+  remainingTime,
+  replayKey
+});
 
   let iconSrc = "/assets/icons/BpXu4PZzKr.svg";
   if (isPlaying) iconSrc = "/assets/icons/fyxToZ1EvX.svg";
