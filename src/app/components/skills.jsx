@@ -11,7 +11,8 @@ import { useCarousel, useProgressDots } from "lib/carousel";
 export default function Skills() {
   const ref = useRef(null);
   const dotsRef = useRef([]);
-  const slideClass = useAnimate(ref, "animate-up", "animate-down");
+  const slideVertical = useAnimate(ref, "animate-up", "animate-down");
+  const slideLevel = useAnimate(ref, "animate-left", "animate-right");
 
   const target = 23;
   const control = 56;
@@ -46,7 +47,7 @@ export default function Skills() {
 
   return (
     <div className="u15 u16 relative max-w-x">
-      <h2 ref={ref} className={`pt-11 pb-4 w-full ${slideClass}`}>
+      <h2 ref={ref} className={`pt-11 pb-4 w-full ${slideVertical}`}>
         Moje osiągnięcia
       </h2>
 
@@ -78,9 +79,9 @@ export default function Skills() {
                 className="u16 h-full box-border items-center justify-between"
               >
                 <div className="u16 p-10 gap-3 w-full">
-                  <h3>{course.title}</h3>
+                  <h3 ref={ref} className={`${slideLevel}`}>{course.title}</h3>
 
-                  <span className="u12 text-lg font-bold">
+                  <span className={`u12 text-lg font-bold ${slideLevel}`}>
                     Certyfikat
                   
                     <Icon
@@ -105,7 +106,7 @@ export default function Skills() {
                   loading="lazy"
                   placeholder="blur"
                   blurDataURL="/assets/images/NZpLlUrqON.webp"
-                  className="w-[100px] h-[100px]"
+                  className=""
                 />
               </Link>
             </li>
