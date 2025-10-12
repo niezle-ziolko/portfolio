@@ -13,7 +13,6 @@
   --color-header-keyline: oklch(0.3802 0.005 286.16 / 70%);
 
   --color-element-background: oklch(0 0 0);
-  --color-element-border: transparent;
 
   --color-theme-button-background: oklch(0.3802 0.005 286.16 / 70%);
   --color-theme-button-border: oklch(0.9184 0.0017 247.84);
@@ -23,7 +22,7 @@
   --color-font-primary: oklch(0.2745 0.0038 286.1);
   --color-font-secondary: oklch(0 0 0);
   --color-font-third: oklch(0.5399 0.0077 286.14);
-  --color-font-link: oklch(0.522 0.1771 255.83);
+  --color-font-link: oklch(0.5629 0.1933 256.16);
 
   --color-background: oklch(0.9707 0.0027 286.35);
 
@@ -199,11 +198,11 @@
   @keyframes slideRight {
     from {
       transform: translateX(0);
-      opacity: 0;
+      opacity: 1;
     }
     to {
       transform: translateX(50px);
-      opacity: 1;
+      opacity: 0;
     }
   }
 

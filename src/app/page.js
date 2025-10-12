@@ -19,6 +19,9 @@ export default function Home() {
       <section id="skills">
         <Skills />
       </section>
+      <section id="about" className="overflow-hidden">
+        <About />
+      </section>
     </div>
   );
 };

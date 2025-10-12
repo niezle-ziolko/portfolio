@@ -65,7 +65,8 @@ export default function Skills() {
             <li
               key={course.id}
               className={`
-                group  min-h-125 
+                group 
+                min-h-125 max-h-125 md:min-h-140 md:min-h-140
                 rounded-2xl snap-start overflow-hidden 
                 bg-element-background flex-[0_0_calc(100%-10px)] 
                 transition-opacity
@@ -76,10 +77,10 @@ export default function Skills() {
                 target="_blank"
                 rel="noopener noreferrer"
                 href={`${course.certificate}`}
-                className="u16 h-full box-border items-center justify-between"
+                className="u16 h-full box-border items-center"
               >
                 <div className="u16 p-10 gap-3 w-full">
-                  <h3 ref={ref} className={`${slideLevel}`}>{course.title}</h3>
+                  <h3 className={`${slideLevel}`}>{course.title}</h3>
 
                   <span className={`u12 text-lg font-bold ${slideLevel}`}>
                     Certyfikat
@@ -92,10 +93,11 @@ export default function Skills() {
                       className="
                         ml-1 fill-font-link opacity-0 transform -scale-x-100 transition-all
                         group-hover:scale-x-100 group-hover:opacity-100
+                        group-focus:scale-x-100 group-focus:opacity-100
+                        group-active:scale-x-100 group-active:opacity-100
                       "
                     />
                   </span>
-                
                 </div>
 
                 <Image
@@ -106,7 +108,16 @@ export default function Skills() {
                   loading="lazy"
                   placeholder="blur"
                   blurDataURL="/assets/images/NZpLlUrqON.webp"
-                  className=""
+                  className="
+                    w-[1135px] h-[675px] 
+                    aspect-[1135/675]
+                    ml-20 rounded-2xl 
+                    border border-element-border 
+                    -rotate-5 transition-all 
+                    group-hover:rotate-0 
+                    group-focus:rotate-0
+                    group-active:rotate-0
+                  "
                 />
               </Link>
             </li>
