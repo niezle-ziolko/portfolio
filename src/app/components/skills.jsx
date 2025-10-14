@@ -120,16 +120,15 @@ export default function Skills() {
                 </div>
 
                 <Image
-                  src={course.image}
-                  alt={course.title}
-                  width={1134}
-                  height={675}
+                  fill={true}
                   loading="lazy"
                   placeholder="blur"
+                  src={course.image}
+                  alt={course.title}
                   blurDataURL="/assets/images/NZpLlUrqON.webp"
                   className="
-                    w-[1135px] h-[675px] 
-                    aspect-[1135/675]
+                    w-[390px] h-[340px] 
+                    md:w-[1135px] md:h-[675px]
                     ml-20 rounded-2xl 
                     border-2 border-element-border 
                     -rotate-2 transition-all 
@@ -157,10 +156,7 @@ export default function Skills() {
                     className={`
                       relative h-2 rounded-full overflow-hidden transition-all duration-300
                       ${finished ? "cursor-default" : "cursor-pointer"}
-                      ${index === activeIndex 
-                    ? "w-12 bg-element-player" 
-                    : `w-2 bg-element-player ${!finished ? "hover:bg-hover-player" : ""}`
-                  }
+                      ${index === activeIndex  ? "w-12 bg-element-player" : `w-2 bg-element-player ${!finished ? "hover:bg-hover-player" : ""}`}
                     `}
                   >
                     <div
