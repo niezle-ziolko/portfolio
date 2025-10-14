@@ -5,20 +5,21 @@ export const useCarousel = ({ length, intervalTime = 3000 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [finished, setFinished] = useState(false);
   const [replayKey, setReplayKey] = useState(0);
+  const [userCanReplay, setUserCanReplay] = useState(true);
 
   const timeoutRef = useRef(null);
   const deadlineRef = useRef(null);
   const remainingRef = useRef(intervalTime);
   const [remainingMs, setRemainingMs] = useState(intervalTime);
 
-  const clearTimer = () => {
+  const clearTimer = useCallback(() => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
     };
 
     deadlineRef.current = null;
-  };
+  }, []);
 
   const handleTimeout = useCallback(() => {
     timeoutRef.current = null;
@@ -29,8 +30,8 @@ export const useCarousel = ({ length, intervalTime = 3000 }) => {
       if (prev >= length - 1) {
         setFinished(true);
         setIsPlaying(false);
+        setUserCanReplay(false);
         remainingRef.current = 0;
-
         return prev;
       };
 
@@ -44,14 +45,17 @@ export const useCarousel = ({ length, intervalTime = 3000 }) => {
   const startTimer = useCallback(
     (ms) => {
       clearTimer();
-      const time = Math.max(0, Math.round(typeof ms === "number" ? ms : remainingRef.current || intervalTime));
+
+      const time = Math.max(
+        0,
+        Math.round(typeof ms === "number" ? ms : remainingRef.current || intervalTime)
+      );
+
       remainingRef.current = time;
       setRemainingMs(time);
       deadlineRef.current = Date.now() + time;
-      timeoutRef.current = setTimeout(() => {
-        handleTimeout();
-      }, time);
-    }, [handleTimeout, intervalTime]
+      timeoutRef.current = setTimeout(handleTimeout, time);
+    }, [clearTimer, handleTimeout, intervalTime]
   );
 
   useEffect(() => {
@@ -61,22 +65,24 @@ export const useCarousel = ({ length, intervalTime = 3000 }) => {
 
   useEffect(() => {
     if (isPlaying && !finished) {
-      if (!timeoutRef.current) {
-        startTimer(remainingRef.current);
-      };
-    } else {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-        timeoutRef.current = null;
-        const rem = deadlineRef.current ? Math.max(0, Math.round(deadlineRef.current - Date.now())) : remainingRef.current;
-        remainingRef.current = rem;
-        setRemainingMs(rem);
-        deadlineRef.current = null;
-      };
+      startTimer(remainingRef.current);
+
+      return;
     };
 
-    return () => {};
-  }, [isPlaying, finished, startTimer, activeIndex]);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+
+      const rem = deadlineRef.current
+        ? Math.max(0, Math.round(deadlineRef.current - Date.now()))
+        : remainingRef.current;
+
+      remainingRef.current = rem;
+      setRemainingMs(rem);
+      deadlineRef.current = null;
+    };
+  }, [isPlaying, finished, activeIndex, startTimer]);
 
   const goToSlide = useCallback(
     (index) => {
@@ -92,24 +98,27 @@ export const useCarousel = ({ length, intervalTime = 3000 }) => {
       } else {
         clearTimer();
       };
-    }, [intervalTime, isPlaying, length, startTimer]
+    }, [intervalTime, isPlaying, length, startTimer, clearTimer]
   );
 
   const handleReplay = useCallback(() => {
     clearTimer();
     setActiveIndex(0);
     setFinished(false);
+    setUserCanReplay(true);
     remainingRef.current = intervalTime;
     setRemainingMs(intervalTime);
     setIsPlaying(true);
     setReplayKey((k) => k + 1);
-  }, [intervalTime]);
+  }, [intervalTime, clearTimer]);
 
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
+
   const handleTouchStart = (e) => {
     touchStartX.current = e.changedTouches[0].clientX;
   };
+
   const handleTouchEnd = (e) => {
     touchEndX.current = e.changedTouches[0].clientX;
     const diff = touchStartX.current - touchEndX.current;
@@ -118,6 +127,54 @@ export const useCarousel = ({ length, intervalTime = 3000 }) => {
     if (diff > 0) goToSlide(activeIndex + 1);
     else goToSlide(activeIndex - 1);
   };
+
+  useEffect(() => {
+    const skillsSection = document.getElementById("skills");
+    if (!skillsSection) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (
+          entry.isIntersecting &&
+          entry.intersectionRatio >= 0.75 &&
+          !finished &&
+          userCanReplay
+        ) {
+          setIsPlaying(true);
+        } else if (entry.intersectionRatio < 0.75) {
+          setIsPlaying(false);
+        };
+      }, { threshold: [0.5, 0.75] }
+    );
+
+    observer.observe(skillsSection);
+    return () => observer.disconnect();
+  }, [finished, userCanReplay]);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll(".section");
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (
+            entry.target.id !== "skills" &&
+            entry.isIntersecting &&
+            entry.intersectionRatio >= 0.5
+          ) {
+            setIsPlaying(false);
+            setUserCanReplay(false);
+          };
+        });
+      }, { threshold: [0.5] }
+    );
+
+    sections.forEach((sec) => observer.observe(sec));
+
+    return () => observer.disconnect();
+  }, []);
 
   return {
     activeIndex,
@@ -131,7 +188,7 @@ export const useCarousel = ({ length, intervalTime = 3000 }) => {
     goToSlide,
     length,
     remainingTime: remainingMs,
-    replayKey
+    replayKey,
   };
 };
 
@@ -146,25 +203,24 @@ export function useProgressDots({
 }) {
   const animTimeoutRef = useRef(null);
   const currentProgressRef = useRef(0);
+  const lastIndexRef = useRef(activeIndex);
 
   useEffect(() => {
     const dots = dotsRef.current || [];
-
     dots.forEach((el) => {
       if (!el) return;
       el.style.transition = "none";
       el.style.width = "0%";
     });
-
     currentProgressRef.current = 0;
-  }, [replayKey, dotsRef]);
+    lastIndexRef.current = activeIndex;
+  }, [replayKey, dotsRef, activeIndex]);
 
   useEffect(() => {
     const dots = dotsRef.current || [];
 
     dots.forEach((el, idx) => {
       if (!el) return;
-
       if (idx !== activeIndex) {
         el.style.transition = "none";
         el.style.width = "0%";
@@ -183,11 +239,8 @@ export function useProgressDots({
       try {
         const computed = getComputedStyle(activeEl);
         const w = parseFloat(computed.width);
-        const parentW = activeEl.parentElement
-          ? activeEl.parentElement.clientWidth
-          : 0;
+        const parentW = activeEl.parentElement ? activeEl.parentElement.clientWidth : 0;
         if (!parentW || isNaN(w)) return currentProgressRef.current || 0;
-
         return Math.min(Math.max(w / parentW, 0), 1);
       } catch {
         return currentProgressRef.current || 0;
@@ -203,19 +256,41 @@ export function useProgressDots({
       return;
     };
 
-    const domProgress = computeProgressFromDOM();
-    const progress = currentProgressRef.current || domProgress || 0;
+    const isNewSlide = lastIndexRef.current !== activeIndex;
+    lastIndexRef.current = activeIndex;
 
-    const remainingMs = typeof remainingTime === "number" ? Math.max(remainingTime, 0) : Math.max(Math.round((1 - progress) * intervalTime), 0);
+    const domProgress = computeProgressFromDOM();
+
+    let startProgress;
+    if (isNewSlide) {
+      startProgress = 0;
+      currentProgressRef.current = 0;
+    } else {
+      startProgress = Math.max(0, Math.min(1, currentProgressRef.current || domProgress || 0));
+      currentProgressRef.current = startProgress;
+    };
+
+    let remainingMs;
+    if (typeof remainingTime === "number" && remainingTime >= 0) {
+      remainingMs = Math.max(0, Math.round(remainingTime));
+    } else {
+      remainingMs = Math.max(0, Math.round((1 - startProgress) * intervalTime));
+    };
+
+    if (remainingMs === 0) {
+      activeEl.style.transition = "none";
+      activeEl.style.width = "100%";
+      currentProgressRef.current = 0;
+      return;
+    };
 
     activeEl.style.transition = "none";
-    activeEl.style.width = `${progress * 100}%`;
-
+    activeEl.style.width = `${startProgress * 100}%`;
     void activeEl.offsetWidth;
     activeEl.style.transition = `width ${remainingMs}ms linear`;
+
     requestAnimationFrame(() => {
       activeEl.style.width = "100%";
-
       animTimeoutRef.current = setTimeout(() => {
         currentProgressRef.current = 0;
         animTimeoutRef.current = null;

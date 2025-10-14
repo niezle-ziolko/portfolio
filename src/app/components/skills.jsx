@@ -56,6 +56,7 @@ export default function Skills() {
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
+
         {/* Slides */}
         <ul
           className="flex snap-x snap-mandatory transition-transform duration-500"
@@ -66,7 +67,7 @@ export default function Skills() {
               key={course.id}
               className={`
                 group 
-                min-h-125 max-h-125 md:min-h-140 md:min-h-140
+                min-h-125 max-h-125 md:min-h-150 md:min-h-150
                 rounded-2xl snap-start overflow-hidden 
                 bg-element-background flex-[0_0_calc(100%-10px)] 
                 transition-opacity
@@ -79,12 +80,30 @@ export default function Skills() {
                 href={`${course.certificate}`}
                 className="u16 h-full box-border items-center"
               >
-                <div className="u16 p-10 gap-3 w-full">
+                <div className="group u16 p-10 gap-3 w-full">
                   <h3 className={`${slideLevel}`}>{course.title}</h3>
 
-                  <span className={`u12 text-lg font-bold ${slideLevel}`}>
-                    Certyfikat
-                  
+                  <span className={`u12 text-lg font-bold relative ${slideLevel} group`}>
+                    <span 
+                      className="
+                        relative
+                        after:content-['']
+                        after:absolute
+                        after:left-0
+                        after:bottom-0
+                        after:h-[1px]
+                        after:bg-current
+                        after:w-full
+                        after:scale-x-0
+                        after:origin-center
+                        after:transition-transform
+                        group-hover:after:scale-x-100
+                        group-focus:after:scale-x-100
+                        group-active:after:scale-x-100
+                      "
+                    >
+                      Certyfikat
+                    </span>
                     <Icon
                       width={target}
                       height={target}
@@ -112,8 +131,8 @@ export default function Skills() {
                     w-[1135px] h-[675px] 
                     aspect-[1135/675]
                     ml-20 rounded-2xl 
-                    border border-element-border 
-                    -rotate-5 transition-all 
+                    border-2 border-element-border 
+                    -rotate-2 transition-all 
                     group-hover:rotate-0 
                     group-focus:rotate-0
                     group-active:rotate-0
@@ -132,11 +151,16 @@ export default function Skills() {
                 {courses.map((course, index) => (
                   <li
                     key={course.id}
-                    onClick={() => setActiveIndex(index)}
+                    onClick={() => {
+                      if (!finished) setActiveIndex(index);
+                    }}
                     className={`
-                      relative h-2 rounded-full overflow-hidden cursor-pointer 
-                      transition-all duration-300 bg-element-player
-                      ${index === activeIndex ? "w-12" : "w-2 hover:bg-hover-player"}
+                      relative h-2 rounded-full overflow-hidden transition-all duration-300
+                      ${finished ? "cursor-default" : "cursor-pointer"}
+                      ${index === activeIndex 
+                        ? "w-12 bg-element-player" 
+                        : `w-2 bg-element-player ${!finished ? "hover:bg-hover-player" : ""}`
+                      }
                     `}
                   >
                     <div
