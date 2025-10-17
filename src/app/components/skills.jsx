@@ -67,7 +67,7 @@ export default function Skills() {
               key={course.id}
               className={`
                 group 
-                min-h-140 max-h-140 md:min-h-170 md:min-h-170
+                min-h-140 max-h-140 md:min-h-155 md:min-h-155
                 rounded-2xl snap-start overflow-hidden 
                 bg-element-background flex-[0_0_calc(100%-10px)] 
                 transition-opacity
