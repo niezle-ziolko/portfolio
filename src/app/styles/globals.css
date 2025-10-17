@@ -338,8 +338,4 @@
   button {
     @apply cursor-pointer hover:u10 hover:text-font-secondary;
   }
-
-  img {
-    position: relative !important;
-  }
 }

@@ -67,7 +67,7 @@ export default function Skills() {
               key={course.id}
               className={`
                 group 
-                min-h-125 max-h-125 md:min-h-150 md:min-h-150
+                min-h-140 max-h-140 md:min-h-170 md:min-h-170
                 rounded-2xl snap-start overflow-hidden 
                 bg-element-background flex-[0_0_calc(100%-10px)] 
                 transition-opacity
@@ -110,7 +110,7 @@ export default function Skills() {
                       aria-hidden="true"
                       src="/assets/icons/awoMUEKk1D.svg"
                       className="
-                        ml-1 fill-font-link opacity-0 transform -scale-x-100 transition-all
+                        fill-font-link opacity-0 transform -scale-x-100 transition-all
                         group-hover:scale-x-100 group-hover:opacity-100
                         group-focus:scale-x-100 group-focus:opacity-100
                         group-active:scale-x-100 group-active:opacity-100
@@ -120,15 +120,15 @@ export default function Skills() {
                 </div>
 
                 <Image
-                  fill={true}
+                  width={1135}
+                  height={675}
                   loading="lazy"
                   placeholder="blur"
                   src={course.image}
                   alt={course.title}
                   blurDataURL="/assets/images/NZpLlUrqON.webp"
                   className="
-                    w-[390px] h-[340px] 
-                    md:w-[1135px] md:h-[675px]
+                    w-[1135px] h-[675px]
                     ml-20 rounded-2xl 
                     border-2 border-element-border 
                     -rotate-2 transition-all 
@@ -161,7 +161,7 @@ export default function Skills() {
                   >
                     <div
                       ref={(el) => (dotsRef.current[index] = el)}
-                      className="absolute top-0 left-0 h-full bg-white w-0"
+                      className="w-0 top-0 left-0 h-full bg-white absolute rounded-full"
                     />
                   </li>
                 ))}
