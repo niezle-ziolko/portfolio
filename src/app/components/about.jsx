@@ -18,6 +18,7 @@ export default function About() {
           className={`
             w-full blur-sm md:blur-xl relative -top-15 rounded-b-full u15
             bg-[linear-gradient(var(--color-gradient))] 
+
             after:h-30 after:block after:backdrop-blur-lg after:w-full
             ${backlightClass}
           `}
@@ -25,6 +26,7 @@ export default function About() {
       </div>
 
       <div className="w-full">
+
         {/* Title */}
         <h2
           ref={ref} 

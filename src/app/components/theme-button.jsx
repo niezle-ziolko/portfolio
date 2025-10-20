@@ -18,12 +18,13 @@ export default function ThemeButton() {
             checked={isDarkMode}
             onChange={() => setIsDarkMode(true)}
           />
+
           <label
             htmlFor="theme-color-dark"
-            className="u10 w-5 h-5 inline-flex box-border items-center justify-center rounded-full cursor-pointer peer-checked:border-[1.5px] peer-checked:border-theme-button-border peer-focus:outline peer-focus:outline-[rgba(0,125,250,0.6)] peer-focus:outline-[2px] peer-focus:outline-offset-[2px]"
+            className="u18"
           >
             <span className="sr-only">dark</span>
-            <span className="w-4 h-4 block rounded-full bg-[#2e2c2e]" />
+            <span className="u19 bg-[#2e2c2e]" />
           </label>
         </li>
 
@@ -37,12 +38,13 @@ export default function ThemeButton() {
             checked={!isDarkMode}
             onChange={() => setIsDarkMode(false)}
           />
+
           <label
             htmlFor="theme-color-light"
-            className="u10 w-5 h-5 inline-flex box-border items-center justify-center rounded-full cursor-pointer peer-checked:border-[1.5px] peer-checked:border-theme-button-border peer-focus:outline peer-focus:outline-[rgba(0,125,250,0.6)] peer-focus:outline-[2px] peer-focus:outline-offset-[2px]"
+            className="u18"
           >
             <span className="sr-only">light</span>
-            <span className="w-4 h-4 block rounded-full bg-[#e3e4e5] shadow-[inset_0_0.5px_1px_rgba(0,0,0,0.5)]" />
+            <span className="u19 bg-[#e3e4e5] shadow-[inset_0_0.5px_1px_rgba(0,0,0,0.5)]" />
           </label>
         </li>
       </ul>

@@ -10,7 +10,7 @@ export default function Laptop() {
           Siemanko!
         </p>
         <p className="p-0 font-bold text-4xl/12 md:text-6xl/20">
-          <span className="text-transparent bg-clip-text bg-[linear-gradient(var(--color-gradient))]">
+          <span className="px-1 text-transparent bg-clip-text bg-[linear-gradient(var(--color-gradient))]">
             jestem Norman
           </span>
            👋
@@ -20,28 +20,28 @@ export default function Laptop() {
 
         {/* Screen */}
         <div className="
-            u1 relative mx-auto
-            h-80 w-45 p-2 pb-6
-            rounded-3xl
+          u1 relative mx-auto
+          h-80 w-45 p-2 pb-6
+          rounded-3xl
 
-            bg-[linear-gradient(var(--color-gradient))]
-            shadow-[inset_0_0_0_2px_var(--color-g-200),inset_0_0_0_10px_#000]
+          bg-[linear-gradient(var(--color-gradient))]
+          shadow-[inset_0_0_0_2px_var(--color-g-200),inset_0_0_0_10px_#000]
 
-            [transform-style:preserve-3d] [transform-origin:50%_100%]
-            [perspective:475rem]
+          [transform-style:preserve-3d] [transform-origin:50%_100%]
+          [perspective:475rem]
 
-            after:content-['']
-            after:absolute after:bottom-[2px] after:left-[2px]
-            after:h-6 after:w-128
-            after:rounded-b-3xl
-            after:bg-[linear-gradient(to_bottom,var(--color-b-300),#0d0d0d)]
-            after:hidden
+          after:content-['']
+          after:absolute after:bottom-[2px] after:left-[2px]
+          after:h-6 after:w-128
+          after:rounded-b-3xl
+          after:bg-[linear-gradient(to_bottom,var(--color-b-300),#0d0d0d)]
+          after:hidden
 
-            md:w-130
-            md:animate-open
-            md:after:block
-            md:[transform:perspective(475rem)_rotateX(-88.5deg)]
-          ">
+          md:w-130
+          md:animate-open
+          md:after:block
+          md:[transform:perspective(475rem)_rotateX(-88.5deg)]
+        ">
           <div className="absolute top-2 left-1/2 -translate-x-1/2 h-3 w-18 rounded-b-md bg-black md:w-25" />
 
           {/* Avatar */}
@@ -60,33 +60,32 @@ export default function Laptop() {
         </div>
 
         {/* Keyboard */}
-        <div
-          className="
-            hidden relative z-[9] -mt-2
-            h-6 w-152
-            rounded-b-xl
-            border border-t-0 border-x-[2px] border-b-0 border-[#a0a3a7]
+        <div className="
+          hidden relative z-[9] -mt-2
+          h-6 w-152
+          rounded-b-xl
+          border border-t-0 border-x-[2px] border-b-0 border-[#a0a3a7]
 
-            bg-[radial-gradient(circle_at_center,var(--color-g-100)_85%,#a9abac_100%)]
-            shadow-[inset_0_-2px_8px_0_#6c7074]
+          bg-[radial-gradient(circle_at_center,var(--color-g-100)_85%,#a9abac_100%)]
+          shadow-[inset_0_-2px_8px_0_#6c7074]
 
-            after:content-['']
-            after:absolute after:top-0 after:left-1/2
-            after:-ml-15
-            after:h-2 after:w-30
-            after:rounded-b-xl
-            after:bg-(var(--color-g-100))
-            after:shadow-[inset_0_0_4px_2px_#babdbf]
+          after:content-['']
+          after:absolute after:top-0 after:left-1/2
+          after:-ml-15
+          after:h-2 after:w-30
+          after:rounded-b-xl
+          after:bg-(var(--color-g-100))
+          after:shadow-[inset_0_0_4px_2px_#babdbf]
 
-            before:content-['']
-            before:absolute before:bottom-[-2px] before:left-1/2
-            before:-ml-2
-            before:h-[2px] before:w-10
-            before:rounded-b-sm
-            before:shadow-[-270px_0_var(--color-b-300),250px_0_var(--color-b-300)]
+          before:content-['']
+          before:absolute before:bottom-[-2px] before:left-1/2
+          before:-ml-2
+          before:h-[2px] before:w-10
+          before:rounded-b-sm
+          before:shadow-[-270px_0_var(--color-b-300),250px_0_var(--color-b-300)]
 
-            md:block
-          " />
+          md:block
+        " />
       </div>
 
       {/* Paragraph */}

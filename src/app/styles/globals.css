@@ -286,6 +286,14 @@
   @apply mb-5 top-5 sticky rounded-full bg-player backdrop-blur-md self-end bottom-8;
 }
 
+@utility u18 {
+  @apply u10 w-5 h-5 inline-flex box-border items-center justify-center rounded-full cursor-pointer peer-checked:border-[1.5px] peer-checked:border-theme-button-border peer-focus:outline peer-focus:outline-[rgba(0,125,250,0.6)] peer-focus:outline-[2px] peer-focus:outline-offset-[2px];
+}
+
+@utility u19 {
+  @apply w-4 h-4 block rounded-full;
+}
+
 @layer base {
   html {
     @apply scroll-smooth;

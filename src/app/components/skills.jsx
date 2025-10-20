@@ -47,7 +47,10 @@ export default function Skills() {
 
   return (
     <div className="u15 u16 relative max-w-x">
-      <h2 ref={ref} className={`pt-11 pb-4 w-full ${slideVertical}`}>
+      <h2
+        ref={ref}
+        className={`pt-11 pb-4 w-full ${slideVertical}`}
+      >
         Moje osiągnięcia
       </h2>
 
@@ -67,7 +70,7 @@ export default function Skills() {
               key={course.id}
               className={`
                 group 
-                min-h-140 max-h-140 md:min-h-155 md:min-h-155
+                min-h-140 max-h-140 md:min-h-170 md:min-h-170
                 rounded-2xl snap-start overflow-hidden 
                 bg-element-background flex-[0_0_calc(100%-10px)] 
                 transition-opacity
@@ -84,24 +87,24 @@ export default function Skills() {
                   <h3 className={`${slideLevel}`}>{course.title}</h3>
 
                   <span className={`u12 text-lg font-bold relative ${slideLevel} group`}>
-                    <span 
-                      className="
-                        relative
-                        after:content-['']
-                        after:absolute
-                        after:left-0
-                        after:bottom-0
-                        after:h-[1px]
-                        after:bg-current
-                        after:w-full
-                        after:scale-x-0
-                        after:origin-center
-                        after:transition-transform
-                        group-hover:after:scale-x-100
-                        group-focus:after:scale-x-100
-                        group-active:after:scale-x-100
-                      "
-                    >
+                    <span className="
+                      relative
+
+                      after:content-['']
+                      after:absolute
+                      after:left-0
+                      after:bottom-0
+                      after:h-[1px]
+                      after:bg-current
+                      after:w-full
+                      after:scale-x-0
+                      after:origin-center
+                      after:transition-transform
+
+                      group-hover:after:scale-x-100
+                      group-focus:after:scale-x-100
+                      group-active:after:scale-x-100
+                    ">
                       Certyfikat
                     </span>
                     <Icon
@@ -110,10 +113,18 @@ export default function Skills() {
                       aria-hidden="true"
                       src="/assets/icons/awoMUEKk1D.svg"
                       className="
-                        fill-font-link opacity-0 transform -scale-x-100 transition-all
-                        group-hover:scale-x-100 group-hover:opacity-100
-                        group-focus:scale-x-100 group-focus:opacity-100
-                        group-active:scale-x-100 group-active:opacity-100
+                        opacity-0
+                        transform
+                        -scale-x-100
+                        transition-all
+                        fill-font-link
+                        
+                        group-hover:scale-x-100
+                        group-hover:opacity-100
+                        group-focus:scale-x-100
+                        group-focus:opacity-100
+                        group-active:scale-x-100
+                        group-active:opacity-100
                       "
                     />
                   </span>
@@ -132,6 +143,7 @@ export default function Skills() {
                     ml-20 rounded-2xl 
                     border-2 border-element-border 
                     -rotate-2 transition-all 
+
                     group-hover:rotate-0 
                     group-focus:rotate-0
                     group-active:rotate-0

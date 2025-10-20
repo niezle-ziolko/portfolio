@@ -17,7 +17,7 @@ export default function Stack() {
     <div className="grid relative max-w-x justify-center items-center">
 
       {/* Icons */}
-      <div className="flex w-full absolute h-screen overflow-hidden">
+      <div className="flex w-full absolute h-screen overflow-visible">
         <div
           ref={containerRef}
           className="u15 absolute"

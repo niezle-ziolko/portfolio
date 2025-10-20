@@ -1,9 +1,5 @@
 export const sections = [
   {
-    id: "about",
-    label: "O mnie"
-  },
-  {
     id: "stack",
     label: "Umiejętności"
   },
@@ -14,6 +10,10 @@ export const sections = [
   {
     id: "projects",
     label: "Projekty"
+  },
+  {
+    id: "pricing",
+    label: "Cennik"
   },
   {
     id: "contact",
