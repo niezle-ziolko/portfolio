@@ -1,3 +1,4 @@
+import About from "components/about";
 import Stack from "components/stack";
 import Laptop from "components/laptop";
 import Skills from "components/skills";
@@ -8,6 +9,10 @@ export default function Home() {
     <div className="overflow-clip">
       <section className="bg-black">
         <Laptop />
+      </section>
+
+      <section id="about">
+        <About />
       </section>
 
       <section id="stack">

@@ -1,5 +1,9 @@
 export const sections = [
   {
+    id: "about",
+    label: "O mnie"
+  },
+  {
     id: "stack",
     label: "Umiejętności"
   },

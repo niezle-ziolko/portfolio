@@ -13,6 +13,7 @@ export default function Skills() {
   const dotsRef = useRef([]);
   const slideVertical = useAnimate(ref, "animate-up", "animate-down");
   const slideLevel = useAnimate(ref, "animate-left", "animate-right");
+  const playerAnimaton = useAnimate(ref, "animate-fade-up", "animate-fade-down");
 
   const target = 23;
   const control = 56;
@@ -155,42 +156,44 @@ export default function Skills() {
         </ul>
 
         {/* Controls */}
-        <div className="u1 u15 absolute gap-4 top-0 pointer-events-none">
-          <div className="u17 px-5 py-6 pointer-events-auto">
-            <div className="u1 h-full">
-              <ul className="flex gap-4 items-center">
-                {courses.map((course, index) => (
-                  <li
-                    key={course.id}
-                    onClick={() => {
-                      if (!finished) setActiveIndex(index);
-                    }}
-                    className={`
-                      relative h-2 rounded-full overflow-hidden transition-all duration-300
-                      ${finished ? "cursor-default" : "cursor-pointer"}
-                      ${index === activeIndex  ? "w-12 bg-element-player" : `w-2 bg-element-player ${!finished ? "hover:bg-hover-player" : ""}`}
-                    `}
-                  >
-                    <div
-                      ref={(el) => (dotsRef.current[index] = el)}
-                      className="w-0 top-0 left-0 h-full bg-white absolute rounded-full"
-                    />
-                  </li>
-                ))}
-              </ul>
+        <div className="u1 u15 absolute top-0 pointer-events-none">
+          <div className={`u1 h-full gap-2 ${playerAnimaton}`}>
+            <div className="element1 u17 px-5 py-6 pointer-events-auto">
+              <div className="u1 h-full">
+                <ul className="flex gap-4 items-center">
+                  {courses.map((course, index) => (
+                    <li
+                      key={course.id}
+                      onClick={() => {
+                        if (!finished) setActiveIndex(index);
+                      }}
+                      className={`
+                        relative h-2 rounded-full overflow-hidden transition-all duration-300
+                        ${finished ? "cursor-default" : "cursor-pointer"}
+                        ${index === activeIndex  ? "w-12 bg-element-player" : `w-2 bg-element-player ${!finished ? "hover:bg-hover-player" : ""}`}
+                      `}
+                    >
+                      <div
+                        ref={(el) => (dotsRef.current[index] = el)}
+                        className="w-0 top-0 left-0 h-full bg-white absolute rounded-full"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
 
-          <div
-            className="u1 u17 fill-white cursor-pointer pointer-events-auto hover:fill-element-player"
-            onClick={() => (finished ? handleReplay() : setIsPlaying((prev) => !prev))}
-          >
-            <Icon
-              width={control}
-              height={control}
-              alt="control"
-              src={iconSrc}
-            />
+            <div
+              className="element2 u1 u17 fill-white cursor-pointer pointer-events-auto hover:fill-element-player"
+              onClick={() => (finished ? handleReplay() : setIsPlaying((prev) => !prev))}
+            >
+              <Icon
+                width={control}
+                height={control}
+                alt="control"
+                src={iconSrc}
+              />
+            </div>
           </div>
         </div>
       </div>
