@@ -75,5 +75,12 @@ export const icons = [
     top: "95%",
     left: "5%",
     scale: 1.5
+  },
+  {
+    alt: "Cloudflare",
+    src: "/assets/icons/VCmaqPoDV8.svg",
+    top: "40%",
+    left: "80%",
+    scale: 1.2
   }
 ];

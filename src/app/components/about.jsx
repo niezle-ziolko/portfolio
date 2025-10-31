@@ -16,7 +16,7 @@ export default function About() {
         <div
           ref={ref}
           className={`
-            u15 -z-1 -top-5
+            u15 -z-1 -top-10
             blur-sm md:blur-xl relative rounded-b-full
             bg-[linear-gradient(var(--color-gradient))] 
             after:h-30 after:block after:backdrop-blur-lg after:w-full

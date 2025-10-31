@@ -23,7 +23,7 @@ export default function Stack() {
           className="u15 absolute"
           style={{
             transform: `scale(${scale})`,
-            transformOrigin: "center center",
+            transformOrigin: "center center"
           }}
         >
           {icons.map((icon, i) => (
@@ -43,7 +43,7 @@ export default function Stack() {
               style={{
                 top: icon.top,
                 left: icon.left,
-                transform: `translate(-50%, -50%) scale(${icon.scale})`,
+                transform: `translate(-50%, -50%) scale(${icon.scale})`
               }}
             />
           ))}

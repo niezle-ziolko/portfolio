@@ -114,16 +114,21 @@ export default function Skills() {
                       aria-hidden="true"
                       src="/assets/icons/awoMUEKk1D.svg"
                       className="
+                        -left-4
+                        relative
                         opacity-0
                         transform
                         -scale-x-100
                         transition-all
                         fill-font-link
                         
+                        group-hover:left-0
                         group-hover:scale-x-100
                         group-hover:opacity-100
+                        group-focus:left-0
                         group-focus:scale-x-100
                         group-focus:opacity-100
+                        group-active:left-0
                         group-active:scale-x-100
                         group-active:opacity-100
                       "
