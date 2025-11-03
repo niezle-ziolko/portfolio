@@ -4,11 +4,11 @@ export const sections = [
     label: "O mnie"
   },
   {
-    id: "stack",
+    id: "skills",
     label: "Umiejętności"
   },
   {
-    id: "skills",
+    id: "certificates",
     label: "Osiągnięcia"
   },
   {

@@ -1,8 +1,8 @@
 import About from "components/about";
-import Stack from "components/stack";
-import Laptop from "components/laptop";
 import Skills from "components/skills";
+import Laptop from "components/laptop";
 import Projects from "components/projects";
+import Certificates from "components/certificates";
 
 export default function Home() {
   return (
@@ -15,12 +15,12 @@ export default function Home() {
         <About />
       </section>
 
-      <section id="stack">
-        <Stack />
-      </section>
-
       <section id="skills">
         <Skills />
+      </section>
+
+      <section id="certificates">
+        <Certificates />
       </section>
 
       <section id="projects">
