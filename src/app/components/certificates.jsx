@@ -13,10 +13,9 @@ export default function Certificates() {
   const dotsRef = useRef([]);
   const slideVertical = useAnimate(ref, "animate-up", "animate-down");
   const slideLevel = useAnimate(ref, "animate-left", "animate-right");
-  const playerCircle = useAnimate(ref, "animate-player-circle", "animate-fade-down");
-  const slideOpacity = useAnimate(ref, "animate-slide-opacity", "animate-fade-down");
-  const animateSildes = useAnimate(ref, "animate-slides", "animate-fade-down");
-  const buttonOpacity = useAnimate(ref, "animate-button-opacity", "animate-fade-down");
+  const circleOpacity = useAnimate(ref, "animate-circle-show", "animate-circle-hidden");
+  const slideOpacity = useAnimate(ref, "animate-slide-show", "animate-slide-hidden");
+  const buttonOpacity = useAnimate(ref, "animate-button-show", "animate-button-hidden");
 
   const target = 23;
   const control = 56;
@@ -165,8 +164,8 @@ export default function Certificates() {
 
         {/* Controls */}
         <div className="u1 u15 absolute top-0 pointer-events-none">
-          <div className={`u1 h-full gap-2 ${playerCircle}`}>
-            <div className={`u17 px-5 py-6 pointer-events-auto ${animateSildes}`}>
+          <div className="u1 h-full gap-2">
+            <div className={`u17 z-10 px-5 py-6 pointer-events-auto ${circleOpacity}`}>
               <div className={`u1 h-full delay-1000 ${slideOpacity} max-w-`}>
                 <ul className="flex gap-4 items-center">
                   {courses.map((course, index) => (
@@ -192,7 +191,7 @@ export default function Certificates() {
             </div>
 
             <div
-              className={`u1 u17 fill-white cursor-pointer pointer-events-auto hover:fill-element-player ${buttonOpacity}`}
+              className={`u1 u17 z-1 fill-white cursor-pointer pointer-events-auto hover:fill-element-player ${buttonOpacity}`}
               onClick={() => (finished ? handleReplay() : setIsPlaying((prev) => !prev))}
             >
               <Icon
@@ -200,6 +199,7 @@ export default function Certificates() {
                 height={control}
                 alt="control"
                 src={iconSrc}
+                className={`${slideOpacity}`}
               />
             </div>
           </div>

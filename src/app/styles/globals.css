@@ -96,34 +96,40 @@
   --animate-backlight-exit: backlightExit 0.7s ease-out forwards;
 
   /* Slider animate */
-  --animate-player-circle: circle 1s forwards;
-  --animate-slides: slides 2s forwards;
-  --animate-slide-opacity: slideOpacity 3s ease-in-out;
-  --animate-button-opacity: slideOpacity 1s ease-in-out;
-  --animate-fade-down: fadeDownScale 1s ease-out both;
+  --animate-circle-show: circleShow .75s forwards;
+  --animate-circle-hidden: circleHidden .75s forwards;
+  --animate-slide-show: slideShow 1s ease-in-out;
+  --animate-slide-hidden: slideHidden .25s forwards;
+  --animate-button-show: buttonShow 1s ease-in-out;
+  --animate-button-hidden: buttonHidden .5s forwards;
   --animate-fill-progress: fillProgress 10s linear forwards;
 
   --animate-interference: interference 0.2s infinite alternate;
 
-  @keyframes circle {
+  @keyframes circleShow {
     from {
-      width: 35px;
+      bottom: 0;
+      width: 105px;
+      border: 2rem solid var(--color-font-link);
     }
     to {
       width: 100%;
+      bottom: 2rem;
+      border: 0px solid var(--color-font-link);
     }
   }
 
-  @keyframes slides {
+  @keyframes circleHidden {
     from {
       width: 100%;
     }
     to {
-      width: auto;
+      width: 0;
+      padding-inline: 0;
     }
   }
 
-  @keyframes slideOpacity {
+  @keyframes slideShow {
     from {
       opacity: 0;
     }
@@ -132,12 +138,34 @@
     }
   }
 
-  @keyframes buttonOpacity {
+  @keyframes slideHidden {
     from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes buttonShow {
+    from {
+      transform: translateX(-65px);
       opacity: 0;
     }
     to {
+      transform: translateX(0px);
       opacity: 1;
+    }
+  }
+
+  @keyframes buttonHidden {
+    from {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-65px);
+      opacity: 0;
     }
   }
   
@@ -264,21 +292,6 @@
     }
   }
 
-  @keyframes fadeDownScale {
-    0% {
-      transform: translateY(0) scale(1);
-      opacity: 1;
-    }
-    50% {
-      transform: translateY(20px) scale(0.8);
-      opacity: 0.5;
-    }
-    100% {
-      transform: translateY(100%) scale(0.5);
-      opacity: 0;
-    }
-  }
-
   @keyframes fillProgress {
     from {
       width: 0%;
@@ -397,7 +410,7 @@
   }
 
   p {
-    @apply p-5 md:p-0 text-base md:text-2xl font-bold leading-none text-font-third font-(family-name:--primary-font-family);
+    @apply p-5 md:p-0 text-base/7 md:text-2xl/7 font-bold leading-none text-font-third font-(family-name:--primary-font-family);
   }
 
   em {
