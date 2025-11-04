@@ -120,10 +120,13 @@
   }
 
   @keyframes circleHidden {
-    from {
+    0% {
       width: 100%;
     }
-    to {
+    50% {
+      width: 55px;
+    }
+    100% {
       width: 0;
       padding-inline: 0;
     }
