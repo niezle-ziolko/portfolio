@@ -25,7 +25,7 @@ export default function Laptop() {
           rounded-3xl
 
           bg-[linear-gradient(var(--color-gradient))]
-          shadow-[inset_0_0_0_2px_var(--color-g-200),inset_0_0_0_10px_#000]
+          shadow-[inset_0_0_0_2px_var(--color-g-200),inset_0_0_0_15px_#000]
 
           [transform-style:preserve-3d] [transform-origin:50%_100%]
           [perspective:475rem]
@@ -89,7 +89,7 @@ export default function Laptop() {
       </div>
 
       {/* Paragraph */}
-      <p className="py-5 text-lg/6 md:text-2xl/8 text-white [filter:drop-shadow(0_0_1px_#fff)_drop-shadow(0_0_10px_#fff)]">Tworzę nowoczesne aplikacje webowe i strony oparte o WordPress.</p>
+      <p className="py-5 text-lg/6 md:text-2xl/8 text-white [filter:drop-shadow(0_0_1px_#fff)_drop-shadow(0_0_20px_#fff)]">Tworzę nowoczesne aplikacje webowe i strony oparte o WordPress.</p>
       
     </div>
   );

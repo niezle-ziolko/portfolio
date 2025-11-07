@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -48,6 +48,20 @@ export default function Certificates() {
   if (isPlaying) iconSrc = "/assets/icons/fyxToZ1EvX.svg";
   else if (finished) iconSrc = "/assets/icons/phEO9jcTzd.svg";
 
+  const listRef = useRef(null);
+
+  useEffect(() => {
+    const list = listRef.current;
+    const activeSlide = list?.children[activeIndex];
+    if (list && activeSlide) {
+      const offset =
+        activeSlide.offsetLeft -
+        list.clientWidth / 2 +
+        activeSlide.clientWidth / 2;
+      list.scrollTo({ left: offset, behavior: "smooth" });
+    }
+  }, [activeIndex]);
+
   return (
     <div className="u15 u16 relative max-w-x">
       <h2
@@ -89,7 +103,7 @@ export default function Certificates() {
                 <div className="group u16 p-10 gap-3 w-full">
                   <h3 className={`${slideLevel}`}>{course.title}</h3>
 
-                  <span className={`u12 text-lg font-bold relative ${slideLevel} group`}>
+                  <span className={`u12 group text-lg font-bold relative ${slideLevel}`}>
                     <span className="
                       relative
 
@@ -147,9 +161,8 @@ export default function Certificates() {
                   alt={course.title}
                   blurDataURL="/assets/images/NZpLlUrqON.webp"
                   className="
-                    w-[1135px] h-[675px]
                     ml-20 rounded-2xl 
-                    border-2 border-element-border 
+                    border-2 border-font-secondary/20 
                     -rotate-2 transition-all 
 
                     group-hover:rotate-0 

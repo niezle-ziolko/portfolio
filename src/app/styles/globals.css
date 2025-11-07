@@ -13,6 +13,7 @@
   --color-header-keyline: oklch(0.3802 0.005 286.16 / 70%);
 
   --color-element-background: oklch(0 0 0);
+  --color-element-border: oklch(1 0 0);
 
   --color-theme-button-background: oklch(0.3802 0.005 286.16 / 70%);
   --color-theme-button-border: oklch(0.9184 0.0017 247.84);
@@ -31,7 +32,7 @@
   --color-header-keyline: oklch(0.2316 0.0038 286.1 / 20%);
 
   --color-element-background: oklch(1 0 0);
-  --color-element-border: oklch(0.8945 0 0 / 50%);
+  --color-element-border: transparent;
 
   --color-theme-button-background: oklch(0.9324 0.0067 286.27 / 70.2%);
   --color-theme-button-border: oklch(0.296 0.0046 325.69);
@@ -99,8 +100,8 @@
   --animate-slider-show: sliderShow .75s forwards;
   --animate-circle-show: circleShow .75s forwards;
   --animate-circle-hidden: circleHidden .75s forwards;
-  --animate-slide-show: slideShow 1s ease-in-out;
-  --animate-slide-hidden: slideHidden .25s forwards;
+  --animate-slide-show: slideShow 1.25s ease-in-out;
+  --animate-slide-hidden: slideHidden .15s forwards;
   --animate-button-show: buttonShow .5s ease-in-out;
   --animate-button-hidden: buttonHidden .25s forwards;
   --animate-fill-progress: fillProgress 10s linear forwards;

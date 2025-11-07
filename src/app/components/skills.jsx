@@ -36,8 +36,8 @@ export default function Skills() {
               className="
                 p-2 border absolute
                 bg-element-background
-                rounded-2xl border-element-border
-                shadow-[2px_2px_4px_rgba(0,0,0,0.1),_inset_0_1px_1px_rgba(0,0,0,0.05)]
+                rounded-2xl border-element-border/20
+                shadow-[2px_2px_4px_rgba(0,0,0,0.1)]
                 scale-70 md:scale-100
               "
               style={{

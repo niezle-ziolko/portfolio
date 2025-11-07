@@ -13,7 +13,7 @@
 		"cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts"
 	},
 	"dependencies": {
-		"@opennextjs/cloudflare": "^1.11.0",
+		"@opennextjs/cloudflare": "^1.11.1",
 		"cssnano": "^7.1.2",
 		"next": "15.4.6",
 		"react": "19.1.0",
@@ -22,12 +22,12 @@
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.3.1",
-		"@tailwindcss/postcss": "^4.1.16",
+		"@tailwindcss/postcss": "^4.1.17",
 		"@types/react": "19.1.13",
 		"eslint": "^9.39.1",
 		"eslint-config-next": "15.4.6",
-		"tailwindcss": "^4.1.16",
-		"wrangler": "^4.45.4"
+		"tailwindcss": "^4.1.17",
+		"wrangler": "^4.46.0"
 	},
 	"packageManager": "pnpm@10.20.0+sha512.cf9998222162dd85864d0a8102e7892e7ba4ceadebbf5a31f9c2fce48dfce317a9c53b9f6464d1ef9042cba2e02ae02a9f7c143a2b438cd93c91840f0192b9dd"
 }
