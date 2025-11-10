@@ -1,16 +1,17 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import Icon from "lib/icon";
-import { useAnimate } from "lib/animate";
 import { courses } from "data/courses";
+import { useAnimate } from "lib/animate";
 import { useCarousel, useProgressDots } from "lib/carousel";
 
 export default function Certificates() {
   const ref = useRef(null);
   const dotsRef = useRef([]);
+
   const slideVertical = useAnimate(ref, "animate-up", "animate-down");
   const slideLevel = useAnimate(ref, "animate-left", "animate-right");
   const circleOpacity = useAnimate(ref, "animate-circle-show", "animate-circle-hidden");
@@ -48,26 +49,9 @@ export default function Certificates() {
   if (isPlaying) iconSrc = "/assets/icons/fyxToZ1EvX.svg";
   else if (finished) iconSrc = "/assets/icons/phEO9jcTzd.svg";
 
-  const listRef = useRef(null);
-
-  useEffect(() => {
-    const list = listRef.current;
-    const activeSlide = list?.children[activeIndex];
-    if (list && activeSlide) {
-      const offset =
-        activeSlide.offsetLeft -
-        list.clientWidth / 2 +
-        activeSlide.clientWidth / 2;
-      list.scrollTo({ left: offset, behavior: "smooth" });
-    }
-  }, [activeIndex]);
-
   return (
     <div className="u15 u16 relative max-w-x">
-      <h2
-        ref={ref}
-        className={`pt-11 pb-4 w-full ${slideVertical}`}
-      >
+      <h2 ref={ref} className={`pt-11 pb-4 w-full ${slideVertical}`}>
         Moje osiągnięcia
       </h2>
 
@@ -76,21 +60,18 @@ export default function Certificates() {
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-
         {/* Slides */}
         <ul
-          className="flex snap-x snap-mandatory transition-transform duration-500"
-          style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+          className="flex mx-4 md:mx-0 gap-4 snap-x snap-mandatory transition-transform duration-500"
+          style={{ transform: `translateX(calc(-${activeIndex * 100}% - ${activeIndex * 1}rem))` }}
         >
           {courses.map((course, index) => (
             <li
               key={course.id}
               className={`
-                group 
-                min-h-140 max-h-140 md:min-h-170 md:min-h-170
-                rounded-2xl snap-start overflow-hidden 
-                bg-element-background flex-[0_0_calc(100%-10px)] 
-                transition-opacity
+                group rounded-2xl snap-start overflow-hidden 
+                min-h-125 max-h-125 md:min-h-170 md:min-h-170 
+                bg-element-background flex-[0_0_100%] transition-opacity
                 ${index === activeIndex ? "opacity-100 cursor-pointer" : "opacity-30 pointer-events-none cursor-default"}
               `}
             >
@@ -98,32 +79,35 @@ export default function Certificates() {
                 target="_blank"
                 rel="noopener noreferrer"
                 href={`${course.certificate}`}
-                className="u16 h-full box-border items-center"
+                className="u16 pb-12 h-full box-border items-center justify-between"
               >
                 <div className="group u16 p-10 gap-3 w-full">
                   <h3 className={`${slideLevel}`}>{course.title}</h3>
 
                   <span className={`u12 group text-lg font-bold relative ${slideLevel}`}>
-                    <span className="
-                      relative
+                    <span
+                      className="
+                        relative
 
-                      after:content-['']
-                      after:absolute
-                      after:left-0
-                      after:bottom-0
-                      after:h-[1px]
-                      after:bg-current
-                      after:w-full
-                      after:scale-x-0
-                      after:origin-center
-                      after:transition-transform
+                        after:content-['']
+                        after:absolute
+                        after:left-0
+                        after:bottom-0
+                        after:h-[1px]
+                        after:bg-current
+                        after:w-full
+                        after:scale-x-0
+                        after:origin-center
+                        after:transition-transform
 
-                      group-hover:after:scale-x-100
-                      group-focus:after:scale-x-100
-                      group-active:after:scale-x-100
-                    ">
+                        group-hover:after:scale-x-100
+                        group-focus:after:scale-x-100
+                        group-active:after:scale-x-100
+                      "
+                    >
                       Certyfikat
                     </span>
+
                     <Icon
                       width={target}
                       height={target}
@@ -161,9 +145,10 @@ export default function Certificates() {
                   alt={course.title}
                   blurDataURL="/assets/images/NZpLlUrqON.webp"
                   className="
+                    w-[2192px] h-[1305px]
                     ml-20 rounded-2xl 
-                    border-2 border-font-secondary/20 
-                    -rotate-2 transition-all 
+                    border-2 bg-font-secondary/30
+                    -rotate-2 transition-all
 
                     group-hover:rotate-0 
                     group-focus:rotate-0
@@ -184,9 +169,7 @@ export default function Certificates() {
                   {courses.map((course, index) => (
                     <li
                       key={course.id}
-                      onClick={() => {
-                        if (!finished) setActiveIndex(index);
-                      }}
+                      onClick={() => { if (!finished) setActiveIndex(index); }}
                       className={`
                         relative h-2 rounded-full overflow-hidden transition-all duration-300
                         ${finished ? "cursor-default" : "cursor-pointer"}
@@ -212,7 +195,7 @@ export default function Certificates() {
                 height={control}
                 alt="control"
                 src={iconSrc}
-                className={`${slideOpacity}`}
+                className="animate-slide-show"
               />
             </div>
           </div>
