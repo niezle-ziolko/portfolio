@@ -70,7 +70,7 @@ export default function Certificates() {
               key={course.id}
               className={`
                 group rounded-2xl snap-start overflow-hidden 
-                min-h-125 max-h-125 md:min-h-170 md:min-h-170 
+                min-h-125 max-h-125 md:min-h-150 md:max-h-150 
                 bg-element-background flex-[0_0_100%] transition-opacity
                 ${index === activeIndex ? "opacity-100 cursor-pointer" : "opacity-30 pointer-events-none cursor-default"}
               `}
@@ -85,26 +85,7 @@ export default function Certificates() {
                   <h3 className={`${slideLevel}`}>{course.title}</h3>
 
                   <span className={`u12 group text-lg font-bold relative ${slideLevel}`}>
-                    <span
-                      className="
-                        relative
-
-                        after:content-['']
-                        after:absolute
-                        after:left-0
-                        after:bottom-0
-                        after:h-[1px]
-                        after:bg-current
-                        after:w-full
-                        after:scale-x-0
-                        after:origin-center
-                        after:transition-transform
-
-                        group-hover:after:scale-x-100
-                        group-focus:after:scale-x-100
-                        group-active:after:scale-x-100
-                      "
-                    >
+                    <span className="u20">
                       Certyfikat
                     </span>
 
@@ -113,25 +94,7 @@ export default function Certificates() {
                       height={target}
                       aria-hidden="true"
                       src="/assets/icons/awoMUEKk1D.svg"
-                      className="
-                        -left-4
-                        relative
-                        opacity-0
-                        transform
-                        -scale-x-100
-                        transition-all
-                        fill-font-link
-                        
-                        group-hover:left-0
-                        group-hover:scale-x-100
-                        group-hover:opacity-100
-                        group-focus:left-0
-                        group-focus:scale-x-100
-                        group-focus:opacity-100
-                        group-active:left-0
-                        group-active:scale-x-100
-                        group-active:opacity-100
-                      "
+                      className="u21"
                     />
                   </span>
                 </div>

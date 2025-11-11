@@ -46,10 +46,7 @@ export const useCarousel = ({ length, intervalTime = 3000 }) => {
     (ms) => {
       clearTimer();
 
-      const time = Math.max(
-        0,
-        Math.round(typeof ms === "number" ? ms : remainingRef.current || intervalTime)
-      );
+      const time = Math.max(0, Math.round(typeof ms === "number" ? ms : remainingRef.current || intervalTime));
 
       remainingRef.current = time;
       setRemainingMs(time);
@@ -74,9 +71,7 @@ export const useCarousel = ({ length, intervalTime = 3000 }) => {
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
 
-      const rem = deadlineRef.current
-        ? Math.max(0, Math.round(deadlineRef.current - Date.now()))
-        : remainingRef.current;
+      const rem = deadlineRef.current ? Math.max(0, Math.round(deadlineRef.current - Date.now())) : remainingRef.current;
 
       remainingRef.current = rem;
       setRemainingMs(rem);
@@ -137,15 +132,15 @@ export const useCarousel = ({ length, intervalTime = 3000 }) => {
         const entry = entries[0];
         if (
           entry.isIntersecting &&
-          entry.intersectionRatio >= 0.75 &&
+          entry.intersectionRatio >= 0.25 &&
           !finished &&
           userCanReplay
         ) {
           setIsPlaying(true);
-        } else if (entry.intersectionRatio < 0.75) {
+        } else if (entry.intersectionRatio < 0.25) {
           setIsPlaying(false);
         };
-      }, { threshold: [0.5, 0.75] }
+      }, { threshold: [0.25] }
     );
 
     observer.observe(skillsSection);
