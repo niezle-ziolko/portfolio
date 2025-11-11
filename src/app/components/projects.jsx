@@ -30,10 +30,10 @@ export default function Projects() {
   } = useCarousel({ length: projects.length, intervalTime });
 
   return (
-    <div className="u15 u16 relative max-w-x">
+    <div className="u22">
       <h2
         ref={ref}
-        className={`pt-11 pb-4 w-full ${slideVertical}`}
+        className={`u23 ${slideVertical}`}
       >
         Moje projekty
       </h2>
@@ -46,21 +46,19 @@ export default function Projects() {
 
         {/* Slides */}
         <ul
-          className="flex snap-x snap-mandatory transition-transform duration-500"
+          className="u24"
           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
         >
           {projects.map((project) => (
             <li
               key={project.id}
-              className={` 
+              className={`
+                u25
                 min-h-140 max-h-140 md:min-h-170 md:min-h-170
-                rounded-2xl snap-start overflow-hidden 
-                bg-element-background flex-[0_0_calc(100%-10px)] 
-                transition-opacity
               `}
             >
               
-                <div className="u16 p-10 gap-3 w-full">
+                <div className="u26">
                   <Icon
                     width={100}
                     height={100}
@@ -74,7 +72,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     href={`${project.link}`}
-                    className="u16 h-full box-border items-left"
+                    className="u16 w-min h-full box-border items-left"
                   >
                     <span className={`u12 group text-lg font-bold relative`}>
                       <span className="u20">

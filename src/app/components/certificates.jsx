@@ -50,8 +50,8 @@ export default function Certificates() {
   else if (finished) iconSrc = "/assets/icons/phEO9jcTzd.svg";
 
   return (
-    <div className="u15 u16 relative max-w-x">
-      <h2 ref={ref} className={`pt-11 pb-4 w-full ${slideVertical}`}>
+    <div className="u22">
+      <h2 ref={ref} className={`u23 ${slideVertical}`}>
         Moje osiągnięcia
       </h2>
 
@@ -62,16 +62,15 @@ export default function Certificates() {
       >
         {/* Slides */}
         <ul
-          className="flex mx-4 md:mx-0 gap-4 snap-x snap-mandatory transition-transform duration-500"
+          className="u24 mx-4 md:mx-0 gap-4"
           style={{ transform: `translateX(calc(-${activeIndex * 100}% - ${activeIndex * 1}rem))` }}
         >
           {courses.map((course, index) => (
             <li
               key={course.id}
               className={`
-                group rounded-2xl snap-start overflow-hidden 
-                min-h-125 max-h-125 md:min-h-150 md:max-h-150 
-                bg-element-background flex-[0_0_100%] transition-opacity
+                group u25
+                min-h-135 max-h-135 md:min-h-150 md:max-h-150 
                 ${index === activeIndex ? "opacity-100 cursor-pointer" : "opacity-30 pointer-events-none cursor-default"}
               `}
             >
@@ -79,12 +78,12 @@ export default function Certificates() {
                 target="_blank"
                 rel="noopener noreferrer"
                 href={`${course.certificate}`}
-                className="u16 pb-12 h-full box-border items-center justify-between"
+                className="u16 pb-17 h-full box-border items-center justify-between"
               >
-                <div className="group u16 p-10 gap-3 w-full">
+                <div className="u26">
                   <h3 className={`${slideLevel}`}>{course.title}</h3>
 
-                  <span className={`u12 group text-lg font-bold relative ${slideLevel}`}>
+                  <span className={`u12 text-lg font-bold relative ${slideLevel}`}>
                     <span className="u20">
                       Certyfikat
                     </span>
@@ -136,7 +135,9 @@ export default function Certificates() {
                       className={`
                         relative h-2 rounded-full overflow-hidden transition-all duration-300
                         ${finished ? "cursor-default" : "cursor-pointer"}
-                        ${index === activeIndex  ? "w-12 bg-element-player" : `w-2 bg-element-player ${!finished ? "hover:bg-hover-player" : ""}`}
+                        ${index === activeIndex  ? "w-12 bg-element-player"
+                         : `w-2 bg-element-player ${!finished ? "hover:bg-hover-player" : ""}
+                        `}
                       `}
                     >
                       <div

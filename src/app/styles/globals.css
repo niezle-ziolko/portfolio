@@ -460,6 +460,26 @@
     group-active:opacity-100;
 }
 
+@utility u22 {
+  @apply u15 u16 relative max-w-x;
+}
+
+@utility u23 {
+  @apply pt-11 pb-4 w-full;
+}
+
+@utility u24 {
+  @apply flex snap-x snap-mandatory transition-transform duration-500;
+}
+
+@utility u25 {
+  @apply rounded-2xl snap-start overflow-hidden bg-element-background flex-[0_0_100%] transition-opacity;
+}
+
+@utility u26 {
+  @apply u16 p-10 pt-15 md:pt-10 gap-3 w-full;
+}
+
 @layer base {
   html {
     @apply scroll-smooth;
