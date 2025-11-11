@@ -58,45 +58,45 @@ export default function Projects() {
               `}
             >
               
-                <div className="u26">
-                  <Icon
-                    width={100}
-                    height={100}
-                    aria-hidden="true"
-                    src={project.favicon}
-                  />
-
-                  <h3>{project.name}</h3>
-
-                  <Link
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={`${project.link}`}
-                    className="u16 w-min h-full box-border items-left"
-                  >
-                    <span className={`u12 group text-lg font-bold relative`}>
-                      <span className="u20">
-                        Link
-                      </span>
-
-                      <Icon
-                        width={target}
-                        height={target}
-                        aria-hidden="true"
-                        src="/assets/icons/awoMUEKk1D.svg"
-                        className="u21"
-                      />
-                    </span>
-                  </Link>
-                </div>
-
+              <div className="u26">
                 <Icon
-                  width={32}
-                  height={32}
+                  width={100}
+                  height={100}
                   aria-hidden="true"
-                  src="/assets/icons/github.svg"
-                  className="fill-font-secondary"
+                  src={project.favicon}
                 />
+
+                <h3>{project.name}</h3>
+
+                <Link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={`${project.link}`}
+                  className="u16 w-min h-full box-border items-left"
+                >
+                  <span className={"u12 group text-lg font-bold relative"}>
+                    <span className="u20">
+                        Link
+                    </span>
+
+                    <Icon
+                      width={target}
+                      height={target}
+                      aria-hidden="true"
+                      src="/assets/icons/awoMUEKk1D.svg"
+                      className="u21"
+                    />
+                  </span>
+                </Link>
+              </div>
+
+              <Icon
+                width={32}
+                height={32}
+                aria-hidden="true"
+                src="/assets/icons/github.svg"
+                className="fill-font-secondary"
+              />
             </li>
           ))}
         </ul>

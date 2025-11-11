@@ -135,8 +135,7 @@ export default function Certificates() {
                       className={`
                         relative h-2 rounded-full overflow-hidden transition-all duration-300
                         ${finished ? "cursor-default" : "cursor-pointer"}
-                        ${index === activeIndex  ? "w-12 bg-element-player"
-                         : `w-2 bg-element-player ${!finished ? "hover:bg-hover-player" : ""}
+                        ${index === activeIndex  ? "w-12 bg-element-player" : `w-2 bg-element-player ${!finished ? "hover:bg-hover-player" : ""}
                         `}
                       `}
                     >
