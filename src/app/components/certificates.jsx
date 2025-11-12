@@ -107,7 +107,8 @@ export default function Certificates() {
                   alt={course.title}
                   blurDataURL="/assets/images/NZpLlUrqON.webp"
                   className="
-                    w-[2192px] h-[1305px]
+                    w-[1135px]
+                    h-[270px] md:h-[675px]
                     ml-20 rounded-2xl 
                     border-2 bg-font-secondary/30
                     -rotate-2 transition-all
