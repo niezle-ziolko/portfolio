@@ -15,9 +15,9 @@
 	"dependencies": {
 		"@opennextjs/cloudflare": "^1.13.1",
 		"cssnano": "^7.1.2",
-		"next": "15.4.6",
-		"react": "19.1.0",
-		"react-dom": "19.1.0",
+		"next": "16.0.3",
+		"react": "19.2.0",
+		"react-dom": "19.2.0",
 		"swr": "^2.3.6"
 	},
 	"devDependencies": {
@@ -25,9 +25,9 @@
 		"@tailwindcss/postcss": "^4.1.17",
 		"@types/react": "19.1.13",
 		"eslint": "^9.39.1",
-		"eslint-config-next": "15.4.6",
+		"eslint-config-next": "16.0.3",
 		"tailwindcss": "^4.1.17",
 		"wrangler": "^4.49.1"
 	},
-	"packageManager": "pnpm@10.21.0"
+	"packageManager": "pnpm@10.23.0+sha512.21c4e5698002ade97e4efe8b8b4a89a8de3c85a37919f957e7a0f30f38fbc5bbdd05980ffe29179b2fb6e6e691242e098d945d1601772cad0fef5fb6411e2a4b"
 }

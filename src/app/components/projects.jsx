@@ -153,20 +153,24 @@ export default function Projects() {
           ))}
         </ul>
 
-        <div className="flex justify-end">
-          <Icon
-            width={control}
-            height={control}
-            alt="control"
-            src="assets/icons/left.svg"
-          />
+        <div className="flex mt-16 gap-6 justify-end">
+          <button className="u27 rotate-180">
+            <Icon
+              width={control}
+              height={control}
+              alt="control"
+              src="assets/icons/rb38LYfmmJ.svg"
+            />
+          </button>
 
-          <Icon
-            width={control}
-            height={control}
-            alt="control"
-            src="assets/icons/left.svg"
-          />
+          <button className="u27">
+            <Icon
+              width={control}
+              height={control}
+              alt="control"
+              src="assets/icons/rb38LYfmmJ.svg"
+            />
+          </button>
         </div>
       </div>
     </div>

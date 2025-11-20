@@ -480,6 +480,10 @@
   @apply u16 p-10 md:pt-10 gap-3 w-full;
 }
 
+@utility u27 {
+  @apply h-11 rounded-full bg-player backdrop-blur-md fill-element-player;
+}
+
 @layer base {
   html {
     @apply scroll-smooth;
