@@ -461,11 +461,11 @@
 }
 
 @utility u22 {
-  @apply u15 u16 relative max-w-x;
+  @apply u16 w-full relative max-w-x;
 }
 
 @utility u23 {
-  @apply pt-11 pb-4 w-full;
+  @apply pt-16 pb-4 w-full;
 }
 
 @utility u24 {
@@ -477,7 +477,7 @@
 }
 
 @utility u26 {
-  @apply u16 p-10 pt-15 md:pt-10 gap-3 w-full;
+  @apply u16 p-10 md:pt-10 gap-3 w-full;
 }
 
 @layer base {

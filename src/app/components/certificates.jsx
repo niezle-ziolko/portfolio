@@ -18,7 +18,7 @@ export default function Certificates() {
   const slideOpacity = useAnimate(ref, "animate-slide-show", "animate-slide-hidden");
   const buttonOpacity = useAnimate(ref, "animate-button-show", "animate-button-hidden");
 
-  const target = 23;
+  const arrow = 20;
   const control = 56;
   const intervalTime = 10000;
 
@@ -50,7 +50,7 @@ export default function Certificates() {
   else if (finished) iconSrc = "/assets/icons/phEO9jcTzd.svg";
 
   return (
-    <div className="u22">
+    <div className="u22 h-full">
       <h2 ref={ref} className={`u23 ${slideVertical}`}>
         Moje osiągnięcia
       </h2>
@@ -89,8 +89,8 @@ export default function Certificates() {
                     </span>
 
                     <Icon
-                      width={target}
-                      height={target}
+                      width={arrow}
+                      height={arrow}
                       aria-hidden="true"
                       src="/assets/icons/awoMUEKk1D.svg"
                       className="u21"

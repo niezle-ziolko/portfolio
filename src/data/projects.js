@@ -1,38 +1,134 @@
+import { icons } from "./skills";
+
+const getIcon = alt => icons.find(i => i.alt === alt);
+
 export const projects = [
   {
     id: "1",
     name: "EchoVerse",
     link: "https://enigma.wgwcompany.workers.dev/",
-    favicon: "/assets/icons/favicons/echoverse.svg",
+    favicon: "/assets/icons/w6SFhIPYQF.svg",
     repository: "https://github.com/niezle-ziolko/cs50x-final-project",
-    performance: "99",
+    performance: "49",
     stack: [
-      {
-        alt: "Node",
-        src: "/assets/icons/XrJyIIncqh.svg"
-      },
-      {
-        alt: "Javascript",
-        src: "/assets/icons/2LPsqh32T3.svg"
-      }
+      getIcon("HTML"),
+      getIcon("CSS"),
+      getIcon("Javascript"),
+      getIcon("Tailwindcss"),
+      getIcon("NextJS"),
+      getIcon("GraphQL")
     ]
   },
   {
     id: "2",
     name: "EchoVerse",
     link: "https://enigma.wgwcompany.workers.dev/",
-    favicon: "/assets/icons/favicons/echoverse.svg",
+    favicon: "/assets/icons/w6SFhIPYQF.svg",
     repository: "https://github.com/niezle-ziolko/cs50x-final-project",
     performance: "99",
     stack: [
-      {
-        alt: "Node",
-        src: "/assets/icons/XrJyIIncqh.svg"
-      },
-      {
-        alt: "Javascript",
-        src: "/assets/icons/2LPsqh32T3.svg"
-      }
+      getIcon("HTML"),
+      getIcon("CSS"),
+      getIcon("Javascript"),
+      getIcon("Tailwindcss"),
+      getIcon("NextJS"),
+      getIcon("GraphQL")
+    ]
+  },
+  {
+    id: "3",
+    name: "EchoVerse",
+    link: "https://enigma.wgwcompany.workers.dev/",
+    favicon: "/assets/icons/w6SFhIPYQF.svg",
+    repository: "https://github.com/niezle-ziolko/cs50x-final-project",
+    performance: "99",
+    stack: [
+      getIcon("HTML"),
+      getIcon("CSS"),
+      getIcon("Javascript"),
+      getIcon("Tailwindcss"),
+      getIcon("NextJS"),
+      getIcon("GraphQL")
+    ]
+  },
+  {
+    id: "4",
+    name: "EchoVerse",
+    link: "https://enigma.wgwcompany.workers.dev/",
+    favicon: "/assets/icons/w6SFhIPYQF.svg",
+    repository: "https://github.com/niezle-ziolko/cs50x-final-project",
+    performance: "99",
+    stack: [
+      getIcon("HTML"),
+      getIcon("CSS"),
+      getIcon("Javascript"),
+      getIcon("Tailwindcss"),
+      getIcon("NextJS"),
+      getIcon("GraphQL")
+    ]
+  },
+  {
+    id: "5",
+    name: "EchoVerse",
+    link: "https://enigma.wgwcompany.workers.dev/",
+    favicon: "/assets/icons/w6SFhIPYQF.svg",
+    repository: "https://github.com/niezle-ziolko/cs50x-final-project",
+    performance: "99",
+    stack: [
+      getIcon("HTML"),
+      getIcon("CSS"),
+      getIcon("Javascript"),
+      getIcon("Tailwindcss"),
+      getIcon("NextJS"),
+      getIcon("GraphQL")
+    ]
+  },
+  {
+    id: "6",
+    name: "EchoVerse",
+    link: "https://enigma.wgwcompany.workers.dev/",
+    favicon: "/assets/icons/w6SFhIPYQF.svg",
+    repository: "https://github.com/niezle-ziolko/cs50x-final-project",
+    performance: "99",
+    stack: [
+      getIcon("HTML"),
+      getIcon("CSS"),
+      getIcon("Javascript"),
+      getIcon("Tailwindcss"),
+      getIcon("NextJS"),
+      getIcon("GraphQL")
+    ]
+  },
+  {
+    id: "7",
+    name: "EchoVerse",
+    link: "https://enigma.wgwcompany.workers.dev/",
+    favicon: "/assets/icons/w6SFhIPYQF.svg",
+    repository: "https://github.com/niezle-ziolko/cs50x-final-project",
+    performance: "99",
+    stack: [
+      getIcon("HTML"),
+      getIcon("CSS"),
+      getIcon("Javascript"),
+      getIcon("Tailwindcss"),
+      getIcon("NextJS"),
+      getIcon("GraphQL")
+    ]
+  },
+  {
+    id: "8",
+    name: "EchoVerse",
+    link: "https://enigma.wgwcompany.workers.dev/",
+    favicon: "/assets/icons/w6SFhIPYQF.svg",
+    repository: "https://github.com/niezle-ziolko/cs50x-final-project",
+    performance: "99",
+    stack: [
+      getIcon("HTML"),
+      getIcon("CSS"),
+      getIcon("Javascript"),
+      getIcon("Tailwindcss"),
+      getIcon("NextJS"),
+      getIcon("GraphQL")
     ]
   }
 ];

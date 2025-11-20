@@ -53,3 +53,26 @@ export function useScale(initialScale = 0.5) {
 
   return { containerRef, scale };
 };
+
+export function usePerformance(projects, duration = 1000) {
+  const [animatedPerf, setAnimatedPerf] = useState(projects.map(() => 0));
+
+  useEffect(() => {
+    const startTime = performance.now();
+
+    const animate = (time) => {
+      const elapsed = time - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      setAnimatedPerf(projects.map((project) => project.performance * progress));
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      };
+    };
+
+    requestAnimationFrame(animate);
+  }, [projects, duration]);
+
+  return animatedPerf;
+};

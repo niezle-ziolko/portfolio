@@ -132,15 +132,15 @@ export const useCarousel = ({ length, intervalTime = 3000 }) => {
         const entry = entries[0];
         if (
           entry.isIntersecting &&
-          entry.intersectionRatio >= 0.5 &&
+          entry.intersectionRatio >= 0.25 &&
           !finished &&
           userCanReplay
         ) {
           setIsPlaying(true);
-        } else if (entry.intersectionRatio < 0.5) {
+        } else if (entry.intersectionRatio < 0.25) {
           setIsPlaying(false);
         };
-      }, { threshold: [0.5] }
+      }, { threshold: [0.25] }
     );
 
     observer.observe(skillsSection);
