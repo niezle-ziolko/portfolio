@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@opennextjs/cloudflare':
         specifier: ^1.13.1
-        version: 1.13.1(wrangler@4.49.1)
+        version: 1.13.1(wrangler@4.50.0)
       cssnano:
         specifier: ^7.1.2
         version: 7.1.2(postcss@8.5.6)
@@ -46,8 +46,8 @@ importers:
         specifier: ^4.1.17
         version: 4.1.17
       wrangler:
-        specifier: ^4.49.1
-        version: 4.49.1
+        specifier: ^4.50.0
+        version: 4.50.0
 
 packages:
 
@@ -163,8 +163,8 @@ packages:
     resolution: {integrity: sha512-Qb8ypBPiQ9VemxzBbGhYacOP4mHMVFMc/L9tKjcNBRHaVcHmMAfwbRuGdnZUZWALneHcPfET5oESVzEPhN8CGA==}
     engines: {node: '>=18.0.0'}
 
-  '@aws-sdk/client-s3@3.936.0':
-    resolution: {integrity: sha512-dnzZAkJDa9tdCxhqdnh37hdizJkernoFn0rufWahziOEmf0Yv9+mLeqR4qDmsAGUMuD1jFCmPR97FaCoh10mZg==}
+  '@aws-sdk/client-s3@3.937.0':
+    resolution: {integrity: sha512-ioeNe6HSc7PxjsUQY7foSHmgesxM5KwAeUtPhIHgKx99nrM+7xYCfW4FMvHypUzz7ZOvqlCdH7CEAZ8ParBvVg==}
     engines: {node: '>=18.0.0'}
 
   '@aws-sdk/client-sqs@3.936.0':
@@ -473,8 +473,8 @@ packages:
     resolution: {integrity: sha512-+tv3z+SPp+gqTIcImN9o0hqE9xyfQjI1XD9pL6NuKjua9B1y7mNYv0S9cP+QEbA4ppVgGZEmKOvHX5G5Ei1CVA==}
     engines: {node: '>=18.0.0'}
 
-  '@cloudflare/unenv-preset@2.7.10':
-    resolution: {integrity: sha512-mvsNAiJSduC/9yxv1ZpCxwgAXgcuoDvkl8yaHjxoLpFxXy2ugc6TZK20EKgv4yO0vZhAEKwqJm+eGOzf8Oc45w==}
+  '@cloudflare/unenv-preset@2.7.11':
+    resolution: {integrity: sha512-se23f1D4PxKrMKOq+Stz+Yn7AJ9ITHcEecXo2Yjb+UgbUDCEBch1FXQC6hx6uT5fNA3kmX3mfzeZiUmpK1W9IQ==}
     peerDependencies:
       unenv: 2.0.0-rc.24
       workerd: ^1.20251106.1
@@ -2172,8 +2172,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.5.258:
-    resolution: {integrity: sha512-rHUggNV5jKQ0sSdWwlaRDkFc3/rRJIVnOSe9yR4zrR07m3ZxhP4N27Hlg8VeJGGYgFTxK5NqDmWI4DSH72vIJg==}
+  electron-to-chromium@1.5.259:
+    resolution: {integrity: sha512-I+oLXgpEJzD6Cwuwt1gYjxsDmu/S/Kd41mmLA3O+/uH2pFRO/DvOjUyGozL8j3KeLV6WyZ7ssPwELMsXCcsJAQ==}
 
   emoji-regex@10.6.0:
     resolution: {integrity: sha512-toUI84YS5YmxW219erniWD0CIVOo46xGKColeNQRgOzDorgBi1v4D71/OFzgD9GO2UGKIv1C3Sp8DAn0+j5w7A==}
@@ -3005,8 +3005,8 @@ packages:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
     engines: {node: '>=6'}
 
-  miniflare@4.20251118.0:
-    resolution: {integrity: sha512-dVO7Bhbv82karSaZ1qacN/W4My2cM9HVxzBl0I+oVX/P/a9NZASSj3kZoAkjuAvc/ytbdOckIRYpK1oLyzVXNg==}
+  miniflare@4.20251118.1:
+    resolution: {integrity: sha512-uLSAE/DvOm392fiaig4LOaatxLjM7xzIniFRG5Y3yF9IduOYLLK/pkCPQNCgKQH3ou0YJRHnTN+09LPfqYNTQQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -3885,8 +3885,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  wrangler@4.49.1:
-    resolution: {integrity: sha512-V0sMP4Gl1pYXwFastYtrcyHwxgmo0xwrnUoOj5hXhzOKunYc/YcCIRZ1ZmPO13OShkx8M0+zCymiNrXkrldj7g==}
+  wrangler@4.50.0:
+    resolution: {integrity: sha512-+nuZuHZxDdKmAyXOSrHlciGshCoAPiy5dM+t6mEohWm7HpXvTHmWQGUf/na9jjWlWJHCJYOWzkA1P5HBJqrIEA==}
     engines: {node: '>=20.0.0'}
     hasBin: true
     peerDependencies:
@@ -4225,7 +4225,7 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/client-s3@3.936.0':
+  '@aws-sdk/client-s3@3.937.0':
     dependencies:
       '@aws-crypto/sha1-browser': 5.2.0
       '@aws-crypto/sha256-browser': 5.2.0
@@ -5092,7 +5092,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/unenv-preset@2.7.10(unenv@2.0.0-rc.24)(workerd@1.20251118.0)':
+  '@cloudflare/unenv-preset@2.7.11(unenv@2.0.0-rc.24)(workerd@1.20251118.0)':
     dependencies:
       unenv: 2.0.0-rc.24
     optionalDependencies:
@@ -5577,7 +5577,7 @@ snapshots:
       '@aws-sdk/client-cloudfront': 3.398.0
       '@aws-sdk/client-dynamodb': 3.936.0
       '@aws-sdk/client-lambda': 3.936.0
-      '@aws-sdk/client-s3': 3.936.0
+      '@aws-sdk/client-s3': 3.937.0
       '@aws-sdk/client-sqs': 3.936.0
       '@node-minify/core': 8.0.6
       '@node-minify/terser': 8.0.6
@@ -5594,7 +5594,7 @@ snapshots:
       - aws-crt
       - supports-color
 
-  '@opennextjs/cloudflare@1.13.1(wrangler@4.49.1)':
+  '@opennextjs/cloudflare@1.13.1(wrangler@4.50.0)':
     dependencies:
       '@ast-grep/napi': 0.40.0
       '@dotenvx/dotenvx': 1.31.0
@@ -5603,7 +5603,7 @@ snapshots:
       enquirer: 2.4.1
       glob: 12.0.0
       ts-tqdm: 0.8.6
-      wrangler: 4.49.1
+      wrangler: 4.50.0
       yargs: 18.0.0
     transitivePeerDependencies:
       - aws-crt
@@ -6617,7 +6617,7 @@ snapshots:
     dependencies:
       baseline-browser-mapping: 2.8.30
       caniuse-lite: 1.0.30001756
-      electron-to-chromium: 1.5.258
+      electron-to-chromium: 1.5.259
       node-releases: 2.0.27
       update-browserslist-db: 1.1.4(browserslist@4.28.0)
 
@@ -6895,7 +6895,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.5.258: {}
+  electron-to-chromium@1.5.259: {}
 
   emoji-regex@10.6.0: {}
 
@@ -7881,7 +7881,7 @@ snapshots:
 
   mimic-fn@2.1.0: {}
 
-  miniflare@4.20251118.0:
+  miniflare@4.20251118.1:
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       acorn: 8.14.0
@@ -8905,13 +8905,13 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20251118.0
       '@cloudflare/workerd-windows-64': 1.20251118.0
 
-  wrangler@4.49.1:
+  wrangler@4.50.0:
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.0
-      '@cloudflare/unenv-preset': 2.7.10(unenv@2.0.0-rc.24)(workerd@1.20251118.0)
+      '@cloudflare/unenv-preset': 2.7.11(unenv@2.0.0-rc.24)(workerd@1.20251118.0)
       blake3-wasm: 2.1.5
       esbuild: 0.25.4
-      miniflare: 4.20251118.0
+      miniflare: 4.20251118.1
       path-to-regexp: 6.3.0
       unenv: 2.0.0-rc.24
       workerd: 1.20251118.0

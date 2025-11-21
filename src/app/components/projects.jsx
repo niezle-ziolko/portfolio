@@ -26,7 +26,8 @@ export default function Projects() {
     handleTouchStart,
     handleTouchEnd,
     replayKey,
-    remainingTime
+    remainingTime,
+    goToSlide,
   } = useCarousel({ length: projects.length, intervalTime });
 
   const getPerformanceColor = (perf) => {
@@ -36,12 +37,24 @@ export default function Projects() {
     return "inherit";
   };
 
+  const canGoPrev = activeIndex > 0;
+  const canGoNext = activeIndex < projects.length - 1;
+
+  const handlePrev = () => {
+    if (!canGoPrev) return;
+    setIsPlaying(false);
+    goToSlide(activeIndex - 1);
+  };
+
+  const handleNext = () => {
+    if (!canGoNext) return;
+    setIsPlaying(false);
+    goToSlide(activeIndex + 1);
+  };
+
   return (
     <div className="u22 h-auto">
-      <h2
-        ref={ref}
-        className={`u23 ${slideVertical}`}
-      >
+      <h2 ref={ref} className={`u23 ${slideVertical}`}>
         Moje projekty
       </h2>
 
@@ -50,16 +63,17 @@ export default function Projects() {
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-
         {/* Slides */}
-        <ul
-          className="u24"
-          style={{ transform: `translateX(calc(-${activeIndex * 100}% - ${activeIndex * 1}rem))` }}
-        >
+        <ul className="u24">
           {projects.map((project, index) => (
             <li
               key={project.id}
-              className="u25 max-w-100"
+              className="u25 max-w-100 transition-transform duration-500"
+              style={{
+                transform: `translateX(calc(-${activeIndex * 100}% - ${
+                  activeIndex * 1
+                }rem))`,
+              }}
             >
               <div className="u26 px-7">
                 <Icon
@@ -67,6 +81,7 @@ export default function Projects() {
                   height={90}
                   aria-hidden="true"
                   src={project.favicon}
+                  className="cursor-default"
                 />
 
                 <Link
@@ -75,10 +90,8 @@ export default function Projects() {
                   href={`${project.link}`}
                   className="u16 w-max h-full box-border items-left"
                 >
-                  <span className={"u12 group text-lg font-bold relative"}>
-                    <span className="u20 text-4xl">
-                      {project.name}
-                    </span>
+                  <span className="u12 group text-lg font-bold relative">
+                    <h3 className="u20 hover:text-font-link">{project.name}</h3>
 
                     <Icon
                       width={icon}
@@ -101,6 +114,7 @@ export default function Projects() {
                         alt={tech.alt}
                         width={icon}
                         height={icon}
+                        className="cursor-default"
                       />
                     ))}
                   </div>
@@ -110,8 +124,11 @@ export default function Projects() {
                   <span>Wydajność strony:</span>
 
                   <div className="py-2">
-                    <div className="relative w-25 h-25">
-                      <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 36 36">
+                    <div className="w-31 w-25 h-25 flex justify-center relative">
+                      <svg
+                        className="absolute top-0 left-0 w-full h-full"
+                        viewBox="0 0 36 36"
+                      >
                         <circle
                           cx="18"
                           cy="18"
@@ -141,7 +158,9 @@ export default function Projects() {
 
                       <span
                         className="absolute inset-0 flex items-center justify-center text-2xl font-mono"
-                        style={{ color: getPerformanceColor(project.performance) }}
+                        style={{
+                          color: getPerformanceColor(project.performance),
+                        }}
                       >
                         {Math.round(animatedPerf[index])}
                       </span>
@@ -153,21 +172,34 @@ export default function Projects() {
           ))}
         </ul>
 
-        <div className="flex mt-16 gap-6 justify-end">
-          <button className="u27 rotate-180">
+        {/* Controls */}
+        <div className="flex mt-16 mx-4 md:mx-0 gap-6 justify-end">
+          <button
+            className={`u27 rotate-180 ${canGoPrev ? "u28" : "u29"}`}
+            onClick={handlePrev}
+            aria-label="poprzedni slajd"
+            type="button"
+            disabled={!canGoPrev}
+          >
             <Icon
               width={control}
               height={control}
-              alt="control"
+              alt="left"
               src="assets/icons/rb38LYfmmJ.svg"
             />
           </button>
 
-          <button className="u27">
+          <button
+            className={`u27 ${canGoNext ? "u28" : "u29"}`}
+            onClick={handleNext}
+            aria-label="następny slajd"
+            type="button"
+            disabled={!canGoNext}
+          >
             <Icon
               width={control}
               height={control}
-              alt="control"
+              alt="right"
               src="assets/icons/rb38LYfmmJ.svg"
             />
           </button>

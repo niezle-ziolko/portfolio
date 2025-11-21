@@ -62,7 +62,7 @@ export default function Certificates() {
       >
         {/* Slides */}
         <ul
-          className="u24 mx-4 md:mx-0 gap-4"
+          className="u24 gap-4"
           style={{ transform: `translateX(calc(-${activeIndex * 100}% - ${activeIndex * 1}rem))` }}
         >
           {courses.map((course, index) => (
