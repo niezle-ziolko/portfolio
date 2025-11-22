@@ -4,8 +4,8 @@ import Link from "next/link";
 import Icon from "lib/icon";
 
 import { projects } from "data/projects";
-import { useCarousel } from "lib/carousel";
 import { useAnimate, usePerformance } from "lib/animate";
+import { useCarousel, carouselControls } from "lib/carousel";
 
 export default function Projects() {
   const ref = useRef(null);
@@ -18,15 +18,9 @@ export default function Projects() {
 
   const {
     activeIndex,
-    isPlaying,
-    finished,
-    setActiveIndex,
     setIsPlaying,
-    handleReplay,
     handleTouchStart,
     handleTouchEnd,
-    replayKey,
-    remainingTime,
     goToSlide,
   } = useCarousel({ length: projects.length, intervalTime });
 
@@ -37,20 +31,16 @@ export default function Projects() {
     return "inherit";
   };
 
-  const canGoPrev = activeIndex > 0;
-  const canGoNext = activeIndex < projects.length - 1;
+  const prev = activeIndex > 0;
+  const next = activeIndex < projects.length - 1;
+  const getActiveIndex = () => activeIndex;
 
-  const handlePrev = () => {
-    if (!canGoPrev) return;
-    setIsPlaying(false);
-    goToSlide(activeIndex - 1);
-  };
-
-  const handleNext = () => {
-    if (!canGoNext) return;
-    setIsPlaying(false);
-    goToSlide(activeIndex + 1);
-  };
+  const { handlePrev, handleNext } = carouselControls({
+    getActiveIndex,
+    setIsPlaying,
+    goToSlide,
+    length: projects.length,
+  });
 
   return (
     <div className="u22 h-auto">
@@ -175,11 +165,11 @@ export default function Projects() {
         {/* Controls */}
         <div className="flex mt-16 mx-4 md:mx-0 gap-6 justify-end">
           <button
-            className={`u27 rotate-180 ${canGoPrev ? "u28" : "u29"}`}
+            className={`u27 rotate-180 ${prev ? "u28" : "u29"}`}
             onClick={handlePrev}
             aria-label="poprzedni slajd"
             type="button"
-            disabled={!canGoPrev}
+            disabled={!prev}
           >
             <Icon
               width={control}
@@ -190,11 +180,11 @@ export default function Projects() {
           </button>
 
           <button
-            className={`u27 ${canGoNext ? "u28" : "u29"}`}
+            className={`u27 ${next ? "u28" : "u29"}`}
             onClick={handleNext}
             aria-label="następny slajd"
             type="button"
-            disabled={!canGoNext}
+            disabled={!next}
           >
             <Icon
               width={control}

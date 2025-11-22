@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 
-export const useCarousel = ({ length, intervalTime = 3000 }) => {
+export function useCarousel({ length, intervalTime = 3000 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [finished, setFinished] = useState(false);
@@ -307,4 +307,22 @@ export function useProgressDots({
     dotsRef,
     replayKey
   ]);
+};
+
+export function carouselControls({ getActiveIndex, setIsPlaying, goToSlide, length }) {
+  const handlePrev = () => {
+    const activeIndex = getActiveIndex();
+    if (activeIndex <= 0) return;
+    setIsPlaying(false);
+    goToSlide(activeIndex - 1);
+  };
+
+  const handleNext = () => {
+    const activeIndex = getActiveIndex();
+    if (activeIndex >= length - 1) return;
+    setIsPlaying(false);
+    goToSlide(activeIndex + 1);
+  };
+
+  return { handlePrev, handleNext };
 };

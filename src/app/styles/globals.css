@@ -494,7 +494,7 @@
   @apply h-11 rounded-full bg-button-carousel backdrop-blur-md fill-arrow-carousel hover:bg-button-carousel-hover hover:fill-arrow-carousel-hover;
 }
 
-@utiltiy u28 {
+@utility u28 {
   @apply opacity-100 cursor-pointer pointer-events-auto;
 }
 
