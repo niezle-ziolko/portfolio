@@ -1,6 +1,7 @@
 import About from "components/about";
 import Skills from "components/skills";
 import Laptop from "components/laptop";
+import Pricing from "components/pricing";
 import Projects from "components/projects";
 import Certificates from "components/certificates";
 
@@ -25,6 +26,10 @@ export default function Home() {
 
       <section id="projects">
         <Projects />
+      </section>
+
+      <section id="pricing">
+        <Pricing />
       </section>
     </div>
   );

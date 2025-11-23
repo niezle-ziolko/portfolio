@@ -50,7 +50,7 @@ export default function Certificates() {
   else if (finished) iconSrc = "/assets/icons/phEO9jcTzd.svg";
 
   return (
-    <div className="u22 h-full">
+    <div className="u22 h-full max-h-[652px]">
       <h2 ref={ref} className={`u23 ${slideVertical}`}>
         Moje osiągnięcia
       </h2>
@@ -70,7 +70,7 @@ export default function Certificates() {
               key={course.id}
               className={`
                 group u25
-                min-h-135 max-h-135 md:min-h-150 md:max-h-150 
+                max-h-[464px]
                 ${index === activeIndex ? "opacity-100 cursor-pointer" : "opacity-30 pointer-events-none cursor-default"}
               `}
             >
@@ -84,7 +84,7 @@ export default function Certificates() {
                   <h3 className={`${slideLevel}`}>{course.title}</h3>
 
                   <span className={`u12 text-lg font-bold relative ${slideLevel}`}>
-                    <span className="u20">
+                    <span className="u20 text-link">
                       Certyfikat
                     </span>
 

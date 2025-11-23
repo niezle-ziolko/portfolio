@@ -29,7 +29,9 @@
   --color-font-primary: oklch(0.2745 0.0038 286.1);
   --color-font-secondary: oklch(0 0 0);
   --color-font-third: oklch(0.5399 0.0077 286.14);
-  --color-font-link: oklch(0.5629 0.1933 256.16);
+
+  --color-link: oklch(0.5629 0.1933 256.16);
+  --color-link-hover: oklch(0.5831 0.198875 255.9725);
 
   --color-background: oklch(0.9707 0.0027 286.35);
 
@@ -131,12 +133,12 @@
     from {
       bottom: 0;
       width: 105px;
-      border: 2rem solid var(--color-font-link);
+      border: 2rem solid var(--color-link);
     }
     to {
       width: 100%;
       bottom: 2rem;
-      border: 0px solid var(--color-font-link);
+      border: 0px solid var(--color-link);
     }
   }
 
@@ -457,7 +459,7 @@
     transform
     -scale-x-100
     transition-all
-    fill-font-link
+    fill-link
                         
     group-hover:left-0
     group-hover:scale-x-100
@@ -475,7 +477,7 @@
 }
 
 @utility u23 {
-  @apply pt-16 pb-4 w-full;
+  @apply pt-10 pb-4 w-full;
 }
 
 @utility u24 {
@@ -491,7 +493,19 @@
 }
 
 @utility u27 {
-  @apply h-11 rounded-full bg-button-carousel backdrop-blur-md fill-arrow-carousel hover:bg-button-carousel-hover hover:fill-arrow-carousel-hover;
+  @apply
+    h-11
+    rounded-full
+    backdrop-blur-md
+    bg-button-carousel
+    fill-arrow-carousel
+    
+    hover:bg-button-carousel-hover
+    focus:bg-button-carousel-hover
+    active:bg-button-carousel-hover
+    hover:fill-arrow-carousel-hover
+    focus:fill-arrow-carousel-hover
+    active:fill-arrow-carousel-hover;
 }
 
 @utility u28 {
@@ -523,6 +537,10 @@
     @apply text-3xl md:text-4xl font-bold text-font-third;
   }
 
+  h4 {
+    @apply text-2xl md:text-3xl font-bold text-font-primary;
+  }
+
   p {
     @apply p-5 md:p-0 text-base/7 md:text-2xl/7 font-bold leading-none text-font-third font-(family-name:--primary-font-family);
   }
@@ -532,7 +550,7 @@
   }
 
   a {
-    @apply text-font-link;
+    @apply text-link;
   }
 
   ul {
@@ -548,7 +566,7 @@
   }
 
   span {
-    @apply font-(family-name:--primary-font-family);
+    @apply text-font-secondary font-(family-name:--primary-font-family);
   }
 
   button {

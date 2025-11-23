@@ -58,30 +58,50 @@ export default function Projects() {
           {projects.map((project, index) => (
             <li
               key={project.id}
-              className="u25 max-w-100 transition-transform duration-500"
+              className="
+                u25
+                max-h-[464px]
+                group
+                max-w-100
+                cursor-pointer
+                transition-transform
+                duration-500
+
+                [transform:var(--tx)]
+                hover:[transform:var(--tx)_scale(1.03)]
+                focus:[transform:var(--tx)_scale(1.03)]
+                active:[transform:var(--tx)_scale(1.03)]
+              "
               style={{
-                transform: `translateX(calc(-${activeIndex * 100}% - ${
-                  activeIndex * 1
-                }rem))`,
+                ['--tx']: `translateX(calc(-${activeIndex * 100}% - ${activeIndex * 1}rem))`
               }}
             >
-              <div className="u26 px-7">
-                <Icon
-                  width={60}
-                  height={90}
-                  aria-hidden="true"
-                  src={project.favicon}
-                  className="cursor-default"
-                />
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                href={`${project.link}`}
+                className="u16 w-max h-full box-border items-left"
+              >
+                <div className="u26 px-7">
+                  <Icon
+                    width={60}
+                    height={90}
+                    aria-hidden="true"
+                    src={project.favicon}
+                    className="cursor-default"
+                  />
 
-                <Link
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={`${project.link}`}
-                  className="u16 w-max h-full box-border items-left"
-                >
                   <span className="u12 group text-lg font-bold relative">
-                    <h3 className="u20 hover:text-font-link">{project.name}</h3>
+                    <h3
+                      className="
+                        u20
+                        
+                        group-hover:text-link
+                        group-focus:text-link
+                        group-active:text-link
+                      ">
+                        {project.name}
+                      </h3>
 
                     <Icon
                       width={icon}
@@ -91,79 +111,79 @@ export default function Projects() {
                       className="u21"
                     />
                   </span>
-                </Link>
 
-                <div className="pb-4">
-                  <span>Użyte technologie:</span>
+                  <div className="pb-4">
+                    <span>Użyte technologie:</span>
 
-                  <div className="flex items-center gap-3 mt-2">
-                    {project.stack.map((tech) => (
-                      <Icon
-                        key={tech.alt}
-                        src={tech.src}
-                        alt={tech.alt}
-                        width={icon}
-                        height={icon}
-                        className="cursor-default"
-                      />
-                    ))}
+                    <div className="flex items-center gap-3 mt-2">
+                      {project.stack.map((tech) => (
+                        <Icon
+                          key={tech.alt}
+                          src={tech.src}
+                          alt={tech.alt}
+                          width={icon}
+                          height={icon}
+                          className="cursor-default"
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex flex-col">
-                  <span>Wydajność strony:</span>
+                  <div className="flex flex-col">
+                    <span>Wydajność strony:</span>
 
-                  <div className="py-2">
-                    <div className="w-31 w-25 h-25 flex justify-center relative">
-                      <svg
-                        className="absolute top-0 left-0 w-full h-full"
-                        viewBox="0 0 36 36"
-                      >
-                        <circle
-                          cx="18"
-                          cy="18"
-                          r="15"
-                          fill={getPerformanceColor(project.performance)}
-                          opacity="0.2"
-                        />
+                    <div className="py-2">
+                      <div className="w-31 w-25 h-25 flex justify-center relative">
+                        <svg
+                          className="absolute top-0 left-0 w-full h-full"
+                          viewBox="0 0 36 36"
+                        >
+                          <circle
+                            cx="18"
+                            cy="18"
+                            r="15"
+                            fill={getPerformanceColor(project.performance)}
+                            opacity="0.2"
+                          />
 
-                        <path
-                          stroke={getPerformanceColor(project.performance)}
-                          opacity="0.2"
-                          strokeWidth="2"
-                          fill="none"
-                          d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32"
-                        />
+                          <path
+                            stroke={getPerformanceColor(project.performance)}
+                            opacity="0.2"
+                            strokeWidth="2"
+                            fill="none"
+                            d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32"
+                          />
 
-                        <path
-                          stroke={getPerformanceColor(project.performance)}
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          fill="none"
-                          strokeDasharray={`${animatedPerf[index]}, 100`}
-                          d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32"
-                        />
-                      </svg>
+                          <path
+                            stroke={getPerformanceColor(project.performance)}
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            fill="none"
+                            strokeDasharray={`${animatedPerf[index]}, 100`}
+                            d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32"
+                          />
+                        </svg>
 
-                      <span
-                        className="absolute inset-0 flex items-center justify-center text-2xl font-mono"
-                        style={{
-                          color: getPerformanceColor(project.performance),
-                        }}
-                      >
-                        {Math.round(animatedPerf[index])}
-                      </span>
+                        <span
+                          className="absolute inset-0 flex items-center justify-center text-2xl font-mono"
+                          style={{
+                            color: getPerformanceColor(project.performance)
+                          }}
+                        >
+                          {Math.round(animatedPerf[index])}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </li>
           ))}
         </ul>
 
         {/* Controls */}
-        <div className="flex mt-16 mx-4 md:mx-0 gap-6 justify-end">
+        <div className="flex mt-10 mx-4 md:mx-0 gap-6 justify-end">
           <button
             className={`u27 rotate-180 ${prev ? "u28" : "u29"}`}
             onClick={handlePrev}
