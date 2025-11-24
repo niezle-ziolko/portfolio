@@ -538,7 +538,7 @@
   }
 
   h4 {
-    @apply text-2xl md:text-3xl font-bold text-font-primary;
+    @apply text-2xl md:text-3xl font-bold text-font-secondary;
   }
 
   p {

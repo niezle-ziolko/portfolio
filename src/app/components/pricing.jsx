@@ -1,25 +1,36 @@
 "use client";
-import { prices } from "data/pricing";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
+import { prices } from "data/pricing";
 import { useCarousel } from "lib/carousel";
 
 export default function Pricing() {
   const router = useRouter();
   const intervalTime = 10000;
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    const handleResize = () => setIsMobile(mq.matches);
+    handleResize();
+    mq.addEventListener("change", handleResize);
+    return () => mq.removeEventListener("change", handleResize);
+  }, []);
+
   const {
     activeIndex,
-    setIsPlaying,
     handleTouchStart,
-    handleTouchEnd,
-    goToSlide,
+    handleTouchEnd
   } = useCarousel({ length: prices.length, intervalTime });
 
   return (
     <div className="relative w-full h-full overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-blue-600 via-indigo-900 to-green-600" />
 
+      {/* Waves */}
       <svg
         className="absolute inset-0 u15"
         viewBox="0 0 1440 1024"
@@ -60,65 +71,71 @@ export default function Pricing() {
         </defs>
       </svg>
 
-      <div className="h-full relative">
-        <ul className="u1 u24 h-full">
-          {prices.map((price, index) => (
-            <li
-              key={price.id}
-              className="
-                u25
-                min-h-[530px]
-                bg-header/90
-                group
-                max-w-82
-                transition-transform
-                duration-500
+      {/* Pricing Cards */}
+      <div className="u1 h-full relative">
+        <ul
+          className={`flex w-full px-4 justify-left duration-500 transition-transform md:justify-center ${
+            isMobile ? "" : "flex-wrap"
+          }`}
+          onTouchStart={isMobile ? handleTouchStart : undefined}
+          onTouchEnd={isMobile ? handleTouchEnd : undefined}
+        >
+          {prices.map((price, index) => {
+            const translateX = isMobile
+              ? `translateX(calc(-${activeIndex * 100}% - ${activeIndex * 1}rem))`
+              : "none";
 
-                [transform:var(--tx)]
-                hover:[transform:var(--tx)_scale(1.03)]
-                focus:[transform:var(--tx)_scale(1.03)]
-                active:[transform:var(--tx)_scale(1.03)]
-              "
-              style={{
-                ['--tx']: `translateX(calc(-${activeIndex * 100}% - ${activeIndex * 1}rem))`
-              }}
-            >
-              <div className="u26 px-7">
-                <h4>Pakiet {price.name}</h4>
+            return (
+              <li
+                key={price.id}
+                className={`
+                  u25
+                  group
+                  min-h-[530px]
+                  bg-header/90
+                  md:max-w-82
+                  transition-transform
+                  duration-500
 
-                <span>{price.price}</span>
+                  ${isMobile ? "[transform:var(--tx)] hover:[transform:var(--tx)_scale(1.03)] focus:[transform:var(--tx)_scale(1.03)] active:[transform:var(--tx)_scale(1.03)]"
+                    : "hover:[transform:scale(1.03)] focus:[transform:scale(1.03)] active:[transform:scale(1.03)]"
+                  }
+                `}
+                style={{ ["--tx"]: translateX }}
+              >
+                <div className="u26 px-7">
+                  <h4>Pakiet {price.name}</h4>
+                  <span>{price.price}</span>
+                  <button
+                    className="
+                      py-2
+                      mx-18
+                      bg-link
+                      text-lg
+                      text-white
+                      rounded-full
 
-                <button
-                  className="
-                    py-2
-                    mx-18
-                    text-lg
-                    text-white
-                    bg-link rounded-full
-                    
-                    hover:bg-link-hover
-                    focus:bg-link-hover
-                    active:bg-link-hover
-                  "
-                  onClick={() => router.push("/kontakt")}
-                >
-                  Kontakt
-                </button>
-
-                <span>{price.description}</span>
-
-                <hr />
-
-                <ul className="u16 gap-1 list-disc">
-                  {price.benefits.map((benefit, index) => (
-                    <li key={index}>
-                      <span>{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </li>
-          ))}
+                      hover:bg-link-hover
+                      focus:bg-link-hover
+                      active:bg-link-hover
+                    "
+                    onClick={() => router.push("/kontakt")}
+                  >
+                    Kontakt
+                  </button>
+                  <span>{price.description}</span>
+                  <hr />
+                  <ul className="u16 gap-1 list-disc">
+                    {price.benefits.map((benefit, index) => (
+                      <li key={index}>
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>
