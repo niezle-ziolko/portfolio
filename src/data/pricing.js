@@ -1,6 +1,5 @@
 export const prices = [
   {
-    id: "1",
     name: "mini",
     price: "1500zł netto",
     description: "Dla tych, którzy chcą szybko, łatwo i przy minimalnym koszcie zaistnieć w internecie.",
@@ -14,7 +13,6 @@ export const prices = [
     ]
   },
   {
-    id: "2",
     name: "profesjonalny",
     price: "3000zł netto",
     description: "Dla firm, które chcą wejść na rynek z mocnym, profesjonalnym wizerunkiem i budować silną obecność online.",
@@ -28,7 +26,6 @@ export const prices = [
     ]
   },
   {
-    id: "3",
     name: "premium",
     price: "4000zł netto",
     description: "Dla marek celujących w najwyższą jakość i pełne dopasowanie projektu do swoich procesów biznesowych.",

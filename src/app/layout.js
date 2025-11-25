@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 
 import Header from "components/header";
+import Footer from "components/footer";
 
 import { ThemeProvider } from "context/theme-context";
 
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <Header />
           <main>{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

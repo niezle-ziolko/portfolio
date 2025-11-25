@@ -1,26 +1,32 @@
 export const sections = [
   {
     id: "about",
-    label: "O mnie"
+    label: "O mnie",
+    link: "/#about"
   },
   {
     id: "skills",
-    label: "Umiejętności"
+    label: "Umiejętności",
+    link: "/#skills"
   },
   {
     id: "certificates",
-    label: "Osiągnięcia"
+    label: "Osiągnięcia",
+    link: "/#certificates"
   },
   {
     id: "projects",
-    label: "Projekty"
+    label: "Projekty",
+    link: "/#projects"
   },
   {
     id: "pricing",
-    label: "Cennik"
+    label: "Cennik",
+    link: "/#pricing"
   },
   {
     id: "contact",
-    label: "Kontakt"
+    label: "Kontakt",
+    link: "/kontakt"
   }
 ];

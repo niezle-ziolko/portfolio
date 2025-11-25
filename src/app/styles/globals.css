@@ -6,6 +6,7 @@
   --color-font-primary: oklch(0.8 0 0);
   --color-font-secondary: oklch(1 0 0);
   --color-font-third: oklch(0.6217 0.0074 286.18);
+  --color-font-footer: oklch(1 0 0 / 56%);
 
   --color-background: oklch(0.2006 0.002 286.22);
 
@@ -29,6 +30,7 @@
   --color-font-primary: oklch(0.2745 0.0038 286.1);
   --color-font-secondary: oklch(0 0 0);
   --color-font-third: oklch(0.5399 0.0077 286.14);
+  --color-font-footer: oklch(0 0 0 / 72%);
 
   --color-link: oklch(0.5629 0.1933 256.16);
   --color-link-hover: oklch(0.5831 0.198875 255.9725);
@@ -570,6 +572,6 @@
   }
 
   button {
-    @apply cursor-pointer hover:u10 hover:text-font-secondary;
+    @apply cursor-pointer hover:u10;
   }
 }

@@ -4,7 +4,6 @@ const getIcon = alt => icons.find(i => i.alt === alt);
 
 export const projects = [
   {
-    id: "1",
     name: "EchoVerse",
     link: "https://enigma.wgwcompany.workers.dev/",
     favicon: "/assets/icons/w6SFhIPYQF.svg",
@@ -20,7 +19,6 @@ export const projects = [
     ]
   },
   {
-    id: "2",
     name: "EchoVerse",
     link: "https://enigma.wgwcompany.workers.dev/",
     favicon: "/assets/icons/w6SFhIPYQF.svg",
@@ -36,7 +34,6 @@ export const projects = [
     ]
   },
   {
-    id: "3",
     name: "EchoVerse",
     link: "https://enigma.wgwcompany.workers.dev/",
     favicon: "/assets/icons/w6SFhIPYQF.svg",
@@ -52,7 +49,6 @@ export const projects = [
     ]
   },
   {
-    id: "4",
     name: "EchoVerse",
     link: "https://enigma.wgwcompany.workers.dev/",
     favicon: "/assets/icons/w6SFhIPYQF.svg",
@@ -68,7 +64,6 @@ export const projects = [
     ]
   },
   {
-    id: "5",
     name: "EchoVerse",
     link: "https://enigma.wgwcompany.workers.dev/",
     favicon: "/assets/icons/w6SFhIPYQF.svg",
@@ -84,7 +79,6 @@ export const projects = [
     ]
   },
   {
-    id: "6",
     name: "EchoVerse",
     link: "https://enigma.wgwcompany.workers.dev/",
     favicon: "/assets/icons/w6SFhIPYQF.svg",
@@ -100,7 +94,6 @@ export const projects = [
     ]
   },
   {
-    id: "7",
     name: "EchoVerse",
     link: "https://enigma.wgwcompany.workers.dev/",
     favicon: "/assets/icons/w6SFhIPYQF.svg",
@@ -116,7 +109,6 @@ export const projects = [
     ]
   },
   {
-    id: "8",
     name: "EchoVerse",
     link: "https://enigma.wgwcompany.workers.dev/",
     favicon: "/assets/icons/w6SFhIPYQF.svg",

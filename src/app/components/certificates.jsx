@@ -67,7 +67,7 @@ export default function Certificates() {
         >
           {courses.map((course, index) => (
             <li
-              key={course.id}
+              key={index}
               className={`
                 group u25
                 max-h-[464px]
@@ -131,7 +131,7 @@ export default function Certificates() {
                 <ul className="flex gap-4 items-center">
                   {courses.map((course, index) => (
                     <li
-                      key={course.id}
+                      key={index}
                       onClick={() => { if (!finished) setActiveIndex(index); }}
                       className={`
                         relative h-2 rounded-full overflow-hidden transition-all duration-300

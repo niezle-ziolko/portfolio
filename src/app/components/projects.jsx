@@ -57,7 +57,7 @@ export default function Projects() {
         <ul className="u24">
           {projects.map((project, index) => (
             <li
-              key={project.id}
+              key={index}
               className="
                 u25
                 max-h-[464px]
@@ -195,7 +195,7 @@ export default function Projects() {
               width={control}
               height={control}
               alt="left"
-              src="assets/icons/rb38LYfmmJ.svg"
+              src="/assets/icons/rb38LYfmmJ.svg"
             />
           </button>
 
@@ -210,7 +210,7 @@ export default function Projects() {
               width={control}
               height={control}
               alt="right"
-              src="assets/icons/rb38LYfmmJ.svg"
+              src="/assets/icons/rb38LYfmmJ.svg"
             />
           </button>
         </div>

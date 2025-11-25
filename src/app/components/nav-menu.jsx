@@ -57,9 +57,35 @@ export default function NavMenu() {
         {/* References */}
         {sections.map((section) => (
           <li key={section.id}>
-            <button onClick={handleScroll(section.id)}>
-              <p className="py-1 px-12 text-3xl text-font-secondary font-bold md:px-0 md:font-normal md:text-base md:text-current">{section.label}</p>
-            </button>
+            <Link
+              rel="noopener noreferrer"
+              href={`${section.link}`}
+              onClick={() => setIsOpen(false)}
+              className="
+                text-font-primary
+                
+                hover:text-font-secondary
+                focus:text-font-secondary
+                active:text-font-secondary
+              "
+            >
+              <p
+                className="
+                  py-1
+                  px-12
+                  text-3xl
+                  font-bold
+                  text-font-secondary
+
+                  md:px-0
+                  md:text-base
+                  md:font-normal
+                  md:text-current
+                "
+              >
+                {section.label}
+              </p>
+            </Link>
           </li>
         ))}
 

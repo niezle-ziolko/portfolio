@@ -87,7 +87,7 @@ export default function Pricing() {
 
             return (
               <li
-                key={price.id}
+                key={index}
                 className={`
                   u25
                   group
