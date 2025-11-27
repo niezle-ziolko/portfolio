@@ -27,6 +27,6 @@ export const sections = [
   {
     id: "contact",
     label: "Kontakt",
-    link: "/kontakt"
+    link: "/#contact"
   }
 ];

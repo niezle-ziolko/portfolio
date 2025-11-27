@@ -6,13 +6,13 @@ export default function Footer() {
   return(
     <footer className="u1">
       <div className="u22 px-3 py-6">
-        <hr className="mb-2 text-arrow-carousel"/>
+        <hr className="mb-2 text-font-footer" />
 
         <Breadcramps />
 
-        <hr className="mb-2 mt-2 text-arrow-carousel"/>
+        <hr className="mb-2 mt-2 text-font-footer" />
 
-        <span className="text-sm text-arrow-carousel">Copyright © 2025</span>
+        <span className="text-sm text-font-footer">Copyright © 2025</span>
 
         <ul className="m-0 gap-0 text-sm flex">
           <li className="w-auto">
@@ -39,7 +39,7 @@ export default function Footer() {
               before:inline-block
               before:w-px
               before:h-3
-              before:bg-arrow-carousel
+              before:bg-font-footer
               before:mx-2
             "
           >

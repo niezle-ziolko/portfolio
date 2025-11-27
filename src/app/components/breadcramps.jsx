@@ -6,7 +6,7 @@ import Icon from "lib/icon";
 
 export default function Breadcramps() {
   const avatar = 16;
-  const arrow = 20;
+  const arrow = 14;
   const pathname = usePathname();
   const lastSegment = pathname.split("/").filter(Boolean).pop();
 
@@ -32,8 +32,8 @@ export default function Breadcramps() {
             width={arrow}
             height={arrow}
             alt="Breadcrumb Icon"
-            src="/assets/icons/rb38LYfmmJ.svg"
-            className="fill-font-footer"
+            src="/assets/icons/XyNeAHolcY.svg"
+            className="stroke-font-footer -rotate-90"
           />
 
           <Link

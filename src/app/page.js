@@ -3,6 +3,7 @@ import Skills from "components/skills";
 import Laptop from "components/laptop";
 import Pricing from "components/pricing";
 import Projects from "components/projects";
+import ContactForm from "components/contact-form";
 import Certificates from "components/certificates";
 
 export default function Home() {
@@ -30,6 +31,10 @@ export default function Home() {
 
       <section id="pricing">
         <Pricing />
+      </section>
+
+      <section id="contact" className="bg-element-background">
+        <ContactForm />
       </section>
     </div>
   );

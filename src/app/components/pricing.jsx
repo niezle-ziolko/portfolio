@@ -119,7 +119,11 @@ export default function Pricing() {
                       focus:bg-link-hover
                       active:bg-link-hover
                     "
-                    onClick={() => router.push("/kontakt")}
+                    onClick={() => {
+                      const element = document.getElementById("contact");
+
+                      element?.scrollIntoView({ behavior: "smooth" });
+                    }}
                   >
                     Kontakt
                   </button>

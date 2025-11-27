@@ -410,7 +410,7 @@
 }
 
 @utility u17 {
-  @apply mb-5 top-5 sticky rounded-full bg-player backdrop-blur-md self-end bottom-8;
+  @apply mb-2 top-5 sticky rounded-full bg-player backdrop-blur-md self-end bottom-8;
 }
 
 @utility u18 {
