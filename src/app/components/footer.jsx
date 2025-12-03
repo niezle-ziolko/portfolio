@@ -1,14 +1,10 @@
 import Link from "next/link";
 
-import Breadcramps from "./breadcramps";
-
 export default function Footer() {
   return(
     <footer className="u1">
       <div className="u22 px-3 py-6">
         <hr className="mb-2 text-font-footer" />
-
-        <Breadcramps />
 
         <hr className="mb-2 mt-2 text-font-footer" />
 

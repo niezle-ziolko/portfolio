@@ -1,28 +1,51 @@
 "use client";
 import { useRef } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import Icon from "lib/icon";
 
+import Icon from "lib/icon";
 import { projects } from "data/projects";
 import { useAnimate, usePerformance } from "lib/animate";
-import { useCarousel, carouselControls } from "lib/carousel";
+import { useCarousel, useProgressDots } from "lib/carousel";
 
-export default function Projects() {
+const Video = dynamic(() => import("lib/video"));
+
+export default function Certificates() {
   const ref = useRef(null);
+  const dotsRef = useRef([]);
+
   const slideVertical = useAnimate(ref, "animate-up", "animate-down");
+  const slideOpacity = useAnimate(ref, "animate-slide-show", "animate-slide-hidden");
+  const circleOpacity = useAnimate(ref, "animate-circle-show", "animate-circle-hidden");
+  const buttonOpacity = useAnimate(ref, "animate-button-show", "animate-button-hidden");
 
   const icon = 30;
-  const control = 45;
+  const control = 56;
   const intervalTime = 10000;
   const animatedPerf = usePerformance(projects, 1000);
 
   const {
+    finished,
+    isPlaying,
+    replayKey,
     activeIndex,
+    remainingTime,
     setIsPlaying,
-    handleTouchStart,
+    handleReplay,
     handleTouchEnd,
-    goToSlide,
+    setActiveIndex,
+    handleTouchStart
   } = useCarousel({ length: projects.length, intervalTime });
+
+  useProgressDots({
+    dotsRef,
+    finished,
+    isPlaying,
+    replayKey,
+    activeIndex,
+    intervalTime,
+    remainingTime
+  });
 
   const getPerformanceColor = (perf) => {
     if (perf >= 90 && perf <= 99) return "#0c6";
@@ -31,19 +54,12 @@ export default function Projects() {
     return "inherit";
   };
 
-  const prev = activeIndex > 0;
-  const next = activeIndex < projects.length - 1;
-  const getActiveIndex = () => activeIndex;
-
-  const { handlePrev, handleNext } = carouselControls({
-    getActiveIndex,
-    setIsPlaying,
-    goToSlide,
-    length: projects.length,
-  });
+  let iconSrc = "/assets/icons/BpXu4PZzKr.svg";
+  if (isPlaying) iconSrc = "/assets/icons/fyxToZ1EvX.svg";
+  else if (finished) iconSrc = "/assets/icons/phEO9jcTzd.svg";
 
   return (
-    <div className="u22 h-auto">
+    <div className="u22 h-full max-h-[652px]">
       <h2 ref={ref} className={`u23 ${slideVertical}`}>
         Moje projekty
       </h2>
@@ -54,41 +70,57 @@ export default function Projects() {
         onTouchEnd={handleTouchEnd}
       >
         {/* Slides */}
-        <ul className="u24">
+        <ul
+          className="u24 gap-4"
+          style={{ transform: `translateX(calc(-${activeIndex * 100}% - ${activeIndex * 1}rem))` }}
+        >
           {projects.map((project, index) => (
             <li
               key={index}
-              className="
+              className={`
                 u25
-                max-h-[464px]
                 group
-                max-w-100
-                cursor-pointer
-                transition-transform
-                duration-500
-
-                [transform:var(--tx)]
-                hover:[transform:var(--tx)_scale(1.03)]
-                focus:[transform:var(--tx)_scale(1.03)]
-                active:[transform:var(--tx)_scale(1.03)]
-              "
-              style={{
-                ['--tx']: `translateX(calc(-${activeIndex * 100}% - ${activeIndex * 1}rem))`
-              }}
+                max-h-[464px]
+                ${index === activeIndex ? "opacity-100 cursor-pointer" : "opacity-30 pointer-events-none cursor-default"}
+              `}
             >
               <Link
                 target="_blank"
                 rel="noopener noreferrer"
                 href={`${project.link}`}
-                className="u16 w-max h-full box-border items-left"
+                className="u16 w-full h-full box-border items-left relative"
               >
-                <div className="u26 px-7">
+                {/* video in webm format */}
+                <Video
+                  src={project.video}
+                  preload="none"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute w-full h-full object-cover"
+                />
+
+                <div className="
+                  u10
+                  u26
+                  z-2
+                  px-7
+                  opacity-0
+                  rounded-2xl
+                  bg-header/90
+                  backdrop-blur-md
+                  
+                  group-hover:opacity-100
+                  group-focus:opacity-100
+                  group-active:opacity-100
+                ">
                   <Icon
-                    width={60}
-                    height={90}
+                    width={control}
+                    height={control}
                     aria-hidden="true"
                     src={project.favicon}
-                    className="cursor-default"
+                    className="page-favicon"
                   />
 
                   <span className="u12 group text-lg font-bold relative">
@@ -143,12 +175,12 @@ export default function Projects() {
                             cy="18"
                             r="15"
                             fill={getPerformanceColor(project.performance)}
-                            opacity="0.2"
+                            opacity="0.1"
                           />
 
                           <path
                             stroke={getPerformanceColor(project.performance)}
-                            opacity="0.2"
+                            opacity="0.1"
                             strokeWidth="2"
                             fill="none"
                             d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32"
@@ -183,36 +215,45 @@ export default function Projects() {
         </ul>
 
         {/* Controls */}
-        <div className="flex mt-10 mx-4 md:mx-0 gap-6 justify-end">
-          <button
-            className={`u27 rotate-180 ${prev ? "u28" : "u29"}`}
-            onClick={handlePrev}
-            aria-label="poprzedni slajd"
-            type="button"
-            disabled={!prev}
-          >
-            <Icon
-              width={control}
-              height={control}
-              alt="left"
-              src="/assets/icons/rb38LYfmmJ.svg"
-            />
-          </button>
+        <div className="u1 u15 absolute top-0 pointer-events-none">
+          <div className="u1 h-full gap-2">
+            <div className={`u17 z-10 px-5 py-6 pointer-events-auto ${circleOpacity}`}>
+              <div className={`u1 h-full delay-1000 ${slideOpacity} max-w-`}>
+                <ul className="flex gap-4 items-center">
+                  {projects.map((project, index) => (
+                    <li
+                      key={index}
+                      onClick={() => { if (!finished) setActiveIndex(index); }}
+                      className={`
+                        relative h-2 rounded-full overflow-hidden transition-all duration-300
+                        ${finished ? "cursor-default" : "cursor-pointer"}
+                        ${index === activeIndex  ? "w-12 bg-element-player" : `w-2 bg-element-player ${!finished ? "hover:bg-hover-player" : ""}
+                        `}
+                      `}
+                    >
+                      <div
+                        ref={(el) => (dotsRef.current[index] = el)}
+                        className="w-0 top-0 left-0 h-full bg-white absolute rounded-full"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
 
-          <button
-            className={`u27 ${next ? "u28" : "u29"}`}
-            onClick={handleNext}
-            aria-label="następny slajd"
-            type="button"
-            disabled={!next}
-          >
-            <Icon
-              width={control}
-              height={control}
-              alt="right"
-              src="/assets/icons/rb38LYfmmJ.svg"
-            />
-          </button>
+            <div
+              className={`u1 u17 z-1 fill-white cursor-pointer pointer-events-auto hover:fill-element-player ${buttonOpacity}`}
+              onClick={() => (finished ? handleReplay() : setIsPlaying((prev) => !prev))}
+            >
+              <Icon
+                width={control}
+                height={control}
+                alt="control"
+                src={iconSrc}
+                className="animate-slide-show"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

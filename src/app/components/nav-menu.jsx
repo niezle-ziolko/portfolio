@@ -10,12 +10,6 @@ export default function NavMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const size = 25;
 
-  const handleScroll = (id) => (e) => {
-    e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setIsOpen(false);
-  };
-
   return(
     <nav className={`px-0 w-full box-border overflow-hidden max-w-x transition-bg duration-200 ${isOpen ? "bg-background" : ""}`}>
       <ul className={`u16 w-auto items-start justify-start transition-height duration-200 md:flex-row md:items-center md:justify-between ${isOpen ? "h-screen" : "h-11"}`}>
@@ -69,8 +63,7 @@ export default function NavMenu() {
                 active:text-font-secondary
               "
             >
-              <p
-                className="
+              <p className="
                   py-1
                   px-12
                   text-3xl

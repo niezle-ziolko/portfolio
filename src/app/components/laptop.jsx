@@ -9,6 +9,7 @@ export default function Laptop() {
         <p className="p-0 text-white text-lg/6 md:text-3xl/8">
           Siemanko!
         </p>
+
         <p className="p-0 font-bold text-4xl/12 md:text-6xl/20">
           <span className="px-1 text-transparent bg-clip-text bg-[linear-gradient(var(--color-gradient))]">
             jestem Norman
@@ -89,7 +90,15 @@ export default function Laptop() {
       </div>
 
       {/* Paragraph */}
-      <p className="py-5 text-lg/6 md:text-2xl/8 text-white [filter:drop-shadow(0_0_1px_#fff)_drop-shadow(0_0_20px_#fff)]">Tworzę nowoczesne aplikacje webowe i strony oparte o WordPress.</p>
+      <p className="
+        py-5
+        text-lg/6
+        text-white
+        md:text-2xl/8
+        [filter:drop-shadow(0_0_1px_#fff)_drop-shadow(0_0_20px_#fff)]
+      ">
+        Tworzę nowoczesne aplikacje webowe i strony oparte o WordPress.
+      </p>
       
     </div>
   );

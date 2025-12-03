@@ -55,7 +55,7 @@ export default function HeaderForm({ size = 420, density = "normal" }) {
     for (let i = 0; i < gradientStops.length - 1; i++) {
       const s0 = gradientStops[i];
       const s1 = gradientStops[i + 1];
-      
+
       if (tt >= s0.t && tt <= s1.t) {
         left = s0;
         right = s1;
@@ -114,7 +114,6 @@ export default function HeaderForm({ size = 420, density = "normal" }) {
     );
   };
 
-
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -125,6 +124,11 @@ export default function HeaderForm({ size = 420, density = "normal" }) {
     if (!container) return;
 
     let isVisible = true;
+
+    // If there is an element with id "contact", prefer observing it.
+    const contactEl = typeof document !== "undefined" ? document.getElementById("contact") : null;
+    const observedEl = contactEl || container;
+
     const io = new IntersectionObserver(
       (entries) => {
         const e = entries[0];
@@ -133,7 +137,7 @@ export default function HeaderForm({ size = 420, density = "normal" }) {
           if (rafRef.current) {
             cancelAnimationFrame(rafRef.current);
             rafRef.current = null;
-          };
+          }
         } else {
           if (!rafRef.current) {
             rafRef.current = requestAnimationFrame(loop);
@@ -143,7 +147,7 @@ export default function HeaderForm({ size = 420, density = "normal" }) {
       { root: null, threshold: 0.05 }
     );
 
-    io.observe(container);
+    io.observe(observedEl);
 
     const ringRadiiPx = ringsConfig.map((r, i) => r.radius * size + i * size * 0.05);
     const dispersions = ringsConfig.map((_, i) => size * (0.28 + i * 0.05));
@@ -157,10 +161,19 @@ export default function HeaderForm({ size = 420, density = "normal" }) {
       };
     });
 
+    // computeTarget now uses the center of #contact (if present) — otherwise falls back to container center.
     function computeTarget() {
-      const rect = container.getBoundingClientRect();
       const viewportCenter = window.innerHeight / 2;
-      const elCenter = rect.top + rect.height / 2;
+
+      // Prefer contact element's bounding rect center when present
+      let elRect = null;
+      if (contactEl) {
+        elRect = contactEl.getBoundingClientRect();
+      } else {
+        elRect = container.getBoundingClientRect();
+      };
+
+      const elCenter = elRect.top + elRect.height / 2;
       const dist = Math.abs(elCenter - viewportCenter);
       const maxDist = window.innerHeight * 0.9;
       const raw = 1 - Math.min(dist / maxDist, 1);
@@ -168,7 +181,7 @@ export default function HeaderForm({ size = 420, density = "normal" }) {
       return Math.pow(Math.max(0, raw), 1.2);
     };
 
-    function loop(now) {
+    function loop() {
       rafRef.current = null;
       if (!isVisible) return;
 
@@ -236,7 +249,7 @@ export default function HeaderForm({ size = 420, density = "normal" }) {
   let dotIndex = 0;
 
   return (
-    <div className="flex w-full justify-center">
+    <div className="u1 w-full h-[250px]">
       <div
         ref={containerRef}
         aria-hidden={true}

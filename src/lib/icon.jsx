@@ -12,7 +12,7 @@ const fetchSvg = async (src) => {
   return text;
 };
 
-const Icon = ({ src, width = 24, height = 24, alt, className, style }) => {
+export default function Icon({ src, width = 24, height = 24, alt, className, style }) {
   const { data: svg, error } = useSWR(src, fetchSvg, { revalidateOnFocus: false });
 
   if (!svg && !error) {
@@ -65,5 +65,3 @@ const Icon = ({ src, width = 24, height = 24, alt, className, style }) => {
     />
   );
 };
-
-export default Icon;

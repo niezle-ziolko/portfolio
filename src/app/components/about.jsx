@@ -5,8 +5,8 @@ import { useAnimate } from "lib/animate";
 
 export default function About() {
   const ref = useRef(null);
-  const backlightClass = useAnimate(ref, "animate-backlight", "animate-backlight-exit");
   const upClass = useAnimate(ref, "animate-up", "animate-down");
+  const backlightClass = useAnimate(ref, "animate-backlight", "animate-backlight-exit");
 
   return (
     <div className="u1 u15 relative max-w-x">
@@ -16,10 +16,20 @@ export default function About() {
         <div
           ref={ref}
           className={`
-            u15 -z-1 -top-10
-            blur-sm md:blur-xl relative rounded-b-full
+            u15
+            -z-1
+            -top-10
+            blur-sm
+            relative
+            rounded-b-full
             bg-[linear-gradient(var(--color-gradient))] 
-            after:h-30 after:block after:backdrop-blur-lg after:w-full
+
+            md:blur-xl
+
+            after:w-full
+            after:h-30 after:block
+            after:backdrop-blur-lg
+
             ${backlightClass}
           `}
         />
@@ -30,8 +40,11 @@ export default function About() {
         <h2
           ref={ref} 
           className={`
-            w-fit text-transparent bg-clip-text 
+            w-fit 
+            bg-clip-text
+            text-transparent
             bg-[linear-gradient(var(--color-gradient))]
+            
             ${upClass}
           `}
         >
@@ -41,7 +54,16 @@ export default function About() {
         {/* Description */}
         <div
           ref={ref}
-          className={`u16 gap-1 md:gap-10 md:flex-row ${upClass}`}
+          className={`
+            u16
+            gap-1
+            [animation-delay:400ms]
+
+            md:gap-10
+            md:flex-row
+            
+            ${upClass}
+          `}
         >
           <p className="u14">
             Moja przygoda z programowaniem zaczęła się w czasach pandemii, 

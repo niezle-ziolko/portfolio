@@ -1,12 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 
 import { prices } from "data/pricing";
 import { useCarousel } from "lib/carousel";
 
 export default function Pricing() {
-  const router = useRouter();
   const intervalTime = 10000;
 
   const [isMobile, setIsMobile] = useState(false);
@@ -94,6 +92,7 @@ export default function Pricing() {
                   min-h-[530px]
                   bg-header/90
                   md:max-w-82
+                  backdrop-blur-md
                   transition-transform
                   duration-500
 
@@ -107,18 +106,7 @@ export default function Pricing() {
                   <h4>Pakiet {price.name}</h4>
                   <span>{price.price}</span>
                   <button
-                    className="
-                      py-2
-                      mx-18
-                      bg-link
-                      text-lg
-                      text-white
-                      rounded-full
-
-                      hover:bg-link-hover
-                      focus:bg-link-hover
-                      active:bg-link-hover
-                    "
+                    className="py-2 mx-18"
                     onClick={() => {
                       const element = document.getElementById("contact");
 

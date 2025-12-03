@@ -96,8 +96,6 @@
   /* Font animate */
   --animate-up: slideUp 1s ease-out both;
   --animate-down: slideDown 1s ease-out both;
-  --animate-left: slideLeft 1s ease-out both;
-  --animate-right: slideRight 1s ease-out both;
 
   /* Laptop animate */
   --animate-open: open 3s forwards;
@@ -215,28 +213,6 @@
     }
     to {
       transform: translateY(50px);
-      opacity: 0;
-    }
-  }
-
-  @keyframes slideLeft {
-    from {
-      transform: translateX(50px);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideRight {
-    from {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    to {
-      transform: translateX(50px);
       opacity: 0;
     }
   }
@@ -461,7 +437,7 @@
     transform
     -scale-x-100
     transition-all
-    fill-link
+    text-link
                         
     group-hover:left-0
     group-hover:scale-x-100
@@ -564,14 +540,40 @@
   }
 
   svg {
-    @apply u10 cursor-pointer text-font-primary hover:text-font-secondary;
+    @apply u10 cursor-pointer;
   }
 
   span {
     @apply text-font-secondary font-(family-name:--primary-font-family);
   }
 
+  input {
+    @apply pb-0 pt-6 px-4 w-full text-lg text-font-primary border-1 border-font-third rounded-xl outline-none;
+  }
+
+  input:focus {
+    @apply border-1 border-link;
+  }
+
+  textarea {
+    @apply pb-0 pt-6 px-4 w-full text-lg text-font-primary border-1 border-font-third rounded-xl outline-none;
+  }
+
+  textarea:focus {
+    @apply border-1 border-link;
+  }
+
   button {
-    @apply cursor-pointer hover:u10;
+    @apply 
+      bg-link
+      text-lg  
+      text-white
+      rounded-full
+      cursor-pointer
+      
+      hover:u10
+      hover:bg-link-hover
+      focus:bg-link-hover
+      active:bg-link-hover;
   }
 }

@@ -10,8 +10,8 @@ export default function Skills() {
   const size = 64;
   const ref = useRef(null);
 
-  const slideClass = useAnimate(ref, "animate-up", "animate-down");
   const { containerRef, scale } = useScale(0.5);
+  const slideClass = useAnimate(ref, "animate-up", "animate-down");
 
   return (
     <div className="grid relative max-w-x justify-center items-center">
@@ -56,7 +56,7 @@ export default function Skills() {
       </h2>
 
       {/* Description */}
-      <p ref={ref} className={`opacity-0 ${slideClass}`}>
+      <p ref={ref} className={`opacity-0 [animation-delay:300ms] ${slideClass}`}>
         Na co dzień tworzę nowoczesne aplikacje i strony internetowe, 
         łącząc <em>Next.js</em>, <em>React</em> i <em>GraphQL</em> z solidnym zapleczem w <em>Node.js</em>. 
         Potrafię efektywnie zarządzać środowiskiem pracy dzięki <em>Dockerowi</em> i <em>npm</em>, 

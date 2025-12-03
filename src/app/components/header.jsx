@@ -6,6 +6,7 @@ export default function Header() {
       <div className="mx-0 my-auto bg-header/90 backdrop-blur-md flex justify-center">
         <NavMenu />
       </div>
+
       <hr className="text-font-secondary opacity-20" />
     </header>
   );
