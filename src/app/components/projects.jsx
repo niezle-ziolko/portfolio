@@ -98,7 +98,7 @@ export default function Certificates() {
                   loop
                   muted
                   playsInline
-                  className="absolute w-full h-full object-cover"
+                  className="absolute w-full h-full object-fill md:object-cover"
                 />
 
                 <div className="
