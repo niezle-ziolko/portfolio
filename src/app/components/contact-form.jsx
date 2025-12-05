@@ -1,10 +1,9 @@
 "use client";
-import { useState } from "react";
-
 import Form from "next/form";
+import { useState } from "react";
 import dynamic from "next/dynamic";
 
-import { Input } from "lib/form";
+import { Input, SubmitButton } from "lib/form";
 
 const HeaderForm = dynamic(() => import("./header-form"), { ssr: true });
 
@@ -68,13 +67,8 @@ export default function ContactForm() {
           required
         />
 
-        <button
-          type="submit"
-          className="px-4 py-2 bg-black text-white rounded"
-        >
-          Prześlij formularz
-        </button>
+        <SubmitButton />
       </Form>
     </div>
   );
-}
+};

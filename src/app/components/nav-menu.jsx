@@ -1,10 +1,12 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import dynamic from "next/dynamic";
 
-import Icon from "lib/icon";
 import { sections } from "data/nav-menu";
-import ThemeButton from "./theme-button";
+
+const Icon = dynamic(() => import("lib/icon"), { ssr: true });
+const ThemeButton = dynamic(() => import("./theme-button"), { ssr: true });
 
 export default function NavMenu() {
   const [isOpen, setIsOpen] = useState(false);

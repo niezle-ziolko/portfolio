@@ -1,4 +1,6 @@
-import Icon from "lib/icon";
+import dynamic from "next/dynamic";
+
+const Icon = dynamic(() => import("lib/icon"), { ssr: true });
 
 export default function Laptop() {
   const size = 250;

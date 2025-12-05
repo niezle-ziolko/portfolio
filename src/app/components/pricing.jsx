@@ -89,12 +89,13 @@ export default function Pricing() {
                 className={`
                   u25
                   group
-                  min-h-[530px]
+                  duration-500
                   bg-header/90
-                  md:max-w-82
+                  min-h-[530px]
                   backdrop-blur-md
                   transition-transform
-                  duration-500
+
+                  md:max-w-82
 
                   ${isMobile ? "[transform:var(--tx)] hover:[transform:var(--tx)_scale(1.03)] focus:[transform:var(--tx)_scale(1.03)] active:[transform:var(--tx)_scale(1.03)]"
                     : "hover:[transform:scale(1.03)] focus:[transform:scale(1.03)] active:[transform:scale(1.03)]"
@@ -106,7 +107,7 @@ export default function Pricing() {
                   <h4>Pakiet {price.name}</h4>
                   <span>{price.price}</span>
                   <button
-                    className="py-2 mx-18"
+                    className="py-2 mx-18 rounded-full"
                     onClick={() => {
                       const element = document.getElementById("contact");
 

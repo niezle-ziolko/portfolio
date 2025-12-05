@@ -1,12 +1,14 @@
 "use client";
+import Link from "next/link";
 import { useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import Icon from "lib/icon";
+import dynamic from "next/dynamic";
 
 import { courses } from "data/courses";
 import { useAnimate } from "lib/animate";
 import { useCarousel, carouselControls } from "lib/carousel";
+
+const Icon = dynamic(() => import("lib/icon"), { ssr: true });
 
 export default function Certificates() {
   const ref = useRef(null);
@@ -66,17 +68,14 @@ export default function Certificates() {
 
                   ${!isBeforeActive ? 
                     "hover:[transform:var(--tx)_scale(1.03)] focus:[transform:var(--tx)_scale(1.03)] active:[transform:var(--tx)_scale(1.03)]"
-                    : "pointer-events-none opacity-70"
+                    : "pointer-events-none opacity-50"
                   }
                 `}
                 style={{
                   ["--tx"]: `translateX(calc(-${activeIndex * 100}% - ${activeIndex * 1}rem))`
                 }}
               >
-                <div
-                  style={{ animationDelay: `${index * 300}ms` }}
-                  className={`u25 ${slideVertical}`}
-                >
+                <div className={`u25 [animation-delay:${index * 200}ms] ${slideVertical}`}>
                   <Link
                     target="_blank"
                     rel="noopener noreferrer"

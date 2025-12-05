@@ -1,10 +1,12 @@
 "use client";
 import { useRef } from "react";
+import dynamic from "next/dynamic";
 
-import Icon from "lib/icon";
 import { icons } from "data/skills";
 import { useScale } from "lib/animate";
 import { useAnimate } from "lib/animate";
+
+const Icon = dynamic(() => import("lib/icon"), { ssr: true });
 
 export default function Skills() {
   const size = 64;
@@ -56,7 +58,7 @@ export default function Skills() {
       </h2>
 
       {/* Description */}
-      <p ref={ref} className={`opacity-0 [animation-delay:300ms] ${slideClass}`}>
+      <p ref={ref} className={`opacity-0 [animation-delay:200ms] ${slideClass}`}>
         Na co dzień tworzę nowoczesne aplikacje i strony internetowe, 
         łącząc <em>Next.js</em>, <em>React</em> i <em>GraphQL</em> z solidnym zapleczem w <em>Node.js</em>. 
         Potrafię efektywnie zarządzać środowiskiem pracy dzięki <em>Dockerowi</em> i <em>npm</em>, 

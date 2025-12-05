@@ -1,7 +1,6 @@
 import localFont from "next/font/local";
 
 import Header from "components/header";
-import Footer from "components/footer";
 
 import { ThemeProvider } from "context/theme-context";
 
@@ -19,7 +18,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="pl">
       <body className={`${sfRegular.variable}`}>
         <ThemeProvider>
           <Header />

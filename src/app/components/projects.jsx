@@ -1,14 +1,14 @@
 "use client";
+import Link from "next/link";
 import { useRef } from "react";
 import dynamic from "next/dynamic";
-import Link from "next/link";
 
-import Icon from "lib/icon";
 import { projects } from "data/projects";
 import { useAnimate, usePerformance } from "lib/animate";
 import { useCarousel, useProgressDots } from "lib/carousel";
 
-const Video = dynamic(() => import("lib/video"));
+const Icon = dynamic(() => import("lib/icon"), { ssr: true });
+const Video = dynamic(() => import("lib/video"), { ssr: true });
 
 export default function Certificates() {
   const ref = useRef(null);
@@ -81,7 +81,7 @@ export default function Certificates() {
                 u25
                 group
                 max-h-[464px]
-                ${index === activeIndex ? "opacity-100 cursor-pointer" : "opacity-30 pointer-events-none cursor-default"}
+                ${index === activeIndex ? "opacity-100 cursor-pointer" : "opacity-50 pointer-events-none cursor-default"}
               `}
             >
               <Link

@@ -1,7 +1,8 @@
 "use client";
+import dynamic from "next/dynamic";
 import { useEffect, useRef, useState, useMemo } from "react";
 
-import Icon from "lib/icon";
+const Icon = dynamic(() => import("lib/icon"), { ssr: true });
 
 export default function HeaderForm({ size = 420, density = "normal" }) {
   const containerRef = useRef(null);

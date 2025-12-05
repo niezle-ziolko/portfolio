@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useFormStatus } from "react-dom";
 
 import Icon from "./icon";
 
@@ -81,5 +82,19 @@ export function Input({
         </span>
       )}
     </div>
+  );
+};
+
+export function SubmitButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <button
+      type="submit"
+      disabled={pending}
+      className="px-4 py-2 w-full rounded-lg"
+    >
+      {pending ? "Wysyłanie..." : "Prześlij formularz"}
+    </button>
   );
 };
