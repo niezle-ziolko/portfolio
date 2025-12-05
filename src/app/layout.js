@@ -1,3 +1,4 @@
+import Script from "next/script";
 import localFont from "next/font/local";
 
 import Header from "components/header";
@@ -19,6 +20,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pl">
+      <head>
+        <Script src="https://niezleziolko.app/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="76ab2befea841a6bfb153bab-|49" defer />
+      </head>
       <body className={`${sfRegular.variable}`}>
         <ThemeProvider>
           <Header />
