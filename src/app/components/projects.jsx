@@ -3,12 +3,12 @@ import Link from "next/link";
 import { useRef } from "react";
 import dynamic from "next/dynamic";
 
+import Video from "lib/video";
 import { projects } from "data/projects";
 import { useAnimate, usePerformance } from "lib/animate";
 import { useCarousel, useProgressDots } from "lib/carousel";
 
 const Icon = dynamic(() => import("lib/icon"), { ssr: true });
-const Video = dynamic(() => import("lib/video"), { ssr: true });
 
 export default function Certificates() {
   const ref = useRef(null);
